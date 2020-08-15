@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "67356123021",
-    "firebase_url": "https://fir-71e6b.firebaseio.com",
-    "project_id": "fir-71e6b",
-    "storage_bucket": "fir-71e6b.appspot.com"
+    "project_number": "43915713492",
+    "firebase_url": "https://form-keluhan.firebaseio.com",
+    "project_id": "form-keluhan",
+    "storage_bucket": "form-keluhan.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:67356123021:android:2dbbe16cdd2482978fe7c4",
+        "mobilesdk_app_id": "1:43915713492:android:31e39e6fce849bffa71441",
         "android_client_info": {
-          "package_name": "com.example.google"
+          "package_name": "com.example.form_keluhan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "67356123021-m76u16ng9s641q855vdprecnm35sej1h.apps.googleusercontent.com",
+          "client_id": "43915713492-ns3ct8jm36ot7e20sufh6kj9bee9mbni.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB09fHmpjHH4vUdEDfXes8nMor7O47Qk60"
+          "current_key": "AIzaSyBCSzzNzsmj4aLu0d6B48dIRM4c5BH2gAk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "67356123021-m76u16ng9s641q855vdprecnm35sej1h.apps.googleusercontent.com",
+              "client_id": "43915713492-ns3ct8jm36ot7e20sufh6kj9bee9mbni.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
