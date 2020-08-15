@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Lantai2Activity">
+
+    <ImageView
+        android:id="@+id/img_lantai2"
+        android:layout_width="wrap_content"
+        android:layout_height="690dp"
+        android:src="@drawable/lantai_2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="300dp"
+        android:text="C"
+        android:id="@+id/btn_c"/>
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="150dp"
+        android:text="A"
+        android:id="@+id/btn_a"/>
+
+    <Button
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="270dp"
+        android:text="D"
+        android:id="@+id/btn_d"/>
+
+    <Button
+        android:layout_width="51dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="420dp"
+        android:text="H"
+        android:id="@+id/btn_h"/>
+
+    <Button
+        android:layout_width="43dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="500dp"
+        android:text="G"
+        android:id="@+id/btn_g"
+        />
+
+    <Button
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="520dp"
+        android:text="F"
+        android:id="@+id/btn_f"/>
+
+    <Button
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="480dp"
+        android:text="E"
+        android:id="@+id/btn_e"/>
+
+    <Button
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/btn_b"
+        android:text="B"/>
+
+</RelativeLayout>
