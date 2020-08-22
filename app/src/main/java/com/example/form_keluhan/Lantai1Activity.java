@@ -13,7 +13,7 @@ import android.widget.ZoomControls;
 public class Lantai1Activity extends AppCompatActivity {
 
     ZoomControls zoomControls;
-    Button btn_a, btn_b, btn_c, btn_d, btn_dd, btn_e, btn_f, btn_g, btn_h, btn_j, btn_k, btn_l,
+    Button btn_lant2, btn_a, btn_b, btn_c, btn_d, btn_dd, btn_e, btn_f, btn_g, btn_h, btn_j, btn_k, btn_l,
             btn_m, btn_n, btn_o, btn_p, btn_q, btn_r, btn_s, btn_ss, btn_t, btn_tt, btn_u, btn_v, btn_w,
             btn_x, btn_y, btn_z, btn_zz;
 
@@ -28,6 +28,15 @@ public class Lantai1Activity extends AppCompatActivity {
 
         zoomControls = findViewById(R.id.simpleZoomControl); // initiate a ZoomControls
         zoomControls.hide();
+
+        btn_lant2= findViewById(R.id.btn_lant2);
+        btn_lant2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Lantai1Activity.this, Lantai2Activity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_a = findViewById(R.id.btn_a);
         btn_a.setOnClickListener(new View.OnClickListener() {

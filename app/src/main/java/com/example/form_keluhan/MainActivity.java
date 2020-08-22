@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 //setelah loading maka akan langsung berpindah ke bottom nav activity
-                Intent home=new Intent(MainActivity.this, BerandaActivity.class);
+                Intent home=new Intent(MainActivity.this, Lantai1Activity.class);
                 startActivity(home);
                 finish();
 
