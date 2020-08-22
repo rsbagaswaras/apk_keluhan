@@ -14,14 +14,11 @@ public class Lantai2Activity extends AppCompatActivity {
     ImageView imageView;
     Button btn_a, btn_b, btn_c, btn_d, btn_e, btn_f, btn_g, btn_h;
 
-    ScaleGestureDetector scaleGestureDetector;
-    float scaleFactor = 1.0f;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lantai2);
 
         imageView = findViewById(R.id.img_lantai2);
 
@@ -94,10 +91,6 @@ public class Lantai2Activity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return scaleGestureDetector.onTouchEvent(event);
-    }
 
 
 

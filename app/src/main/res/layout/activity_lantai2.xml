@@ -26,7 +26,7 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="130dp"
         android:text="A"
         android:id="@+id/btn_a"/>
 
@@ -39,10 +39,11 @@
         android:id="@+id/btn_d"/>
 
     <Button
-        android:layout_width="51dp"
+        android:layout_width="49dp"
         android:layout_height="36dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="401dp"
+        android:padding="2dp"
         android:text="H"
         android:id="@+id/btn_h"/>
 
@@ -50,7 +51,7 @@
         android:layout_width="43dp"
         android:layout_height="36dp"
         android:layout_marginLeft="119dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="485dp"
         android:text="G"
         android:id="@+id/btn_g"
         />
@@ -58,24 +59,25 @@
     <Button
         android:layout_width="43dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginLeft="195dp"
+        android:layout_marginTop="500dp"
         android:text="F"
         android:id="@+id/btn_f"/>
 
     <Button
         android:layout_width="38dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="480dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="440dp"
         android:text="E"
         android:id="@+id/btn_e"/>
 
     <Button
-        android:layout_width="38dp"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="130dp"
+        android:padding="5dp"
         android:id="@+id/btn_b"
         android:text="B"/>
 

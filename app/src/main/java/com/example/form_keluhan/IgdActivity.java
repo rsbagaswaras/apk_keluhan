@@ -107,7 +107,6 @@ public class IgdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                popupAddBtn.setVisibility(View.INVISIBLE);
                 //Alert Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(IgdActivity.this);
                 builder.setTitle("Pemberitahuan");

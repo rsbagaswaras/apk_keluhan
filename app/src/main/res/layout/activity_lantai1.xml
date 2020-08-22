@@ -23,50 +23,54 @@
 
     <Button
         android:id="@+id/btn_a"
-        android:layout_width="28dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginLeft="280dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="115dp"
+        android:padding="3sp"
         android:text="A"
-        android:textSize="8sp"
+        android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_b"
-        android:layout_width="28dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="120dp"
         android:layout_marginLeft="180dp"
+        android:padding="3dp"
         android:text="B"
         android:textSize="8sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_c"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="145dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="14dp"
         android:layout_marginLeft="250dp"
         android:text="C"
-        android:textSize="7sp"
+        android:textSize="5sp"
+        android:padding="3dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_d"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginLeft="250dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginLeft="258dp"
         android:text="D"
-        android:textSize="7sp"
+        android:textSize="5sp"
+        android:padding="3dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_dd"
         android:layout_width="18dp"
         android:layout_height="20dp"
-        android:layout_marginTop="105dp"
         android:layout_marginLeft="260dp"
+        android:layout_marginTop="105dp"
         android:padding="2dp"
         android:text="D"
         android:textSize="5sp"
@@ -80,197 +84,214 @@
         android:layout_marginTop="105dp"
         android:layout_marginLeft="250dp"
         android:text="E"
-        android:textSize="7sp"
+        android:textSize="5sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_f"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="123dp"
         android:layout_marginLeft="230dp"
         android:text="F"
-        android:textSize="7sp"
+        android:textSize="5sp"
+        android:padding="3dp"
         tools:ignore="MissingConstraints" />
     <Button
         android:id="@+id/btn_g"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="210dp"
         android:layout_marginLeft="290dp"
+        android:padding="3dp"
         android:text="G"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_h"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="185dp"
-        android:layout_marginLeft="270dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginLeft="275dp"
         android:text="H"
-        android:textSize="7sp"
+        android:textSize="5sp"
+        android:padding="2dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_j"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="255dp"
-        android:layout_marginLeft="265dp"
+        android:layout_marginLeft="267dp"
+        android:padding="3dp"
         android:text="J"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_k"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="198dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="201dp"
         android:layout_marginLeft="202dp"
+        android:padding="3dp"
         android:text="K"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_l"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="198dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="201dp"
         android:layout_marginLeft="162dp"
+        android:padding="3dp"
         android:text="L"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_m"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:layout_marginTop="245dp"
         android:layout_marginLeft="195dp"
-        android:padding="1dp"
+        android:paddingBottom="3dp"
+        android:padding="3dp"
         android:text="M"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_n"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="277dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="279dp"
         android:layout_marginLeft="195dp"
         android:text="N"
         android:textSize="7sp"
+        android:padding="3dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_o"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="255dp"
         android:layout_marginLeft="320dp"
+        android:padding="3sp"
         android:text="O"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_p"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="255dp"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="305dp"
+        android:padding="3dp"
         android:text="P"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_q"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="360dp"
-        android:layout_marginLeft="235dp"
+        android:layout_marginLeft="238dp"
+        android:padding="3dp"
         android:text="Q"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_r"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="340dp"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="263dp"
+        android:padding="3dp"
         android:text="R"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_u"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="380dp"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="263dp"
+        android:padding="3dp"
         android:text="U"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_s"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="330dp"
-        android:layout_marginLeft="294dp"
+        android:layout_marginLeft="297dp"
+        android:padding="3dp"
         android:text="S"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ss"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="330dp"
-        android:layout_marginLeft="317dp"
+        android:layout_marginLeft="320dp"
+        android:padding="3dp"
         android:text="S"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_t"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="387dp"
-        android:layout_marginLeft="294dp"
+        android:layout_marginLeft="297dp"
+        android:padding="3dp"
         android:text="T"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_tt"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="387dp"
-        android:layout_marginLeft="317dp"
+        android:layout_marginLeft="320dp"
+        android:padding="3dp"
         android:text="T"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_v"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="335dp"
         android:layout_marginLeft="180dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="V"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_w"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="385dp"
         android:layout_marginLeft="180dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="W"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
@@ -312,14 +333,14 @@
 
     <Button
         android:id="@+id/btn_ac2"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="450dp"
         android:layout_marginLeft="220dp"
         android:paddingBottom="1dp"
-        android:padding="3dp"
+        android:padding="2dp"
         android:text="AC"
-        android:textSize="6sp"
+        android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -335,21 +356,21 @@
 
     <Button
         android:id="@+id/btn_aa"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="449dp"
-        android:layout_marginLeft="239dp"
-        android:padding="1dp"
+        android:layout_marginLeft="241dp"
+        android:padding="3dp"
         android:text="AA"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ab"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="440dp"
-        android:padding="1dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="449dp"
+        android:padding="3dp"
         android:layout_marginLeft="265dp"
         android:text="AB"
         android:textSize="7sp"
@@ -358,10 +379,10 @@
 
     <Button
         android:id="@+id/btn_ac"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="475dp"
-        android:padding="1dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="481dp"
+        android:padding="3dp"
         android:layout_marginLeft="265dp"
         android:text="AC"
         android:textSize="7sp"
@@ -369,197 +390,197 @@
 
     <Button
         android:id="@+id/btn_ar2"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="440dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="449dp"
         android:layout_marginLeft="93dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AR"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ad"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="495dp"
-        android:padding="1dp"
-        android:layout_marginLeft="267dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="502dp"
+        android:padding="3dp"
+        android:layout_marginLeft="271dp"
         android:text="AD"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ae"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="495dp"
-        android:layout_marginLeft="245dp"
-        android:padding="1dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="501dp"
+        android:layout_marginLeft="248dp"
+        android:padding="3dp"
         android:text="AE"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_af"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="495dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="499dp"
         android:layout_marginLeft="220dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AF"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ag"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="480dp"
         android:layout_marginLeft="210dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AG"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ah"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="439dp"
-        android:padding="1dp"
-        android:layout_marginLeft="160dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="449dp"
+        android:padding="3dp"
+        android:layout_marginLeft="167dp"
         android:text="AH"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ai"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="460dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="469dp"
         android:layout_marginLeft="160dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AI"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_aj"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginLeft="160dp"
-        android:padding="2dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="501dp"
+        android:layout_marginLeft="165dp"
+        android:padding="3dp"
         android:text="AJ"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ak"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="600dp"
         android:layout_marginLeft="266dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AK"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ak2"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="580dp"
         android:layout_marginLeft="195dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AK"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_al"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:layout_marginTop="630dp"
         android:layout_marginLeft="195dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AL"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_am"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="533dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="539dp"
         android:layout_marginLeft="37dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AM"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_an"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="496dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="500dp"
         android:layout_marginLeft="73dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AN"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ao"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="475dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="485dp"
         android:layout_marginLeft="71dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AO"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ap"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="485dp"
-        android:layout_marginLeft="110dp"
-        android:padding="1dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="489dp"
+        android:layout_marginLeft="107dp"
+        android:padding="3dp"
         android:text="AP"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_aq"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginLeft="90dp"
-        android:padding="1dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="489dp"
+        android:layout_marginLeft="95dp"
+        android:padding="3dp"
         android:text="AQ"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ar"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="455dp"
-        android:layout_marginLeft="73dp"
-        android:padding="2dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="461dp"
+        android:layout_marginLeft="79dp"
+        android:padding="3dp"
         android:text="AR"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_as"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="320dp"
-        android:layout_marginLeft="114dp"
+        android:layout_marginLeft="116dp"
         android:padding="2dp"
         android:text="AS"
         android:textSize="7sp"
@@ -567,11 +588,11 @@
 
     <Button
         android:id="@+id/btn_aw"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="85dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="87dp"
         android:layout_marginLeft="106dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:text="AW"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
@@ -600,22 +621,22 @@
 
     <Button
         android:id="@+id/btn_ax3"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginLeft="330dp"
-        android:padding="2dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="335dp"
+        android:padding="3dp"
         android:text="AX"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_ax4"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
         android:layout_marginTop="538dp"
         android:layout_marginLeft="175dp"
-        android:padding="1dp"
+        android:padding="3dp"
         android:text="AX"
         android:textSize="7sp"
         tools:ignore="MissingConstraints" />

@@ -37,7 +37,9 @@
         <activity android:name=".AuditoriumActivity"/>
         <activity android:name=".KamarMandiActivity"/>
         <activity android:name=".KasubacActivity"/>
-        <activity android:name=".KomiteMedikActivity"/>
+        <activity android:name=".KomiteMedikActivity"
+            android:label="@string/title_activity_igd"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".PanelListrikActivity"/>
         <activity android:name=".RuangAkreditasiActivity"/>
         <activity android:name=".RuangDirekturActivity"/>
@@ -47,7 +49,9 @@
         <activity android:name=".Lantai2Activity" />
         <activity android:name=".Lantai1Activity" />
         <activity android:name=".BerandaActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="@string/title_activity_igd"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
