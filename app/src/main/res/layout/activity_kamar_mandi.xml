@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".KamarMandiActivity">
 
-    <ImageView
+
+<com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/kamarmandi"/>
+        app:src="@drawable/kamarmandi"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

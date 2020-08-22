@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".RuangDirekturActivity">
 
-    <ImageView
+
+<com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ruangdirektur"/>
+        app:src="@drawable/ruangdirektur"/>
 </RelativeLayout>

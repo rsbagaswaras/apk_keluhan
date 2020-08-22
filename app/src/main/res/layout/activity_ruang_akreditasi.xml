@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".RuangAkreditasiActivity">
 
-    <ImageView
+<com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ruangakreditasi"/>
+        app:src="@drawable/ruangakreditasi" />
 
 </RelativeLayout>

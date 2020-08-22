@@ -8,9 +8,10 @@
     android:orientation="vertical"
     tools:context=".GedungSActivity">
 
-    <ImageView
+
+<com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ss"/>
+        app:src="@drawable/ss"/>
 
 </RelativeLayout>
