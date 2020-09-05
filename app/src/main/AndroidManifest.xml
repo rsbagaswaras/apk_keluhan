@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.form_keluhan">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
@@ -9,11 +13,11 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".IgdActivity"
-            android:label="@string/title_activity_igd"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".GedungOActivity"></activity>
+        <activity android:name=".KodeActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".IgdActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GedungOActivity" />
         <activity android:name=".GedungPActivity" />
         <activity android:name=".GedungQActivity" />
         <activity android:name=".GedungAJActivity" />
@@ -34,23 +38,22 @@
         <activity android:name=".GedungGActivity" />
         <activity android:name=".GedungLActivity" />
         <activity android:name=".GedungAActivity" />
-        <activity android:name=".AuditoriumActivity"/>
-        <activity android:name=".KamarMandiActivity"/>
-        <activity android:name=".KasubacActivity"/>
+        <activity android:name=".AuditoriumActivity" />
+        <activity android:name=".KamarMandiActivity" />
+        <activity android:name=".KasubacActivity" />
         <activity android:name=".KomiteMedikActivity"
-            android:label="@string/title_activity_igd"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".PanelListrikActivity"/>
-        <activity android:name=".RuangAkreditasiActivity"/>
-        <activity android:name=".RuangDirekturActivity"/>
-        <activity android:name=".RekapMedikActivity"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PanelListrikActivity" />
+        <activity android:name=".RuangAkreditasiActivity" />
+        <activity android:name=".RuangDirekturActivity" />
+        <activity android:name=".RekapMedikActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".Lantai2Activity" />
         <activity android:name=".Lantai1Activity" />
         <activity android:name=".BerandaActivity" />
-        <activity android:name=".MainActivity"
-            android:label="@string/title_activity_igd"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,9 +62,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
