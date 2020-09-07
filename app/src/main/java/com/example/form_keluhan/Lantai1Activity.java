@@ -21,6 +21,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
     Button btn_lant2;
 
+
     private final String TAG = getClass().getSimpleName();
 
     @Override
@@ -59,18 +60,102 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "RADIOLOGI" :
-                    Intent i = new Intent(Lantai1Activity.this, GedungLActivity.class);
-                    startActivity(i);
+                case "L. RADIOLOGI" :
+                    Intent L = new Intent(Lantai1Activity.this, GedungLActivity.class);
+                    startActivity(L);
                     break;
-            }
 
-
-            switch (text) {
                 case "K. LABORATORIUM" :
-                    Intent i = new Intent(Lantai1Activity.this, GedungKActivity.class);
-                    startActivity(i);
+                    Intent K = new Intent(Lantai1Activity.this, GedungKActivity.class);
+                    startActivity(K);
                     break;
+
+                case "M. INSTALASI KEBIDANAN" :
+                    Intent M = new Intent(Lantai1Activity.this, GedungMActivity.class);
+                    startActivity(M);
+                    break;
+
+                case "N. PERINATAL" :
+                    Intent N = new Intent(Lantai1Activity.this, GedungNActivity.class);
+                    startActivity(N);
+                    break;
+
+                case "Q.R. KLAS IIIA (PERGIWA)" :
+                    Intent Q = new Intent(Lantai1Activity.this, GedungQActivity.class);
+                    startActivity(Q);
+                    break;
+
+                case "R.R. KLAS IIIB (KUNTHI)" :
+                    Intent R = new Intent(Lantai1Activity.this, GedungRActivity.class);
+                    startActivity(R);
+                    break;
+
+                case "S.R. VIP (SRIKANDI)" :
+                    Intent S = new Intent(Lantai1Activity.this, GedungSActivity.class);
+                    startActivity(S);
+                    break;
+
+                case "SS.R. VIP (SRIKANDI)" :
+                    Intent SS = new Intent(Lantai1Activity.this, GedungSSActivity.class);
+                    startActivity(SS);
+                    break;
+
+                case "J.ICU/PICU/NICU" :
+                    Intent J = new Intent(Lantai1Activity.this, GedungJActivity.class);
+                    startActivity(J);
+                    break;
+
+                case "P.FISIOTERAPI" :
+                    Intent P = new Intent(Lantai1Activity.this, GedungPActivity.class);
+                    startActivity(P);
+                    break;
+
+                case "O.HAEDEMOLISA" :
+                    Intent O = new Intent(Lantai1Activity.this, GedungOActivity.class);
+                    startActivity(O);
+                    break;
+
+                case "G. INSTALASI BEDAH SENTRAL" :
+                    Intent G = new Intent(Lantai1Activity.this, GedungGActivity.class);
+                    startActivity(G);
+                    break;
+
+                case "T. R. KLAS I (SHINTA)" :
+                    Intent T = new Intent(Lantai1Activity.this, GedungTActivity.class);
+                    startActivity(T);
+                    break;
+
+                case "U. R. KLAS II (ARIMBI)" :
+                    Intent U = new Intent(Lantai1Activity.this, GedungUActivity.class);
+                    startActivity(U);
+                    break;
+
+                case "AA. R. INSTALASI GIZI" :
+                    Intent AA = new Intent(Lantai1Activity.this, GedungAAActivity.class);
+                    startActivity(AA);
+                    break;
+
+                case "AB. INSTALASI LAUNDRY" :
+                    Intent AB = new Intent(Lantai1Activity.this, GedungABActivity.class);
+                    startActivity(AB);
+                    break;
+
+                case "AH. R. JENAZAH" :
+                    Intent AH = new Intent(Lantai1Activity.this, GedungAHActivity.class);
+                    startActivity(AH);
+                    break;
+
+                case "AI. R. MOBIL  JENAZAH" :
+                    Intent AI = new Intent(Lantai1Activity.this, GedungAIActivity.class);
+                    startActivity(AI);
+                    break;
+
+                case "AJ. R. GAS MEDIS" :
+                    Intent AJ= new Intent(Lantai1Activity.this, GedungAJActivity.class);
+                    startActivity(AJ);
+                    break;
+
+
             }
 
         }
@@ -82,7 +167,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(270, 420, 50, 50, new State("RADIOLOGI")));
+        clickableAreas.add(new ClickableArea(270, 420, 50, 50, new State("L. RADIOLOGI")));
         clickableAreas.add(new ClickableArea(350, 420, 50, 50, new State("K.LABORATORIUM")));
         clickableAreas.add(new ClickableArea(350, 500, 50, 50, new State("M.INSTALASI KEBIDANAN")));
 
@@ -136,7 +221,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
         clickableAreas.add(new ClickableArea(500, 1170, 50, 50, new State("AK. R. KLAS III")));
         clickableAreas.add(new ClickableArea(330, 1080, 50, 50, new State("AX. POST SATPAM")));
-        clickableAreas.add(new ClickableArea(630, 670, 50, 50, new State("S. R. VIP(SRIKANDI)")));
+        clickableAreas.add(new ClickableArea(630, 670, 50, 50, new State("SS. R. VIP(SRIKANDI)")));
 
         clickableAreas.add(new ClickableArea(650, 1100, 30, 30, new State("AX. POST SATPAM")));
         clickableAreas.add(new ClickableArea(500, 920, 50, 50, new State("AB. INSTALASI LAUNDRY")));
