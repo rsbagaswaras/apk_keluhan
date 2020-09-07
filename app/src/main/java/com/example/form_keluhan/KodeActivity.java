@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,7 +77,9 @@ public class KodeActivity extends AppCompatActivity {
         //sign in user
         signInWithPhoneAuthCredential(credential);
     }
-
+    // wktu user udh masukin kode verifikasi kmu login ke firebase authentication pake phoneCredential,
+    // biar data user yang login kesave
+    // di firebase
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -84,21 +87,27 @@ public class KodeActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             pb_bar.setVisibility(View.INVISIBLE);
-                            Intent intent = new Intent(KodeActivity.this , Lantai1Activity.class);
+                            Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
                             startActivity(intent);
                             finish();
-                        }else {
-                            pb_bar.setVisibility(View.INVISIBLE);
-                            String message = "Verification failed , Please try again later.";
+                        } else {
+                            // pb_bar.setVisibility(View.INVISIBLE);
+                            //  String message = "Verification failed , Please try again later.";
 
-                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                message = "Invalid code entered...";
-                            }
-                            Toast.makeText(KodeActivity.this, message, Toast.LENGTH_SHORT).show();
+                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                            //    message = "Invalid code entered...";
+                            //   }
+                            Toast.makeText(KodeActivity.this, "Something Wrong ",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(KodeActivity.this, "Something Wrong " + e, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
