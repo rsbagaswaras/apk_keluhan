@@ -65,17 +65,17 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
                     startActivity(L);
                     break;
 
-                case "K. LABORATORIUM" :
+                case "K.LABORATORIUM" :
                     Intent K = new Intent(Lantai1Activity.this, GedungKActivity.class);
                     startActivity(K);
                     break;
 
-                case "M. INSTALASI KEBIDANAN" :
+                case "M.INSTALASI KEBIDANAN" :
                     Intent M = new Intent(Lantai1Activity.this, GedungMActivity.class);
                     startActivity(M);
                     break;
 
-                case "N. PERINATAL" :
+                case "N.PERINATAL" :
                     Intent N = new Intent(Lantai1Activity.this, GedungNActivity.class);
                     startActivity(N);
                     break;
@@ -180,8 +180,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         clickableAreas.add(new ClickableArea(570, 670, 50, 50, new State("S.R. VIP (SRIKANDI)")));
 
         clickableAreas.add(new ClickableArea(500, 530, 50, 50, new State("J.ICU/PICU/NICU")));
-        clickableAreas.add(new ClickableArea(590, 530, 50, 50, new State("P.FISIOTERAPI")));
-        clickableAreas.add(new ClickableArea(630, 530, 50, 50, new State("O.HAEDEMOLISA")));
+        clickableAreas.add(new ClickableArea(590, 530, 30, 50, new State("P.FISIOTERAPI")));
+        clickableAreas.add(new ClickableArea(630, 530, 30, 50, new State("O.HAEDEMOLISA")));
 
         clickableAreas.add(new ClickableArea(550, 420, 50, 50, new State("G. INSTALASI BEDAH SENTRAL")));
         clickableAreas.add(new ClickableArea(490, 390, 50, 50, new State("H. SIMRS")));
