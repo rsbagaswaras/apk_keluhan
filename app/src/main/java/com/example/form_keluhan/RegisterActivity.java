@@ -130,13 +130,17 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    // ini code untuk ngirim nomor hp yang bakal di kirimin sms
+    // untuk nomornya jangan lupa pake kode negara ya, jgn pake 0
     private void sendVerificationCode(String phoneNumber) {
+        phoneNumber = "+62" + phoneNumber;
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                "+62"+phoneNumber, //nomor yang diverifikasi
-                60,//timeout
-                TimeUnit.SECONDS,//unittimeout
+                phoneNumber,
+                60,
+                TimeUnit.SECONDS,
                 this,
-                mCall );
+                mCall
+        );
         Toast.makeText(getApplicationContext(), "Sedang Memverifikasi, Mohon Tunggu", Toast.LENGTH_SHORT).show();
     }
 
@@ -144,11 +148,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
+            String code = phoneAuthCredential.getSmsCode();
         }
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
+            Toast.makeText(RegisterActivity.this, "Failed" + e, Toast.LENGTH_SHORT).show();
             loadingProgress.setVisibility(View.GONE);
         }
 
@@ -165,6 +170,7 @@ public class RegisterActivity extends AppCompatActivity {
             finish();
         }
     };
+
 
 
     //8
