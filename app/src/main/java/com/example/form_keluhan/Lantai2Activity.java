@@ -132,6 +132,6 @@ public class Lantai2Activity extends AppCompatActivity implements OnClickableAre
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
-        
+
     }
 }
