@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".GedungAAActivity">
+    tools:context=".lantai1.GedungAAActivity">
 
     <TextView
         android:id="@+id/textViewTop"

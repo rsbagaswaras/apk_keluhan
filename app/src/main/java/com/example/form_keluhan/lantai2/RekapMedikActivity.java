@@ -1,14 +1,16 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai2;
 
 import android.os.Bundle;
 
+import com.example.form_keluhan.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GedungPActivity extends AppCompatActivity {
+public class RekapMedikActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gedung_p);
+        setContentView(R.layout.activity_rekapmedik);
     }
 }

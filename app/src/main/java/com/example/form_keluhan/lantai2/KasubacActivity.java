@@ -1,14 +1,16 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai2;
 
 import android.os.Bundle;
 
+import com.example.form_keluhan.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RuangDirekturActivity extends AppCompatActivity {
+public class KasubacActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ruang_direktur);
+        setContentView(R.layout.activity_kasubac);
     }
 }

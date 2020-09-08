@@ -9,11 +9,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.form_keluhan.lantai2.AuditoriumActivity;
+import com.example.form_keluhan.lantai2.KamarMandiActivity;
+import com.example.form_keluhan.lantai2.KasubacActivity;
+import com.example.form_keluhan.lantai2.KomiteMedikActivity;
+import com.example.form_keluhan.lantai2.PanelListrikActivity;
+import com.example.form_keluhan.lantai2.RekapMedikActivity;
+import com.example.form_keluhan.lantai2.RuangAkreditasiActivity;
+import com.example.form_keluhan.lantai2.RuangDirekturActivity;
 
 import java.util.ArrayList;
 import java.util.List;
