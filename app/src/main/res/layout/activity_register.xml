@@ -96,7 +96,7 @@
 
     <EditText
         android:background="@drawable/reg_edittext_style"
-        android:hint="Phone Number"
+        android:hint="+62 Phone Number"
         android:id="@+id/et_phone"
         android:layout_width="265dp"
         android:layout_height="wrap_content"

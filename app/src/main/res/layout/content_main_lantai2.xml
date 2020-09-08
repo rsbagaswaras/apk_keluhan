@@ -15,26 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"/>
 
-    <TextView
-        android:id="@+id/textViewTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:textColor="#000000"
-        android:text="Click on an emblem to see the name of the state!"/>
-
-    <TextView
-        android:id="@+id/textViewBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:textColor="#000000"
-        android:text="Tip: You can zoom in and turn your device!"/>
-
 
 
 </RelativeLayout>

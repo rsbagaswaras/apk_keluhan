@@ -11,7 +11,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ZoomControls;
+
+import com.example.form_keluhan.lantai1.GedungAAActivity;
+import com.example.form_keluhan.lantai1.GedungABActivity;
+import com.example.form_keluhan.lantai1.GedungAHActivity;
+import com.example.form_keluhan.lantai1.GedungAIActivity;
+import com.example.form_keluhan.lantai1.GedungAJActivity;
+import com.example.form_keluhan.lantai1.GedungGActivity;
+import com.example.form_keluhan.lantai1.GedungJActivity;
+import com.example.form_keluhan.lantai1.GedungKActivity;
+import com.example.form_keluhan.lantai1.GedungLActivity;
+import com.example.form_keluhan.lantai1.GedungMActivity;
+import com.example.form_keluhan.lantai1.GedungNActivity;
+import com.example.form_keluhan.lantai1.GedungOActivity;
+import com.example.form_keluhan.lantai1.GedungPActivity;
+import com.example.form_keluhan.lantai1.GedungQActivity;
+import com.example.form_keluhan.lantai1.GedungRActivity;
+import com.example.form_keluhan.lantai1.GedungSActivity;
+import com.example.form_keluhan.lantai1.GedungSSActivity;
+import com.example.form_keluhan.lantai1.GedungTActivity;
+import com.example.form_keluhan.lantai1.GedungUActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,16 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai1;
 
 import android.os.Bundle;
 
+import com.example.form_keluhan.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GedungAActivity extends AppCompatActivity {
+public class GedungRActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gedung_a);
+        setContentView(R.layout.activity_gedung_r);
     }
 }

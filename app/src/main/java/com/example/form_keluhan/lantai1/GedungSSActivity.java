@@ -1,6 +1,8 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai1;
 
 import android.os.Bundle;
+
+import com.example.form_keluhan.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

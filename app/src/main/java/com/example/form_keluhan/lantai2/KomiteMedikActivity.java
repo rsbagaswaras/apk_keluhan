@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai2;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -8,16 +8,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -26,9 +16,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class IgdActivity extends AppCompatActivity {
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.example.form_keluhan.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class KomiteMedikActivity extends AppCompatActivity {
 
     Dialog popAddPost;
     ImageView popupPostImage, popupAddBtn;
@@ -39,7 +37,7 @@ public class IgdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_igd);
+        setContentView(R.layout.activity_komite_medik);
 
         iniPopup();
         setupPopupImageClick();
@@ -68,9 +66,9 @@ public class IgdActivity extends AppCompatActivity {
 
     private void checkAndRequestForPermission() {
         //Request for camera permission
-        if (ContextCompat.checkSelfPermission(IgdActivity.this,
+        if (ContextCompat.checkSelfPermission(KomiteMedikActivity.this,
                 Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(IgdActivity.this,
+            ActivityCompat.requestPermissions(KomiteMedikActivity.this,
                     new String[] {
                             Manifest.permission.CAMERA
                     },
@@ -108,7 +106,7 @@ public class IgdActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Alert Dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(IgdActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(KomiteMedikActivity.this);
                 builder.setTitle("Pemberitahuan");
                 builder.setMessage("Form Berhasil di Upload !");
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -121,5 +119,4 @@ public class IgdActivity extends AppCompatActivity {
             }
         });
     }
-
 }

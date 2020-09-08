@@ -6,7 +6,7 @@ android:layout_height="fill_parent"
 xmlns:tools="http://schemas.android.com/tools"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:orientation="vertical"
-tools:context=".GedungTActivity">
+tools:context=".lantai1.GedungTActivity">
 
     <TextView
         android:id="@+id/textViewTop"
