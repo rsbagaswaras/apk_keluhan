@@ -58,41 +58,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:background="@drawable/reg_edittext_style"
-        android:hint="Password"
-        android:id="@+id/regPassword"
-        android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        tools:ignore="UnknownId" />
+        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+            android:id="@+id/regPassword"
+            android:background="@drawable/reg_edittext_style"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_marginTop="8dp"
+            app:drawable_hide="@drawable/ic_visibility_off"
+            app:drawable_show="@drawable/ic_visibility_on"
+            app:tint_color="#D50000" />
 
-    <EditText
-        android:background="@drawable/reg_edittext_style"
-        android:hint="Confirm Password"
-        android:id="@+id/regPassword2"
-        android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPassword" />
-
+         <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+             android:id="@+id/regPassword2"
+             android:background="@drawable/reg_edittext_style"
+             android:layout_width="265dp"
+             android:layout_height="wrap_content"
+             android:hint="Confirm Password"
+             android:layout_marginTop="8dp"
+             app:drawable_hide="@drawable/ic_visibility_off"
+             app:drawable_show="@drawable/ic_visibility_on"
+             app:tint_color="#D50000" />
 
     <EditText
         android:background="@drawable/reg_edittext_style"
@@ -106,6 +92,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:inputType="phone"
+        android:layout_toRightOf="@+id/no_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPassword" />
