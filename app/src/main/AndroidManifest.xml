@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KodeActivity"></activity>
+        <activity android:name=".CobaPindahBisaDihapus"></activity>
+        <activity android:name=".KodeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".lantai1.GedungOActivity" />
         <activity android:name=".lantai1.GedungPActivity" />
@@ -39,7 +40,9 @@
         <activity android:name=".lantai2.AuditoriumActivity" />
         <activity android:name=".lantai2.KamarMandiActivity" />
         <activity android:name=".lantai2.KasubacActivity" />
-        <activity android:name=".lantai2.KomiteMedikActivity"/>
+        <activity
+            android:name=".lantai2.KomiteMedikActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".lantai2.PanelListrikActivity" />
         <activity android:name=".lantai2.RuangAkreditasiActivity" />
         <activity android:name=".lantai2.RuangDirekturActivity" />

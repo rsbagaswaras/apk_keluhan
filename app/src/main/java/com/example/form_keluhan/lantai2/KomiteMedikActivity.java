@@ -11,28 +11,39 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import at.lukle.clickableareasimage.ClickableArea;
+import at.lukle.clickableareasimage.OnClickableAreaClickedListener;
 
 import com.example.form_keluhan.R;
+import com.example.form_keluhan.State;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class KomiteMedikActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class KomiteMedikActivity extends AppCompatActivity  implements OnClickableAreaClickedListener {
 
     Dialog popAddPost;
     ImageView popupPostImage, popupAddBtn;
     TextView popupJudul, popupNama,popupRuangan, popupKeluhan;
     EditText edt_nama, edt_ruangan, edt_keluhan;
     Button addForm;
+
+    private final String TAG = getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,5 +129,39 @@ public class KomiteMedikActivity extends AppCompatActivity {
                 builder.show();
             }
         });
+    }
+
+    @Override
+    public void onClickableAreaTouched(Object item) {
+        if (item instanceof State) {
+            String text = ((State) item).getName();
+
+            switch (text) {
+                case "KOMITE MEDIK":
+                    Intent intent = new Intent(KomiteMedikActivity.this, CobaPindahBisaDihapus.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    }
+
+    @NonNull
+    private List<ClickableArea> getClickableAreas() {
+
+        List<ClickableArea> clickableAreas = new ArrayList<>();
+
+        clickableAreas.add(new ClickableArea(140, 70, 120, 120, new State("KOMITE MEDIK")));
+
+return clickableAreas;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
