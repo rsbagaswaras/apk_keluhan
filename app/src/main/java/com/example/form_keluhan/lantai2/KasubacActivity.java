@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
 
@@ -32,7 +33,7 @@ public class KasubacActivity extends AppCompatActivity implements OnClickableAre
 
             switch (text) {
                 case "KASUBAC AND KASI":
-                    Intent intent = new Intent(KasubacActivity.this, CobaPindahBisaDihapus.class);
+                    Intent intent = new Intent(KasubacActivity.this, FormActivity.class);
                     startActivity(intent);
                     break;
             }

@@ -28,6 +28,7 @@ import androidx.core.content.ContextCompat;
 import at.lukle.clickableareasimage.ClickableArea;
 import at.lukle.clickableareasimage.OnClickableAreaClickedListener;
 
+import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -138,7 +139,7 @@ public class KomiteMedikActivity extends AppCompatActivity  implements OnClickab
 
             switch (text) {
                 case "KOMITE MEDIK":
-                    Intent intent = new Intent(KomiteMedikActivity.this, CobaPindahBisaDihapus.class);
+                    Intent intent = new Intent(KomiteMedikActivity.this, FormActivity.class);
                     startActivity(intent);
                     break;
             }

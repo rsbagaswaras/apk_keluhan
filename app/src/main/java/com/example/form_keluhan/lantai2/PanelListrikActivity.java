@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
 
@@ -33,7 +34,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
 
             switch (text) {
                 case "R.KOMITE MEDIK":
-                    Intent intent = new Intent(PanelListrikActivity.this, CobaPindahBisaDihapus.class);
+                    Intent intent = new Intent(PanelListrikActivity.this, FormActivity.class);
                     startActivity(intent);
                     break;
             }

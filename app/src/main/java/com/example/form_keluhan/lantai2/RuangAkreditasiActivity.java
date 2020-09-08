@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.form_keluhan.CobaPindahBisaDihapus;
+import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
 
@@ -30,7 +31,7 @@ public class RuangAkreditasiActivity extends AppCompatActivity implements OnClic
 
             switch (text) {
                 case "RUANG AKREDITASI":
-                    Intent intent = new Intent(RuangAkreditasiActivity.this, CobaPindahBisaDihapus.class);
+                    Intent intent = new Intent(RuangAkreditasiActivity.this, FormActivity.class);
                     startActivity(intent);
                     break;
             }

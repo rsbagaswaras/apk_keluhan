@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
 
@@ -33,7 +34,7 @@ public class KamarMandiActivity extends AppCompatActivity implements OnClickable
 
             switch (text) {
                 case "KAMAR MANDI":
-                    Intent intent = new Intent(KamarMandiActivity.this, CobaPindahBisaDihapus.class);
+                    Intent intent = new Intent(KamarMandiActivity.this, FormActivity.class);
                     startActivity(intent);
                     break;
             }
