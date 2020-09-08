@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RuangDirekturActivity extends AppCompatActivity {
 
+    private final String TAG = getClass().getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

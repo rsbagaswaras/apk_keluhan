@@ -67,7 +67,8 @@
             android:layout_marginTop="8dp"
             app:drawable_hide="@drawable/ic_visibility_off"
             app:drawable_show="@drawable/ic_visibility_on"
-            app:tint_color="#D50000" />
+            app:tint_color="#D50000"
+            tools:ignore="MissingClass" />
 
          <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
              android:id="@+id/regPassword2"
