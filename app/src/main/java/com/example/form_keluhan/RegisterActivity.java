@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,9 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.concurrent.TimeUnit;
 
+import cyd.awesome.material.AwesomeText;
+import cyd.awesome.material.FontCharacterMaps;
+
 public class RegisterActivity extends AppCompatActivity {
 
     ImageView ImgUserPhoto;
@@ -45,6 +49,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText userEmail,userPassword,userPAssword2,userName, et_phone;
     private ProgressBar loadingProgress;
     private Button regBtn;
+    private AwesomeText awesomeText;
+
+    private boolean pwd_status = true;
 
     String phoneNumber;
 
@@ -61,6 +68,26 @@ public class RegisterActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.regMail);
         userPassword = findViewById(R.id.regPassword);
         userPAssword2 = findViewById(R.id.regPassword2);
+
+        //show hide password
+        awesomeText = findViewById(R.id.awesome);
+        awesomeText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pwd_status){
+                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    pwd_status = false;
+                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY);
+                    userPassword.setSelection(userPassword.length());
+                }else {
+                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+                    pwd_status = true;
+                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY_OFF);
+                    userPassword.setSelection(userPassword.length());
+                }
+            }
+        });
+
         userName = findViewById(R.id.regName);
         loadingProgress = findViewById(R.id.regProgressBar);
         loadingProgress.setVisibility(View.INVISIBLE);

@@ -58,29 +58,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-            android:id="@+id/regPassword"
-            android:background="@drawable/reg_edittext_style"
-            android:layout_width="265dp"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:layout_marginTop="8dp"
-            app:drawable_hide="@drawable/ic_visibility_off"
-            app:drawable_show="@drawable/ic_visibility_on"
-            app:tint_color="#D50000"
-            tools:ignore="MissingClass" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal">
 
-         <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-             android:id="@+id/regPassword2"
-             android:background="@drawable/reg_edittext_style"
-             android:layout_width="265dp"
-             android:layout_height="wrap_content"
-             android:hint="Confirm Password"
-             android:layout_marginTop="8dp"
-             app:drawable_hide="@drawable/ic_visibility_off"
-             app:drawable_show="@drawable/ic_visibility_on"
-             app:tint_color="#D50000"
-             tools:ignore="MissingClass" />
+        <EditText
+            android:background="@drawable/reg_edittext_style"
+            android:hint="Password"
+            android:id="@+id/regPassword"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/regMail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <cyd.awesome.material.AwesomeText
+            android:id="@+id/awesome"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            app:awesome_font="material_design"
+            app:awesome_icon="MD_VISIBILITY_OFF"/>
+
+
+    </LinearLayout>
+
+
 
     <EditText
         android:background="@drawable/reg_edittext_style"
@@ -88,11 +102,12 @@
         android:id="@+id/et_phone"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:layout_centerHorizontal="true"
         android:inputType="phone"
