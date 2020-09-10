@@ -25,9 +25,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import at.lukle.clickableareasimage.ClickableArea;
 import at.lukle.clickableareasimage.OnClickableAreaClickedListener;
+import uk.co.senab.photoview.PhotoViewAttacher;
 
+import com.example.form_keluhan.ClickableArea;
+import com.example.form_keluhan.ClickableAreasImage;
 import com.example.form_keluhan.FormActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.State;
@@ -36,13 +38,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KomiteMedikActivity extends AppCompatActivity  implements OnClickableAreaClickedListener {
-
-    Dialog popAddPost;
-    ImageView popupPostImage, popupAddBtn;
-    TextView popupJudul, popupNama,popupRuangan, popupKeluhan;
-    EditText edt_nama, edt_ruangan, edt_keluhan;
-    Button addForm;
+public class KomiteMedikActivity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.OnClickableAreaClickedListener {
 
     private final String TAG = getClass().getSimpleName();
 
@@ -51,85 +47,17 @@ public class KomiteMedikActivity extends AppCompatActivity  implements OnClickab
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_komite_medik);
 
-        iniPopup();
-        setupPopupImageClick();
+        // Add image
+        ImageView image = (ImageView) findViewById(R.id.imageView);
+        image.setImageResource(R.drawable.kasubac);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popAddPost.show();
-            }
-        });
-    }
+        // Create your image
+        ClickableAreasImage clickableAreasImage = new ClickableAreasImage(new PhotoViewAttacher(image), this);
 
-    private void setupPopupImageClick() {
+        // Define your clickable area (pixel values: x coordinate, y coordinate, width, height) and assign an object to it
+        List<ClickableArea> clickableAreas = getClickableAreas();
+        clickableAreasImage.setClickableAreas(clickableAreas);
 
-        popupPostImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // here when image clicked we need to open the gallery
-                // before we open the gallery we need to check if our app have the access to user files
-                // we did this before in register activity I'm just going to copy the code to save time ...
-                checkAndRequestForPermission();
-            }
-        });
-    }
-
-    private void checkAndRequestForPermission() {
-        //Request for camera permission
-        if (ContextCompat.checkSelfPermission(KomiteMedikActivity.this,
-                Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(KomiteMedikActivity.this,
-                    new String[] {
-                            Manifest.permission.CAMERA
-                    },
-                    100
-            );
-        }
-        else {
-            //Open Camera
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent, 100);
-        }
-    }
-
-    private void iniPopup() {
-        popAddPost = new Dialog(this);
-        popAddPost.setContentView(R.layout.activity_form);
-        popAddPost.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        popAddPost.getWindow().setLayout(Toolbar.LayoutParams.WRAP_CONTENT,Toolbar.LayoutParams.WRAP_CONTENT);
-        popAddPost.getWindow().getAttributes().gravity = Gravity.CENTER;
-
-        // ini popup widgets
-        popupPostImage = popAddPost.findViewById(R.id.gambar);
-        popupJudul = popAddPost.findViewById(R.id.form);
-        popupNama = popAddPost.findViewById(R.id.txt_nama);
-        popupRuangan = popAddPost.findViewById(R.id.txt_ruangan);
-        popupKeluhan = popAddPost.findViewById(R.id.txt_keluhan);
-        edt_nama = popAddPost.findViewById(R.id.edt_nama);
-        edt_ruangan = popAddPost.findViewById(R.id.edt_ruangan);
-        edt_keluhan = popAddPost.findViewById(R.id.edt_keluhan);
-        popupAddBtn = popAddPost.findViewById(R.id.btn_add);
-
-        //Add post click listener
-        popupAddBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //Alert Dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(KomiteMedikActivity.this);
-                builder.setTitle("Pemberitahuan");
-                builder.setMessage("Form Berhasil di Upload !");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Log.e("info", "OK");
-                    }
-                });
-                builder.show();
-            }
-        });
     }
 
     @Override
@@ -146,23 +74,21 @@ public class KomiteMedikActivity extends AppCompatActivity  implements OnClickab
         }
     }
 
-    @NonNull
     private List<ClickableArea> getClickableAreas() {
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(140, 70, 120, 120, new State("KOMITE MEDIK")));
+        clickableAreas.add(new ClickableArea(200, 350, 700, 700, new State("KOMITE MEDIK")));
 
-return clickableAreas;
+
+        return clickableAreas;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
-    }
+
+
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
