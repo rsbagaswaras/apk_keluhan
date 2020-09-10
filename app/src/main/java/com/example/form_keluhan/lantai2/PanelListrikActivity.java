@@ -31,7 +31,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
 
         // Add image
         ImageView image = (ImageView) findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.auditorium);
+        image.setImageResource(R.drawable.panellistrik);
 
         // Create your image
         ClickableAreasImage clickableAreasImage = new ClickableAreasImage(new PhotoViewAttacher(image), this);
@@ -60,7 +60,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(200, 350, 700, 700, new State("PANEL LISTRIK")));
+        clickableAreas.add(new ClickableArea(125, 100, 500, 500, new State("PANEL LISTRIK")));
 
 
         return clickableAreas;

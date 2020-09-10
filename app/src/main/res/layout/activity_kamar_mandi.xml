@@ -13,9 +13,11 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="130dp"
         android:textColor="#000000"
         android:text="KAMAR MANDI"/>
+
+
 
     <!--    <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"

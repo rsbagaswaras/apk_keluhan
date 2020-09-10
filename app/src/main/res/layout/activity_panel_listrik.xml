@@ -13,6 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="110dp"
         android:textColor="#000000"
         android:text="RUANG PANEL LISTRIK"/>
 
@@ -35,6 +36,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBottom"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="700dp"
+        android:text="Klik pada huruf untuk melanjutkan ke menu selanjutnya"
+        android:textColor="#000000"/>
 
 
 

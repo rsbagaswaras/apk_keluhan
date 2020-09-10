@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CobaPindahBisaDihapus"></activity>
         <activity android:name=".KodeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".lantai1.GedungOActivity" />
