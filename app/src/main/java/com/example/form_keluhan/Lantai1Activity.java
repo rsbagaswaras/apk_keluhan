@@ -57,9 +57,6 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
             }
         });
 
-
-
-
         // Add image
         ImageView image = (ImageView) findViewById(R.id.imageView);
         image.setImageResource(R.drawable.resize);
@@ -173,12 +170,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
                     Intent AJ= new Intent(Lantai1Activity.this, GedungAJActivity.class);
                     startActivity(AJ);
                     break;
-
-
             }
-
         }
-
     }
 
     @NonNull

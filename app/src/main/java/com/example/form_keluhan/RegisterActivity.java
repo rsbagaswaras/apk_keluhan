@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     static int REQUESCODE = 1 ;
     Uri pickedImgUri ;
 
-    private EditText userEmail,userPassword,userPAssword2,userName, et_phone;
+    private EditText userEmail,userPassword, userPassword2,userName, et_phone;
     private ProgressBar loadingProgress;
     private Button regBtn;
     private AwesomeText awesomeText;
@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
         et_phone = findViewById(R.id.et_phone);
         userEmail = findViewById(R.id.regMail);
         userPassword = findViewById(R.id.regPassword);
-        userPAssword2 = findViewById(R.id.regPassword2);
+        userPassword2 = findViewById(R.id.regPassword2);
 
         //show hide password
         awesomeText = findViewById(R.id.awesome);
@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                 loadingProgress.setVisibility(View.VISIBLE);
                 final String email = userEmail.getText().toString();
                 final String password = userPassword.getText().toString();
-                final String password2 = userPAssword2.getText().toString();
+                final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
 
                 if( email.isEmpty() || name.isEmpty() || password.isEmpty()  || !password.equals(password2)) {
@@ -311,7 +311,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
-
             // the user has successfully picked an image
             // we need to save its reference to a Uri variable
             pickedImgUri = data.getData() ;
