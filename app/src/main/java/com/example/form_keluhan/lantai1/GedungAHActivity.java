@@ -55,20 +55,12 @@ public class GedungAHActivity extends AppCompatActivity implements OnClickableAr
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
+                case "R":
                     Intent K = new Intent(GedungAHActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
 
-                case "GUDANG":
-                    Intent G = new Intent(GedungAHActivity. this, FormActivity.class);
-                    startActivity(G);
-                    break;
 
-                case "SH":
-                    Intent S = new Intent(GedungAHActivity. this, FormActivity.class);
-                    startActivity(S);
-                    break;
 
             }
         }
@@ -79,9 +71,8 @@ public class GedungAHActivity extends AppCompatActivity implements OnClickableAr
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R. KONSULTAS")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2573, new State("R")));
+
 
 
         return clickableAreas;
