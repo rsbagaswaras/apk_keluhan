@@ -15,8 +15,9 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
         android:textColor="#000000"
-        android:text="Gedung U"/>
+        android:text="R. KLAS II (ARIMBI)"/>
 
 
     <!--    <android.support.design.widget.AppBarLayout

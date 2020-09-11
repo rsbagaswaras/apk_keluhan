@@ -55,20 +55,12 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
-                    Intent K = new Intent(GedungKActivity. this, FormActivity.class);
-                    startActivity(K);
+                case "HEMATOLOGI":
+                    Intent H = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(H);
                     break;
 
-                case "GUDANG":
-                    Intent G = new Intent(GedungKActivity. this, FormActivity.class);
-                    startActivity(G);
-                    break;
 
-                case "SH":
-                    Intent S = new Intent(GedungKActivity. this, FormActivity.class);
-                    startActivity(S);
-                    break;
 
             }
         }
@@ -79,9 +71,8 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R. KONSULTAS")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("HEMATOLOGI")));
+
 
 
         return clickableAreas;
