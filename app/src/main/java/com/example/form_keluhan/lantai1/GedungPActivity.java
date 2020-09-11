@@ -55,37 +55,6 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
                     Intent K = new Intent(GedungPActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
-
-                case "US/TENS TRAKSI":
-                    Intent G = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(G);
-                    break;
-
-                case "NWD SWD":
-                    Intent S = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(S);
-                    break;
-
-                case "ES IR":
-                    Intent intent = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(intent);
-                    break;
-
-                case "EXERCISE/PARALLEL BAR/WALL BAR/SHOULDER WHEEL":
-                    Intent intent1 = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(intent1);
-                    break;
-
-                case "LAV 1":
-                    Intent intent2 = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(intent2);
-                    break;
-
-                case "LAV 2":
-                    Intent intent3 = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(intent3);
-                    break;
-
             }
         }
     }
@@ -95,15 +64,7 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("ADMIN")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("US/TENS TRAKSI")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("NWD SWD")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("ES IR")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("EXERCISE/PARALLEL BAR/WALL BAR/SHOULDER WHEEL")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV 1")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV 2")));
-
-
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("ADMIN")));
         return clickableAreas;
     }
 
