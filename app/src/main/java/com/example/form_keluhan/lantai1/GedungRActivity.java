@@ -24,10 +24,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class GedungRActivity extends AppCompatActivity implements OnClickableAreaClickedListener {
-
-
-
-
     private final String TAG = getClass().getSimpleName();
 
     @Override
@@ -55,19 +51,39 @@ public class GedungRActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
+                case "NS":
                     Intent K = new Intent(GedungRActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
 
-                case "GUDANG":
+                case "R.PERAWAT":
                     Intent G = new Intent(GedungRActivity. this, FormActivity.class);
                     startActivity(G);
                     break;
 
-                case "SH":
+                case "R.DOKTER":
                     Intent S = new Intent(GedungRActivity. this, FormActivity.class);
                     startActivity(S);
+                    break;
+
+                case "R.KA INTALASI":
+                    Intent intent = new Intent(GedungRActivity. this, FormActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case "PERAWATAN KELAS 2":
+                    Intent intent2 = new Intent(GedungRActivity. this, FormActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case "SELASAR PETUGAS":
+                    Intent intent3 = new Intent(GedungRActivity. this, FormActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case "PERAWATAN KELAS 3":
+                    Intent intent4 = new Intent(GedungRActivity. this, FormActivity.class);
+                    startActivity(intent4);
                     break;
 
             }
@@ -79,9 +95,13 @@ public class GedungRActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R. KONSULTAS")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("NS")));
+        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("R.PERAWAT")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.KA INTALASI")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PERAWATAN KELAS 2")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SELASAR PETUGAS")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PERAWATAN KELAS 3")));
 
 
         return clickableAreas;

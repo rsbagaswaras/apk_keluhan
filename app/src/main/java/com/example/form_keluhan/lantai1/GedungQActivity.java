@@ -25,9 +25,6 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class GedungQActivity extends AppCompatActivity implements OnClickableAreaClickedListener {
 
-
-
-
     private final String TAG = getClass().getSimpleName();
 
     @Override
@@ -55,19 +52,49 @@ public class GedungQActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
+                case "NS":
                     Intent K = new Intent(GedungQActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
 
-                case "GUDANG":
+                case "R.PERAWAT":
                     Intent G = new Intent(GedungQActivity. this, FormActivity.class);
                     startActivity(G);
                     break;
 
-                case "SH":
+                case "R.DOKTER":
                     Intent S = new Intent(GedungQActivity. this, FormActivity.class);
                     startActivity(S);
+                    break;
+
+                case "R.KA INSTALSI":
+                    Intent intent = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case "TOILET":
+                    Intent intent1 = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case "R.ALAT & LINEN":
+                    Intent intent2 = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case "PANTRY":
+                    Intent intent3 = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case "LAV":
+                    Intent intent4 = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent4);
+                    break;
+
+                case "SH":
+                    Intent intent5 = new Intent(GedungQActivity. this, FormActivity.class);
+                    startActivity(intent5);
                     break;
 
             }
@@ -79,10 +106,15 @@ public class GedungQActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R. KONSULTAS")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("NS")));
+        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("R.PERAWAT")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.KA.INSTALASI")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.ALAT & LINEN")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("TOILET")));
         clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
-
 
         return clickableAreas;
     }

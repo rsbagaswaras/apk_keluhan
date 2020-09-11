@@ -8,11 +8,15 @@
     android:fitsSystemWindows="true"
     tools:context=".lantai1.GedungUActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textViewTop"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:text="Gedung U"/>
 
 
     <!--    <android.support.design.widget.AppBarLayout
@@ -29,6 +33,10 @@
 
         </android.support.design.widget.AppBarLayout>-->
 
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
