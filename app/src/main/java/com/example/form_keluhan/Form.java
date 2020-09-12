@@ -14,19 +14,15 @@ public class Form {
     private Object timeStamp ;
 
 
-    public Form(String nama, String ruangan, String keluhan, String picture, String userId, String userPhoto) {
+    public Form(String nama, String ruangan, String keluhan, String picture) {
         this.postKey = postKey;
         this.nama = nama;
         this.ruangan = ruangan;
         this.keluhan = keluhan;
         this.picture = picture;
-        this.userId = userId;
-        this.userPhoto = userPhoto;
         this.timeStamp = ServerValue.TIMESTAMP;
     }
 
-    public Form() {
-    }
 
     public String getPostKey() {
         return postKey;
