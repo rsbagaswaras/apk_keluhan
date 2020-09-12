@@ -30,6 +30,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -46,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
     static int REQUESCODE = 1 ;
     Uri pickedImgUri ;
 
-    private EditText userEmail,userPassword, userPassword2,userName, et_phone;
+     private EditText userEmail,userPassword, userPassword2,userName, et_phone;
     private ProgressBar loadingProgress;
     private Button regBtn;
     private AwesomeText awesomeText;
@@ -316,5 +318,31 @@ public class RegisterActivity extends AppCompatActivity {
             pickedImgUri = data.getData() ;
             ImgUserPhoto.setImageURI(pickedImgUri);
         }
+    }
+
+    public void ClickRegister(View view){
+
+        EditText  regName =  (EditText)findViewById(R.id.regName);
+        EditText  regMail =  (EditText)findViewById(R.id.regMail);
+        EditText  regPassword =  (EditText)findViewById(R.id.regPassword);
+        EditText  et_phone =  (EditText)findViewById(R.id.et_phone);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        //Referensi database yang dituju
+        DatabaseReference myRef =
+                database.getReference("Pengguna").child(regName.getText().toString());
+
+        //memberi nilai pada referensi yang dituju
+        myRef.child("E-mail").setValue(regMail.getText().toString());
+        myRef.child("Password").setValue(regPassword.getText().toString());
+        myRef.child("No.Hp").setValue(et_phone.getText().toString());
+
+        Intent intent = new Intent(RegisterActivity.this, KodeActivity.class);
+        startActivity(intent);
+        finish();
+
+      //  Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
+
     }
 }

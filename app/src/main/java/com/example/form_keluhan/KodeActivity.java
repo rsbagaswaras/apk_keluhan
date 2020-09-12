@@ -37,6 +37,8 @@ public class KodeActivity extends AppCompatActivity {
     String otp;
     ProgressBar pb_bar;
 
+   // Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class KodeActivity extends AppCompatActivity {
         pb_bar.setVisibility(View.GONE);
 
         mAuth =FirebaseAuth.getInstance();
+
 
     }
 
@@ -69,18 +72,17 @@ public class KodeActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
+                        otp = et_otp.getText().toString().trim();
+
+
                         if (task.isSuccessful()) {
                             pb_bar.setVisibility(View.INVISIBLE);
                             Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
                             startActivity(intent);
                             finish();
-                        } else {
-                            // pb_bar.setVisibility(View.INVISIBLE);
-                            //  String message = "Verification failed , Please try again later.";
+                        } else  {
+                            et_otp.setError("Invalid otp");
 
-                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            //    message = "Invalid code entered...";
-                            //   }
                             Toast.makeText(KodeActivity.this, "Something Wrong ",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -111,6 +113,8 @@ public class KodeActivity extends AppCompatActivity {
         finish();
 
         Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
+
+
 
     }
 }
