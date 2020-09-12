@@ -319,30 +319,5 @@ public class RegisterActivity extends AppCompatActivity {
             ImgUserPhoto.setImageURI(pickedImgUri);
         }
     }
-
-    public void ClickRegister(View view){
-
-        EditText  regName =  (EditText)findViewById(R.id.regName);
-        EditText  regMail =  (EditText)findViewById(R.id.regMail);
-        EditText  regPassword =  (EditText)findViewById(R.id.regPassword);
-        EditText  et_phone =  (EditText)findViewById(R.id.et_phone);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        //Referensi database yang dituju
-        DatabaseReference myRef =
-                database.getReference("Pengguna").child(regName.getText().toString());
-
-        //memberi nilai pada referensi yang dituju
-        myRef.child("E-mail").setValue(regMail.getText().toString());
-        myRef.child("Password").setValue(regPassword.getText().toString());
-        myRef.child("No.Hp").setValue(et_phone.getText().toString());
-
-        Intent intent = new Intent(RegisterActivity.this, KodeActivity.class);
-        startActivity(intent);
-        finish();
-
-      //  Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
-
-    }
+    
 }
