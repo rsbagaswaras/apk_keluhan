@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -72,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         if(user!=null){
             Intent intent = new Intent(getApplicationContext(), Lantai1Activity.class );
             startActivity(intent);
+            finish();
         }
     }
 
@@ -125,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class );
                             startActivity(intent);
+                            finish();
 
                             // } else {
                             //   Toast.makeText(MainActivity.this, "Sorry Auth Failed", Toast.LENGTH_SHORT).show();

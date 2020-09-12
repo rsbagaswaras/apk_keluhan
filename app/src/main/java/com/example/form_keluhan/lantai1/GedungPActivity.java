@@ -24,10 +24,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class GedungPActivity extends AppCompatActivity implements OnClickableAreaClickedListener {
-
-
-
-
     private final String TAG = getClass().getSimpleName();
 
     @Override
@@ -55,21 +51,10 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
+                case "ADMIN":
                     Intent K = new Intent(GedungPActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
-
-                case "GUDANG":
-                    Intent G = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(G);
-                    break;
-
-                case "SH":
-                    Intent S = new Intent(GedungPActivity. this, FormActivity.class);
-                    startActivity(S);
-                    break;
-
             }
         }
     }
@@ -79,11 +64,7 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R. KONSULTAS")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
-
-
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("ADMIN")));
         return clickableAreas;
     }
 

@@ -3,6 +3,7 @@ package com.example.form_keluhan;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class KodeActivity extends AppCompatActivity {
 
@@ -27,13 +30,14 @@ public class KodeActivity extends AppCompatActivity {
     String verificationId;
     FirebaseAuth mAuth;
 
-    Intent intent;
 
     //Variable Untuk Komponen-komponen Yang Diperlukan
     EditText et_otp;
     Button verify_btn;
     String otp;
     ProgressBar pb_bar;
+
+   // Intent intent;
 
 
     @Override
@@ -46,28 +50,9 @@ public class KodeActivity extends AppCompatActivity {
         pb_bar=findViewById(R.id.pb_bar);
         pb_bar.setVisibility(View.GONE);
 
-
         mAuth =FirebaseAuth.getInstance();
 
-        intent = getIntent();
-        verificationId =intent.getStringExtra("verificationID");
-        verify_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                otp = et_otp.getText().toString().trim();
-
-                if(!otp.isEmpty()){
-                    pb_bar.setVisibility(View.VISIBLE);
-                    verifyOtp(verificationId , otp);
-                    Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
-                    startActivity(intent);
-                }else {
-                    et_otp.setError("Invalid otp");
-                }
-
-            }
-        });
     }
 
 
@@ -77,6 +62,8 @@ public class KodeActivity extends AppCompatActivity {
         //sign in user
         signInWithPhoneAuthCredential(credential);
     }
+
+
     // wktu user udh masukin kode verifikasi kmu login ke firebase authentication pake phoneCredential,
     // biar data user yang login kesave
     // di firebase
@@ -87,18 +74,17 @@ public class KodeActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
+                        otp = et_otp.getText().toString().trim();
+
+
                         if (task.isSuccessful()) {
                             pb_bar.setVisibility(View.INVISIBLE);
                             Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
                             startActivity(intent);
                             finish();
-                        } else {
-                            // pb_bar.setVisibility(View.INVISIBLE);
-                            //  String message = "Verification failed , Please try again later.";
+                        } else  {
+                            et_otp.setError("Invalid otp");
 
-                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            //    message = "Invalid code entered...";
-                            //   }
                             Toast.makeText(KodeActivity.this, "Something Wrong ",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -109,5 +95,28 @@ public class KodeActivity extends AppCompatActivity {
                 Toast.makeText(KodeActivity.this, "Something Wrong " + e, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void ClickKode(View view){
+
+        EditText  et_otp =  (EditText)findViewById(R.id.et_otp);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        //Referensi database yang dituju
+        DatabaseReference myRef =
+                database.getReference("Kode").child(et_otp.getText().toString());
+
+        //memberi nilai pada referensi yang dituju
+        myRef.child("Kode").setValue(et_otp.getText().toString());
+
+        Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
+        startActivity(intent);
+        finish();
+
+        Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
+
+
+
     }
 }
