@@ -114,7 +114,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:onClick="Click3"
-        android:background="@drawable/rectag_bg"
+        android:background="@drawable/backgroundbutton"
         android:text="Upload"
         tools:ignore="OnClick" />
 
