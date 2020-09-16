@@ -5,9 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
-    android:padding="25dp"
+    android:padding="10dp"
     android:id="@+id/form_keluhan">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="5" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
     <TextView
         android:id="@+id/form"
@@ -104,7 +114,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:onClick="Click3"
-        android:background="@drawable/rectag_bg"
+        android:background="@drawable/backgroundbutton"
         android:text="Upload"
         tools:ignore="OnClick" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

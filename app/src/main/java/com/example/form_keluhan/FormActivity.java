@@ -164,6 +164,13 @@ public class FormActivity extends AppCompatActivity  {
             myRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
 
 
+        Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
+
+        edt_nama.setText("");
+        edt_ruangan.setText("");
+        edt_keluhan.setText("");
+        edt_keluhan.setText("");
+        edt_nama.requestFocus();
 
     }
 
