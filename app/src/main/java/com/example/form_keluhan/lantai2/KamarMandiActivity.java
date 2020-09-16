@@ -62,7 +62,7 @@ public class KamarMandiActivity extends AppCompatActivity implements OnClickable
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(140, 147, 500, 500, new State("KAMAR MANDI")));
+        clickableAreas.add(new ClickableArea(0, 0, 461, 362, new State("KAMAR MANDI")));
 
         return clickableAreas;
 

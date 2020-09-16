@@ -60,7 +60,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(125, 100, 500, 500, new State("PANEL LISTRIK")));
+        clickableAreas.add(new ClickableArea(0, 0, 402, 237, new State("PANEL LISTRIK")));
 
 
         return clickableAreas;

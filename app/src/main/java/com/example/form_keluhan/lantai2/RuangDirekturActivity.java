@@ -54,7 +54,7 @@ public class RuangDirekturActivity extends AppCompatActivity implements OnClicka
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(140, 290, 700, 700, new State("RUANG DIREKTUR")));
+        clickableAreas.add(new ClickableArea(0, 0, 408, 628, new State("RUANG DIREKTUR")));
 
         return clickableAreas;
     }

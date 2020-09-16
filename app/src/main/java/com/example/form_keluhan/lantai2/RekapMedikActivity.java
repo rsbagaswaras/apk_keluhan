@@ -55,7 +55,7 @@ public class RekapMedikActivity extends AppCompatActivity implements OnClickable
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(140, 126, 700, 500, new State("REKAP MEDIK")));
+        clickableAreas.add(new ClickableArea(0, 0, 572, 332, new State("REKAP MEDIK")));
 
 
         return clickableAreas;

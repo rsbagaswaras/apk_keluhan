@@ -59,7 +59,7 @@ public class KasubacActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(200, 350, 700, 700, new State("KASUBAC AND KASI")));
+        clickableAreas.add(new ClickableArea(0, 0, 400, 531, new State("KASUBAC AND KASI")));
 
 
         return clickableAreas;

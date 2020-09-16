@@ -53,7 +53,7 @@ public class RuangAkreditasiActivity extends AppCompatActivity implements OnClic
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(170, 150, 700, 700, new State("RUANG AKREDITASI")));
+        clickableAreas.add(new ClickableArea(0, 0, 434, 472, new State("RUANG AKREDITASI")));
 
 
         return clickableAreas;

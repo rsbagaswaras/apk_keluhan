@@ -49,7 +49,7 @@ public class KomiteMedikActivity extends AppCompatActivity implements OnClickabl
 
         // Add image
         ImageView image = (ImageView) findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.kasubac);
+        image.setImageResource(R.drawable.rkomitemedik);
 
         // Create your image
         ClickableAreasImage clickableAreasImage = new ClickableAreasImage(new PhotoViewAttacher(image), this);
@@ -78,7 +78,7 @@ public class KomiteMedikActivity extends AppCompatActivity implements OnClickabl
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(200, 350, 700, 700, new State("KOMITE MEDIK")));
+        clickableAreas.add(new ClickableArea(0, 0, 687, 400, new State("KOMITE MEDIK")));
 
 
         return clickableAreas;
