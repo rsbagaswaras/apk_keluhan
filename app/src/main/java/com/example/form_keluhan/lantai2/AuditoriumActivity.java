@@ -24,21 +24,20 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
     private final String TAG = getClass().getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedinstanceState) {
+        super.onCreate(savedinstanceState);
         setContentView(R.layout.activity_auditorium);
 
-        // Add image
-        ImageView image = (ImageView) findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.auditorium);
+        //add image
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.auditorium);
 
-        // Create your image
-        ClickableAreasImage clickableAreasImage = new ClickableAreasImage(new PhotoViewAttacher(image), this);
+        //create your image
+        ClickableAreasImage clickableAreasImage = new ClickableAreasImage(new PhotoViewAttacher(imageView), this);
 
-        // Define your clickable area (pixel values: x coordinate, y coordinate, width, height) and assign an object to it
+        //
         List<ClickableArea> clickableAreas = getClickableAreas();
         clickableAreasImage.setClickableAreas(clickableAreas);
-
     }
 
     @Override
@@ -53,22 +52,17 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
                     break;
             }
         }
-
     }
 
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 461, 362, new State("AUDITORIUM")));
+        clickableAreas.add(new ClickableArea(0, 0, 400, 498, new State("AUDITORIUM")));
 
-
-    return clickableAreas;
-    }
-
-
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+        return clickableAreas;
 
     }
+
+
+
 }
