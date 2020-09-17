@@ -59,7 +59,7 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 400, 498, new State("AUDITORIUM")));
+        clickableAreas.add(new ClickableArea(0, 0, 461, 362, new State("AUDITORIUM")));
 
 
     return clickableAreas;
