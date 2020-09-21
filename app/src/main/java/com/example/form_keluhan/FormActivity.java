@@ -153,15 +153,18 @@ public class FormActivity extends AppCompatActivity  {
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+        DatabaseReference ref = database.getReference("RSBW/Keluhan");
 
             //Referensi database yang dituju
-            DatabaseReference myRef = database.getReference("Keluhan").child("Keluhan 1");
+            DatabaseReference myRef = ref.child("Laporan");
+
+            //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
+            DatabaseReference newmyRef = myRef.push();
 
             //memberi nilai pada referensi yang dituju
-            myRef.child("Nama").setValue(edt_nama.getText().toString());
-            myRef.child("Ruangan").setValue(edt_ruangan.getText().toString());
-            myRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
+            newmyRef.child("Nama").setValue(edt_nama.getText().toString());
+            newmyRef.child("Ruangan").setValue(edt_ruangan.getText().toString());
+            newmyRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
 
 
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
