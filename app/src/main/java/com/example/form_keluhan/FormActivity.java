@@ -139,6 +139,7 @@ public class FormActivity extends AppCompatActivity  {
     //setting popup
     public void Click3(View view) {
 
+        //deklarasi
         edt_nama = findViewById(R.id.edt_nama);
         edt_ruangan = findViewById(R.id.edt_ruangan);
         edt_keluhan = findViewById(R.id.edt_keluhan);
@@ -151,8 +152,9 @@ public class FormActivity extends AppCompatActivity  {
             }
         });
 
-
+        //untuk memasukkan ke firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //membuat server pada realtime database
         DatabaseReference ref = database.getReference("RSBW/Keluhan");
 
             //Referensi database yang dituju
@@ -169,6 +171,7 @@ public class FormActivity extends AppCompatActivity  {
 
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
+        //mengosongkan isian setelah klik button upload
         edt_nama.setText("");
         edt_ruangan.setText("");
         edt_keluhan.setText("");
