@@ -2,6 +2,9 @@ package com.example.form_keluhan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 import android.content.Intent;
@@ -11,7 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.form_keluhan.lantai1.GedungAAActivity;
 import com.example.form_keluhan.lantai1.GedungABActivity;
 import com.example.form_keluhan.lantai1.GedungAHActivity;
@@ -31,6 +36,9 @@ import com.example.form_keluhan.lantai1.GedungSActivity;
 import com.example.form_keluhan.lantai1.GedungSSActivity;
 import com.example.form_keluhan.lantai1.GedungTActivity;
 import com.example.form_keluhan.lantai1.GedungUActivity;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +47,7 @@ import java.util.List;
 public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener{
 
     Button btn_lant2;
-
+    FirebaseUser currentUser ;
 
     private final String TAG = getClass().getSimpleName();
 
@@ -67,6 +75,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         // Define your clickable area (pixel values: x coordinate, y coordinate, width, height) and assign an object to it
         List<ClickableArea> clickableAreas = getClickableAreas();
         clickableAreasImage.setClickableAreas(clickableAreas);
+
+
     }
 
     // Listen for touches on your images:
@@ -264,6 +274,64 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_glosarium) {
+
+            getSupportActionBar().setTitle("Glosarium");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,new Lantai2Activity()).commit();
+        }
+        else if (id == R.id.nav_signout) {
+
+            FirebaseAuth.getInstance().signOut();
+            Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(loginActivity);
+            finish();
+
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public void updateNavHeader() {
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = headerView.findViewById(R.id.nav_username);
+        TextView navUserMail = headerView.findViewById(R.id.nav_user_mail);
+        ImageView navUserPhot = headerView.findViewById(R.id.nav_user_photo);
+
+        navUserMail.setText(currentUser.getEmail());
+        navUsername.setText(currentUser.getDisplayName());
+
+        // now we will use Glide to load user image
+        // first we need to import the library
+
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhot);
+
+
+
+
+    }
+
 }
 
 

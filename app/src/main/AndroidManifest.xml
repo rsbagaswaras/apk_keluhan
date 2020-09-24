@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.form_keluhan">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
@@ -13,6 +9,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SmsActivity"></activity>
+        <activity android:name=".VerifyActivity" />
         <activity android:name=".KodeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".lantai1.GedungOActivity" />
@@ -39,7 +37,7 @@
         <activity android:name=".lantai2.AuditoriumActivity" />
         <activity android:name=".lantai2.KamarMandiActivity" />
         <activity android:name=".lantai2.KasubacActivity" />
-        <activity android:name=".lantai2.KomiteMedikActivity"/>
+        <activity android:name=".lantai2.KomiteMedikActivity" />
         <activity android:name=".lantai2.PanelListrikActivity" />
         <activity android:name=".lantai2.RuangAkreditasiActivity" />
         <activity android:name=".lantai2.RuangDirekturActivity" />
@@ -47,8 +45,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".Lantai2Activity" />
-        <activity android:name=".Lantai1Activity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Lantai1Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -59,5 +58,9 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

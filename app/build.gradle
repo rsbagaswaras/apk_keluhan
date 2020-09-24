@@ -53,6 +53,10 @@ dependencies {
     implementation 'com.github.Lukle:ClickableAreasImages:v0.1'
 
     implementation 'cyd.awesome.android:awesome-material:1.0'
+
+    // Glide library
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+
 }
 
 allprojects {

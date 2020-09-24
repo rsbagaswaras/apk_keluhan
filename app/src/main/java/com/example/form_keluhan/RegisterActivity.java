@@ -21,11 +21,13 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -48,28 +50,37 @@ public class RegisterActivity extends AppCompatActivity {
     static int REQUESCODE = 1 ;
     Uri pickedImgUri ;
 
-     private EditText userEmail,userPassword, userPassword2,userName, et_phone;
+    private EditText inputNama, inputEmail, inputPassword, inputConfirmPassword, inputPhone;
+    private Button btnRegister;
     private ProgressBar loadingProgress;
-    private Button regBtn;
-    private AwesomeText awesomeText;
-
+    private AwesomeText awesomeText, awesomeText2;
     private boolean pwd_status = true;
 
-    String phoneNumber;
+    FirebaseAuth mAuth;
 
-    private FirebaseAuth mAuth;
-
+    String nama, email, password, confirmPassword, phoneNumber ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //1 ini views
-        et_phone = findViewById(R.id.et_phone);
-        userEmail = findViewById(R.id.regMail);
-        userPassword = findViewById(R.id.regPassword);
-        userPassword2 = findViewById(R.id.regPassword2);
+        //Init
+        inputNama = findViewById(R.id.regName);
+        inputEmail = findViewById(R.id.regMail);
+        inputPassword = findViewById(R.id.regPassword);
+        inputConfirmPassword = findViewById(R.id.regConfirmPassword);
+        inputPhone = findViewById(R.id.et_phone);
+
+        loadingProgress = findViewById(R.id.regProgressBar);
+        loadingProgress.setVisibility(View.INVISIBLE);
+
+        btnRegister = findViewById(R.id.regBtn);
+
+        //Firebase Init
+        mAuth = FirebaseAuth.getInstance();
+
+        Register();
 
         //show hide password
         awesomeText = findViewById(R.id.awesome);
@@ -77,58 +88,39 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (pwd_status){
-                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    inputPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                     pwd_status = false;
                     awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY);
-                    userPassword.setSelection(userPassword.length());
+                    inputPassword.setSelection(inputPassword.length());
                 }else {
-                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+                    inputPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
                     pwd_status = true;
                     awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY_OFF);
-                    userPassword.setSelection(userPassword.length());
+                    inputPassword.setSelection(inputPassword.length());
                 }
             }
         });
 
-        userName = findViewById(R.id.regName);
-        loadingProgress = findViewById(R.id.regProgressBar);
-        loadingProgress.setVisibility(View.INVISIBLE);
-
-        //9
-        mAuth = FirebaseAuth.getInstance();
-
-        //6
-        regBtn = findViewById(R.id.regBtn);
-        regBtn.setOnClickListener(new View.OnClickListener() {
+        //show hide confirm password
+        awesomeText2 = findViewById(R.id.awesome2);
+        awesomeText2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                regBtn.setVisibility(View.INVISIBLE);
-                loadingProgress.setVisibility(View.VISIBLE);
-                final String email = userEmail.getText().toString();
-                final String password = userPassword.getText().toString();
-                final String password2 = userPassword2.getText().toString();
-                final String name = userName.getText().toString();
-
-                if( email.isEmpty() || name.isEmpty() || password.isEmpty()  || !password.equals(password2)) {
-
-
-                    // something goes wrong : all fields must be filled
-                    // we need to display an error message
-                    showMessage("Please Verify all fields") ;
-                    regBtn.setVisibility(View.VISIBLE);
-                    loadingProgress.setVisibility(View.INVISIBLE);
-                }
-                else {
-                    // everything is ok and all fields are filled now we can start creating user account
-                    // CreateUserAccount method will try to create the user if the email is valid
-                    CreateUserAccount(email,name,password);
+            public void onClick(View v) {
+                if (pwd_status){
+                    inputConfirmPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    pwd_status = false;
+                    awesomeText2.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY);
+                    inputConfirmPassword.setSelection(inputConfirmPassword.length());
+                }else {
+                    inputConfirmPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+                    pwd_status = true;
+                    awesomeText2.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY_OFF);
+                    inputConfirmPassword.setSelection(inputConfirmPassword.length());
                 }
             }
         });
 
 
-        //2
         ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
         ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,92 +135,121 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        regBtn.setOnClickListener(new View.OnClickListener() {
+
+
+    }
+
+
+    //on click listener at btn register
+    public void Register() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phoneNumber = et_phone.getText().toString().trim();
-                if(phoneNumber.isEmpty()){ //untuk mengecek nomor hp kosong atau tidak
-                    et_phone.setError("Invalid Phone Number");
-                }else {
-                    loadingProgress.setVisibility(View.VISIBLE);
-                    sendVerificationCode(phoneNumber);
+                ValidateDataAndDoRegister();
+            }
+        });
+    }
+
+
+
+    private void ValidateDataAndDoRegister() {
+
+        nama = inputNama.getText().toString().trim();
+        email = inputEmail.getText().toString().trim();
+        password = inputPassword.getText().toString().trim();
+        confirmPassword = inputConfirmPassword.getText().toString().trim();
+        phoneNumber = inputPhone.getText().toString().trim();
+
+
+        if (nama.isEmpty())
+        {
+            inputNama.setError("Masukkan Nama");
+            inputNama.requestFocus();
+        }
+
+        else if(email.isEmpty())
+        {
+            inputEmail.setError("Enter Email Address");
+            inputEmail.requestFocus();
+        }
+
+        else if(email.length()<10)
+        {
+            inputEmail.setError("Enter valid email");
+            inputEmail.requestFocus();
+        }
+
+        else if (password.isEmpty())
+        {
+            inputPassword.setError("Enter Password");
+            inputPassword.requestFocus();
+        }
+        else if (inputPassword.length()<7)
+        {
+            inputPassword.setError("Password should be greater than 7 character");
+            inputPassword.requestFocus();
+        }
+        else if (confirmPassword.isEmpty())
+        {
+            inputConfirmPassword.setError("Enter Confirm Password");
+            inputConfirmPassword.requestFocus();
+        }
+        else if (confirmPassword.length()<7)
+        {
+            inputConfirmPassword.setError("Password should be greater than 7 character");
+            inputConfirmPassword.requestFocus();
+        }
+        else if (!password.equals(confirmPassword)) //if password not equal to confirm password
+        {
+            inputPassword.setError("Password not matched");
+            inputPassword.requestFocus();
+            inputConfirmPassword.setError("Password not matched");
+            inputConfirmPassword.requestFocus();
+            inputPassword.setText("");
+            inputConfirmPassword.setText("");
+        }
+        else if(phoneNumber.isEmpty()){
+            inputPhone.setError("Masukkan Nomor Telefon");
+            inputPhone.requestFocus();
+        }
+        else
+        {
+            doRegister(nama, email,password);
+        }
+    }
+
+    private void doRegister( final String nama, String email, String password)
+    {
+        btnRegister.setEnabled(false);
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful())
+                {
+                    updateUserInfo( nama ,pickedImgUri,mAuth.getCurrentUser());
+                    sendVerificationEmail();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                if (e instanceof FirebaseAuthUserCollisionException) //this exception means email already registered
+                {
+                    btnRegister.setEnabled(true);
+                    inputEmail.setError("Email Already Registered");
+                    inputEmail.requestFocus();
+                }
+                else
+                {
+                    btnRegister.setEnabled(true);
+                    Toast.makeText(RegisterActivity.this, "Opps! Something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    // ini code untuk ngirim nomor hp yang bakal di kirimin sms
-    // untuk nomornya jangan lupa pake kode negara ya, jgn pake 0
-    private void sendVerificationCode(String phoneNumber) {
-        phoneNumber = "+62" + phoneNumber;
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNumber,
-                60,
-                TimeUnit.SECONDS,
-                this,
-                mCall
-        );
-        Toast.makeText(getApplicationContext(), "Sedang Memverifikasi, Mohon Tunggu", Toast.LENGTH_SHORT).show();
-    }
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCall = new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            String code = phoneAuthCredential.getSmsCode();
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(RegisterActivity.this, "Failed" + e, Toast.LENGTH_SHORT).show();
-            loadingProgress.setVisibility(View.GONE);
-        }
-
-        //kode verif dikirim
-        @Override
-        public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken token) {
-
-            loadingProgress.setVisibility(View.GONE);
-            String mVerificationId = verificationId;
-            Log.e("RegisterActivity", "Verification id : " + verificationId);
-            Intent intent = new Intent(RegisterActivity.this, KodeActivity.class);
-            intent.putExtra("verificationId", mVerificationId);
-            startActivity(intent);
-            finish();
-        }
-    };
-
-
-
-    //8
-    private void CreateUserAccount(String email, final String name, String password) {
-
-        // this method create user account with specific email and password
-        mAuth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()) {
-                            // user account created successfully
-                            showMessage("Account created");
-                            // after we created user account we need to update his profile picture and name
-                            updateUserInfo( name ,pickedImgUri,mAuth.getCurrentUser());
-                        }
-                        else
-                        {
-                            // account creation failed
-                            showMessage("account creation failed" + task.getException().getMessage());
-                            regBtn.setVisibility(View.VISIBLE);
-                            loadingProgress.setVisibility(View.INVISIBLE);
-                        }
-                    }
-                });
-    }
-
-
-    // update user photo and name //10
-    private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {
+    private void updateUserInfo(final String nama, Uri pickedImgUri, final FirebaseUser currentUser) {
 
         // first we need to upload user photo to firebase storage and get url
         StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
@@ -245,7 +266,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         // uri contain user image url
                         UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(name)
+                                .setDisplayName(nama)
                                 .setPhotoUri(uri)
                                 .build();
 
@@ -268,7 +289,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     //11
     private void updateUI() {
-        Intent RegisterActivity = new Intent(getApplicationContext(),KodeActivity.class);
+        Intent RegisterActivity = new Intent(getApplicationContext(),VerifyActivity.class);
         startActivity(RegisterActivity);
         finish();
     }
@@ -278,7 +299,38 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
 
-    //3
+
+    private void sendVerificationEmail()
+    {
+        if (mAuth.getCurrentUser()!=null)
+        {
+            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful())
+                    {
+                        btnRegister.setEnabled(true);
+                        sendToLoginWithEmailAndPassword();
+                    }
+                    else
+                    {
+                        btnRegister.setEnabled(true);
+                        Toast.makeText(getApplicationContext(),"Oops! failed to send verification email",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    private void sendToLoginWithEmailAndPassword()
+    {
+        Intent intent = new Intent(getApplicationContext(), VerifyActivity.class);
+        intent.putExtra("email",email);
+        intent.putExtra("password",password);
+        //forgot to start activity
+        startActivity(intent);
+    }
+
     private void openGallery() {
         //TODO: open gallery intent and wait for user to pick an image !
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -286,7 +338,7 @@ public class RegisterActivity extends AppCompatActivity {
         startActivityForResult(galleryIntent,REQUESCODE);
     }
 
-    //4
+
     private void checkAndRequestForPermission() {
 
         if (ContextCompat.checkSelfPermission(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -305,7 +357,7 @@ public class RegisterActivity extends AppCompatActivity {
             openGallery();
     }
 
-    //5
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -318,28 +370,4 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void ClickRegister(View view){
-
-        EditText  regName =  (EditText)findViewById(R.id.regName);
-        EditText  regMail =  (EditText)findViewById(R.id.regMail);
-        EditText  regPassword =  (EditText)findViewById(R.id.regPassword);
-        EditText  et_phone =  (EditText)findViewById(R.id.et_phone);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        //Referensi database yang dituju
-        DatabaseReference myRef =
-                database.getReference("Pengguna").child(regName.getText().toString());
-
-        //memberi nilai pada referensi yang dituju
-        myRef.child("E-mail").setValue(regMail.getText().toString());
-        myRef.child("Password").setValue(regPassword.getText().toString());
-        myRef.child("No.Hp").setValue(et_phone.getText().toString());
-
-        Intent intent = new Intent(RegisterActivity.this, KodeActivity.class);
-        startActivity(intent);
-        finish();
-
-
-    }
 }
