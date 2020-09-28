@@ -1,7 +1,9 @@
 package com.example.form_keluhan;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -48,6 +50,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
     Button btn_lant2;
     FirebaseUser currentUser ;
+    Toolbar toolbar;
 
     private final String TAG = getClass().getSimpleName();
 
@@ -77,6 +80,18 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         clickableAreasImage.setClickableAreas(clickableAreas);
 
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+
+
+        updateNavHeader();
     }
 
     // Listen for touches on your images:
@@ -291,12 +306,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_glosarium) {
-
-            getSupportActionBar().setTitle("Glosarium");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new Lantai2Activity()).commit();
-        }
-        else if (id == R.id.nav_signout) {
+        if (id == R.id.nav_signout) {
 
             FirebaseAuth.getInstance().signOut();
             Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
@@ -326,8 +336,6 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         // first we need to import the library
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhot);
-
-
 
 
     }
