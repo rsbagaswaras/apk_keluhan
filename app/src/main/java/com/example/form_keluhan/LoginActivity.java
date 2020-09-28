@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_reg;
+    Button verify, btn_reg, btn_login;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
@@ -51,6 +51,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, EmailLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         mAuth = FirebaseAuth.getInstance();
 
