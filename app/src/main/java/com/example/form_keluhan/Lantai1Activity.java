@@ -87,11 +87,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
-
-        updateNavHeader();
     }
 
     // Listen for touches on your images:
@@ -300,45 +296,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_signout) {
-
-            FirebaseAuth.getInstance().signOut();
-            Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
-            startActivity(loginActivity);
-            finish();
 
 
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    public void updateNavHeader() {
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        View headerView = navigationView.getHeaderView(0);
-        TextView navUsername = headerView.findViewById(R.id.nav_username);
-        TextView navUserMail = headerView.findViewById(R.id.nav_user_mail);
-        ImageView navUserPhot = headerView.findViewById(R.id.nav_user_photo);
-
-        navUserMail.setText(currentUser.getEmail());
-        navUsername.setText(currentUser.getDisplayName());
-
-        // now we will use Glide to load user image
-        // first we need to import the library
-
-        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhot);
-
-
-    }
 
 }
 
