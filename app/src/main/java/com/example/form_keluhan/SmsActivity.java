@@ -5,114 +5,106 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.FirebaseException;
+
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+
+import java.util.concurrent.TimeUnit;
 
 public class SmsActivity extends AppCompatActivity {
-    //Variable yang Dibutuhkan Untuk Autentikasi
-    String verificationId;
-    FirebaseAuth mAuth;
 
-
-    //Variable Untuk Komponen-komponen Yang Diperlukan
-    EditText et_otp;
-    Button verify_btn;
-    String otp;
-    ProgressBar pb_bar;
-
-    // Intent intent;
-
+    TextView countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
 
-        et_otp = findViewById(R.id.et_otp);
-        verify_btn = findViewById(R.id.verify_btn);
-        pb_bar=findViewById(R.id.pb_bar);
-        pb_bar.setVisibility(View.GONE);
+        final EditText inputMobile = findViewById(R.id.inputMobile);
+        final Button buttonGetOTP = findViewById(R.id.buttonGetOTP);
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
 
-        mAuth =FirebaseAuth.getInstance();
+        buttonGetOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (inputMobile.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(SmsActivity.this, "Enter Mobile", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+                buttonGetOTP.setVisibility(View.INVISIBLE);
+
+                PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                        "+628" + inputMobile.getText().toString(),
+                        30,
+                        TimeUnit.SECONDS,
+                        SmsActivity.this,
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                            @Override
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                progressBar.setVisibility(View.GONE);
+                                buttonGetOTP.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onVerificationFailed(@NonNull FirebaseException e) {
+                                progressBar.setVisibility(View.GONE);
+                                buttonGetOTP.setVisibility(View.VISIBLE);
+                                Toast.makeText(SmsActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                progressBar.setVisibility(View.GONE);
+                                buttonGetOTP.setVisibility(View.VISIBLE);
+
+                                Intent intent = new Intent(getApplicationContext(), VerifyOtpActivity.class);
+                                intent.putExtra("mobile", inputMobile.getText().toString());
+                                intent.putExtra("verificationId", verificationId);
+                                startActivity(intent);
 
 
-    }
+                            }
+
+                        }
+                );
 
 
-    private void verifyOtp(String verificationId, String otp) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,otp);
-
-        //sign in user
-        signInWithPhoneAuthCredential(credential);
-    }
-
-
-    // wktu user udh masukin kode verifikasi kmu login ke firebase authentication pake phoneCredential,
-    // biar data user yang login kesave
-    // di firebase
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                new CountDownTimer (60 * 1000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        int minutes = (int) ((millisUntilFinished / (1000 * 60)) % 60);
+                        int seconds = (int) (millisUntilFinished / 1000) % 60;
+                        countDownTimer.setText(minutes + ":" + " " + seconds + " " + "left");
+                    }
 
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        otp = et_otp.getText().toString().trim();
-
-
-                        if (task.isSuccessful()) {
-                            pb_bar.setVisibility(View.INVISIBLE);
-                            Intent intent = new Intent(SmsActivity.this, Lantai1Activity.class);
-                            startActivity(intent);
-                            finish();
-                        } else  {
-                            et_otp.setError("Invalid otp");
-
-                            Toast.makeText(SmsActivity.this, "Something Wrong ",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+                    public void onFinish() {
+                        countDownTimer.setText("done");
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SmsActivity.this, "Something Wrong " + e, Toast.LENGTH_SHORT).show();
+                };
+
+
             }
         });
-    }
 
-    public void ClickKode(View view){
 
-        EditText  et_otp =  (EditText)findViewById(R.id.et_otp);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        //Referensi database yang dituju
-        DatabaseReference myRef =
-                database.getReference("Kode").child(et_otp.getText().toString());
-
-        //memberi nilai pada referensi yang dituju
-        myRef.child("Kode").setValue(et_otp.getText().toString());
-
-        Intent intent = new Intent(SmsActivity.this, Lantai1Activity.class);
-        startActivity(intent);
-        finish();
-
-        Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
-
+        countDownTimer = findViewById(R.id.countDownTimer);
 
 
     }
+
 }

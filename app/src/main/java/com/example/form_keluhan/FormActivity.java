@@ -177,17 +177,17 @@ public class FormActivity extends AppCompatActivity  {
           //  newmyRef.child("Nama").setValue(edt_nama.getText().toString());
             newmyRef.child("Ruangan").setValue(edt_ruangan.getText().toString());
             newmyRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
+            newmyRef.child("Kategori").setValue(spinner.getSelectedItem().toString());
+            newmyRef.child("Foto").setValue(postImage.getDrawable().toString());
 
 
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
         //mengosongkan isian setelah klik button upload
-        txt_respon.setText("");
         edt_ruangan.setText("");
         edt_keluhan.setText("");
         edt_keluhan.setText("");
-        edt_nama.requestFocus();
-
+        spinner.setSelection(0);
     }
 
 }

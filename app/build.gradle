@@ -44,7 +44,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.firebase:firebase-database:19.3.1'
-    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
 
 

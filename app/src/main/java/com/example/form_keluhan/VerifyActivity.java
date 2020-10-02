@@ -49,8 +49,8 @@ public class VerifyActivity extends AppCompatActivity {
         tvPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phoneNumber = tvPhone.getText().toString().trim();
-                sendVerificationCode(phoneNumber);
+                Intent intent = new Intent(VerifyActivity.this,SmsActivity.class);
+                startActivity(intent);
             }
         });
 
