@@ -6,6 +6,8 @@ import com.squareup.leakcanary.LeakCanary;
 
 public class ClickableAreaApplication extends Application {
 
+    //library untuk klikable
+
     @Override
     public void onCreate() {
         super.onCreate();

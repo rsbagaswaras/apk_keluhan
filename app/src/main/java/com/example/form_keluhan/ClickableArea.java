@@ -9,6 +9,7 @@ public class ClickableArea<T> {
 
     private T item;
 
+    //untuk menentukan area klikable
     public ClickableArea(int x, int y, int w, int h, T item){
         this.x = x;
         this.y = y;

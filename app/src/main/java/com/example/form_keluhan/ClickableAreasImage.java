@@ -21,6 +21,7 @@ public class ClickableAreasImage implements PhotoViewAttacher.OnPhotoTapListener
     private int imageWidthInPx;
     private int imageHeightInPx;
 
+//untuk callback yang akan dipanggil saat ImageView diklik/disentuh
     public ClickableAreasImage(PhotoViewAttacher attacher, OnClickableAreaClickedListener listener){
         this.attacher = attacher;
         init(listener);
@@ -32,7 +33,7 @@ public class ClickableAreasImage implements PhotoViewAttacher.OnPhotoTapListener
         attacher.setOnPhotoTapListener(this);
     }
 
-
+//untuk menentukan dimensi
     private void getImageDimensions(ImageView imageView){
 
         BitmapDrawable drawable2 = (BitmapDrawable) imageView.getDrawable();
