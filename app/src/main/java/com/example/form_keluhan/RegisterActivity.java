@@ -70,7 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.regMail);
         inputPassword = findViewById(R.id.regPassword);
         inputConfirmPassword = findViewById(R.id.regConfirmPassword);
-        inputPhone = findViewById(R.id.et_phone);
 
         loadingProgress = findViewById(R.id.regProgressBar);
         loadingProgress.setVisibility(View.INVISIBLE);
@@ -158,7 +157,6 @@ public class RegisterActivity extends AppCompatActivity {
         email = inputEmail.getText().toString().trim();
         password = inputPassword.getText().toString().trim();
         confirmPassword = inputConfirmPassword.getText().toString().trim();
-        phoneNumber = inputPhone.getText().toString().trim();
 
 
         if (nama.isEmpty())
@@ -207,10 +205,6 @@ public class RegisterActivity extends AppCompatActivity {
             inputConfirmPassword.requestFocus();
             inputPassword.setText("");
             inputConfirmPassword.setText("");
-        }
-        else if(phoneNumber.isEmpty()){
-            inputPhone.setError("Masukkan Nomor Telefon");
-            inputPhone.requestFocus();
         }
         else
         {

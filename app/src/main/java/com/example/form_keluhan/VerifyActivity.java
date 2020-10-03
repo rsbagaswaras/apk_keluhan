@@ -20,7 +20,6 @@ public class VerifyActivity extends AppCompatActivity {
 
 
     private TextView tvLogin, tvPhone;
-    String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,50 +48,10 @@ public class VerifyActivity extends AppCompatActivity {
         tvPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phoneNumber = tvPhone.getText().toString().trim();
-                sendVerificationCode(phoneNumber);
+                Intent intent = new Intent(VerifyActivity.this,SmsActivity.class);
+                startActivity(intent);
             }
         });
 
     }
-
-    // ini code untuk ngirim nomor hp yang bakal di kirimin sms
-    // untuk nomornya jangan lupa pake kode negara ya, jgn pake 0
-    private void sendVerificationCode(String phoneNumber) {
-        phoneNumber = "+62" + phoneNumber;
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNumber,
-                60,
-                TimeUnit.SECONDS,
-                this,
-                mCall
-        );
-        Toast.makeText(getApplicationContext(), "Sedang Memverifikasi, Mohon Tunggu", Toast.LENGTH_SHORT).show();
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCall = new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            String code = phoneAuthCredential.getSmsCode();
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(VerifyActivity.this, "Failed" + e, Toast.LENGTH_SHORT).show();
-        }
-
-        //kode verif dikirim
-        @Override
-        public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken token) {
-
-            String mVerificationId = verificationId;
-            Log.e("VerifyActivity", "Verification id : " + verificationId);
-            Intent intent = new Intent(VerifyActivity.this, SmsActivity.class);
-            intent.putExtra("verificationId", mVerificationId);
-            startActivity(intent);
-            finish();
-        }
-    };
-
 }
