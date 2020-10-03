@@ -48,7 +48,7 @@ import java.util.List;
 
 public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener{
 
-    Button btn_lant2;
+    Button btn_lant2, btn_fetch;
     FirebaseUser currentUser ;
     Toolbar toolbar;
 
@@ -64,6 +64,16 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Lantai1Activity.this, Lantai2Activity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        btn_fetch= findViewById(R.id.btn_fetch);
+        btn_fetch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Lantai1Activity.this, AdminActivity.class);
                 startActivity(intent);
             }
         });
