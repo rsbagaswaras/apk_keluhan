@@ -1,5 +1,6 @@
 package com.example.form_keluhan;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,6 +19,7 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,12 +29,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.Locale;
@@ -39,11 +44,14 @@ import java.util.Locale;
 public class FormActivity extends AppCompatActivity  {
 
     ImageView postImage;
-    Button btn_add;
-    EditText edt_nama, edt_ruangan, edt_keluhan;
+    Button up;
+    EditText  edt_ruangan, edt_keluhan;
     Spinner spinner;
     TextView txt_respon;
 
+   // StorageReference mStorageRef;
+   // public Uri imguri;
+   // private StorageTask uploadTask;
 
     private Uri pickedImgUri = null;
     private static final int PReqCode = 2 ;
@@ -56,14 +64,14 @@ public class FormActivity extends AppCompatActivity  {
 
         imageClick();
 
+        // memunculkan nama pengguna melalui google account
         txt_respon = findViewById(R.id.txt_respon);
-
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
-        if(signInAccount != null){
+        if (signInAccount != null) {
             txt_respon.setText(signInAccount.getDisplayName());
         }
-
     }
+
 
     private void imageClick() {
         postImage = findViewById(R.id.gambar);
@@ -74,6 +82,7 @@ public class FormActivity extends AppCompatActivity  {
             }
         });
     }
+
 
     private void selectImage() {
 
@@ -174,19 +183,22 @@ public class FormActivity extends AppCompatActivity  {
             DatabaseReference newmyRef = myRef.push();
 
             //memberi nilai pada referensi yang dituju
-          //  newmyRef.child("Nama").setValue(edt_nama.getText().toString());
+            newmyRef.child("Nama").setValue(txt_respon.getText().toString());
             newmyRef.child("Ruangan").setValue(edt_ruangan.getText().toString());
             newmyRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
+            newmyRef.child("Kategori").setValue(spinner.getSelectedItem().toString());
+            newmyRef.child("Foto").setValue(postImage.getDrawable().toString());
 
 
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
         //mengosongkan isian setelah klik button upload
-        txt_respon.setText("");
         edt_ruangan.setText("");
         edt_keluhan.setText("");
         edt_keluhan.setText("");
-        edt_nama.requestFocus();
+        spinner.setSelection(0);
+
+
 
     }
 
