@@ -28,7 +28,6 @@ public class VerifyOtpActivity extends AppCompatActivity {
 
     private EditText inputCode1, inputCode2, inputCode3, inputCode4, inputCode5, inputCode6;
     private String verificationId;
-    TextView countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +50,6 @@ public class VerifyOtpActivity extends AppCompatActivity {
 
         final ProgressBar progressBar = findViewById(R.id.progressBar);
         final Button buttonVerify = findViewById(R.id.buttonVerify);
-
-        countDownTimer = findViewById(R.id.countDownTimer);
 
         verificationId = getIntent().getStringExtra("verificationId");
 

@@ -188,6 +188,7 @@ public class FormActivity extends AppCompatActivity  {
         edt_keluhan.setText("");
         edt_keluhan.setText("");
         spinner.setSelection(0);
+
     }
 
 }

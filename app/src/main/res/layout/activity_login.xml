@@ -13,33 +13,47 @@
         android:id="@+id/sign_in_button"
         android:layout_width="325dp"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btn_reg"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="Register" />
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:text="Sign in with phone number"
+        android:textSize="10dp"
+        android:background="#ffff"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OR" />
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="Login" />
+        <Button
+            android:id="@+id/btn_reg"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:background="@drawable/reg_btn_style"
+            android:text="Register" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="OR" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/reg_btn_style"
+            android:text="Login"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

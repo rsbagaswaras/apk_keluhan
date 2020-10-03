@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SmsActivity extends AppCompatActivity {
 
-    TextView countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,35 +74,11 @@ public class SmsActivity extends AppCompatActivity {
                                 intent.putExtra("verificationId", verificationId);
                                 startActivity(intent);
 
-
                             }
-
                         }
                 );
-
-
-                new CountDownTimer (60 * 1000, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        int minutes = (int) ((millisUntilFinished / (1000 * 60)) % 60);
-                        int seconds = (int) (millisUntilFinished / 1000) % 60;
-                        countDownTimer.setText(minutes + ":" + " " + seconds + " " + "left");
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        countDownTimer.setText("done");
-                    }
-                };
-
-
             }
         });
-
-
-        countDownTimer = findViewById(R.id.countDownTimer);
-
-
     }
 
 }
