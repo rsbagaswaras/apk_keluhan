@@ -23,7 +23,8 @@ import com.example.form_keluhan.lantai2.RuangDirekturActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lantai2Activity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.OnClickableAreaClickedListener {
+public class Lantai2Activity extends AppCompatActivity implements OnClickableAreaClickedListener,
+        com.example.form_keluhan.OnClickableAreaClickedListener {
 
 
 
