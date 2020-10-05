@@ -53,7 +53,16 @@
             android:text="Login"
             tools:ignore="RtlCompat" />
 
+
+
     </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saya Admin ?"
+            android:id="@+id/sayaadmin"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"/>
 
 </LinearLayout>

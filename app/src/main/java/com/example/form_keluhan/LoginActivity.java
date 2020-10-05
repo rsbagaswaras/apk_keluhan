@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -40,10 +41,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean doubleBacktoExit = false;
 
+    private TextView sayaadmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sayaadmin = (TextView) findViewById(R.id.sayaadmin);
 
         btn_reg = findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +68,14 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, EmailLoginActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        sayaadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           btn_login.setText("Login Admin");
+           sayaadmin.setVisibility(View.VISIBLE);
             }
         });
 
