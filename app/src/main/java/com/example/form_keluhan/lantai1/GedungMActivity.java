@@ -57,6 +57,7 @@ public class GedungMActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "DAPUR SUSU":
                     Intent K = new Intent(GedungMActivity. this, FormActivity.class);
+                    K.putExtra("data1",  "DAPUR SUSU");
                     startActivity(K);
                     break;
 

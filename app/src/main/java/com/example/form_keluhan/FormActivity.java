@@ -42,7 +42,7 @@ public class FormActivity extends AppCompatActivity  {
     Button btn_add;
     EditText edt_nama, edt_ruangan, edt_keluhan;
     Spinner spinner;
-    TextView txt_respon;
+    TextView txt_respon, txt_namru;
 
 
     private Uri pickedImgUri = null;
@@ -55,6 +55,9 @@ public class FormActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_form);
 
         imageClick();
+
+        txt_namru = findViewById(R.id.txt_namru);
+        txt_namru.setText(getIntent().getStringExtra("data1"));
 
         txt_respon = findViewById(R.id.txt_respon);
 
@@ -151,7 +154,7 @@ public class FormActivity extends AppCompatActivity  {
 
         //deklarasi
         txt_respon = findViewById(R.id.txt_respon);
-        edt_ruangan = findViewById(R.id.edt_ruangan);
+        txt_namru = findViewById(R.id.txt_namru);
         edt_keluhan = findViewById(R.id.edt_keluhan);
         spinner = findViewById(R.id.spinner);
         postImage = findViewById(R.id.gambar);
@@ -175,7 +178,7 @@ public class FormActivity extends AppCompatActivity  {
 
             //memberi nilai pada referensi yang dituju
           //  newmyRef.child("Nama").setValue(edt_nama.getText().toString());
-            newmyRef.child("Ruangan").setValue(edt_ruangan.getText().toString());
+            newmyRef.child("Ruangan").setValue(txt_namru.getText().toString());
             newmyRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
             newmyRef.child("Kategori").setValue(spinner.getSelectedItem().toString());
             newmyRef.child("Foto").setValue(postImage.getDrawable().toString());
@@ -184,8 +187,6 @@ public class FormActivity extends AppCompatActivity  {
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
         //mengosongkan isian setelah klik button upload
-        edt_ruangan.setText("");
-        edt_keluhan.setText("");
         edt_keluhan.setText("");
         spinner.setSelection(0);
 
