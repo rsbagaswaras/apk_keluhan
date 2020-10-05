@@ -40,7 +40,7 @@ public class FormActivity extends AppCompatActivity  {
 
     ImageView postImage;
     Button btn_add;
-    EditText edt_nama, edt_ruangan, edt_keluhan;
+    EditText edt_nama, edt_keluhan;
     Spinner spinner;
     TextView txt_respon, txt_namru;
 
@@ -59,12 +59,11 @@ public class FormActivity extends AppCompatActivity  {
         txt_namru = findViewById(R.id.txt_namru);
         txt_namru.setText(getIntent().getStringExtra("data1"));
 
-        txt_respon = findViewById(R.id.txt_respon);
-
-        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
-        if(signInAccount != null){
-            txt_respon.setText(signInAccount.getDisplayName());
-        }
+    //    txt_respon = findViewById(R.id.txt_respon);
+     //   GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+     //   if(signInAccount != null){
+      //      txt_respon.setText(signInAccount.getDisplayName());
+      //  }
 
     }
 
@@ -153,7 +152,7 @@ public class FormActivity extends AppCompatActivity  {
     public void Click3(View view) {
 
         //deklarasi
-        txt_respon = findViewById(R.id.txt_respon);
+        edt_nama = findViewById(R.id.edt_nama);
         txt_namru = findViewById(R.id.txt_namru);
         edt_keluhan = findViewById(R.id.edt_keluhan);
         spinner = findViewById(R.id.spinner);
@@ -177,7 +176,7 @@ public class FormActivity extends AppCompatActivity  {
             DatabaseReference newmyRef = myRef.push();
 
             //memberi nilai pada referensi yang dituju
-          //  newmyRef.child("Nama").setValue(edt_nama.getText().toString());
+            newmyRef.child("Nama").setValue(edt_nama.getText().toString());
             newmyRef.child("Ruangan").setValue(txt_namru.getText().toString());
             newmyRef.child("Keluhan").setValue(edt_keluhan.getText().toString());
             newmyRef.child("Kategori").setValue(spinner.getSelectedItem().toString());
@@ -187,8 +186,10 @@ public class FormActivity extends AppCompatActivity  {
         Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
         //mengosongkan isian setelah klik button upload
+        edt_nama.setText("");
         edt_keluhan.setText("");
         spinner.setSelection(0);
+        postImage.setImageResource(0);
 
     }
 
