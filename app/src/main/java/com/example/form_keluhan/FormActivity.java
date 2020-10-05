@@ -189,7 +189,7 @@ public class FormActivity extends AppCompatActivity  {
         edt_nama.setText("");
         edt_keluhan.setText("");
         spinner.setSelection(0);
-        postImage.setImageResource(0);
+        postImage.setImageResource(R.drawable.ic_camera_alt_black_24dp);
 
     }
 
