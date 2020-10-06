@@ -48,6 +48,7 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
             switch (text) {
                 case "AUDITORIUM":
                     Intent intent = new Intent(AuditoriumActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "AUDITORIUM");
                     startActivity(intent);
                     break;
             }

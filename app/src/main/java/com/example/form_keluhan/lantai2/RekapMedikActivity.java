@@ -45,6 +45,7 @@ public class RekapMedikActivity extends AppCompatActivity implements OnClickable
             switch (text) {
                 case "REKAP MEDIK":
                     Intent intent = new Intent(RekapMedikActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "REKAP MEDIK");
                     startActivity(intent);
                     break;
             }

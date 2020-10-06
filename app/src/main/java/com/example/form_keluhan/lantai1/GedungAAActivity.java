@@ -57,6 +57,7 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
             switch (text) {
                 case "R. KONSULTASI":
                     Intent K = new Intent(GedungAAActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. KONSULTASI");
                     startActivity(K);
                     break;
 

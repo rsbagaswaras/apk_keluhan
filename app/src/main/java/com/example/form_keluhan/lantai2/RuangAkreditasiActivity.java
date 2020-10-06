@@ -43,6 +43,7 @@ public class RuangAkreditasiActivity extends AppCompatActivity implements OnClic
             switch (text) {
                 case "RUANG AKREDITASI":
                     Intent intent = new Intent(RuangAkreditasiActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "RUANG AKREDITASI");
                     startActivity(intent);
                     break;
             }

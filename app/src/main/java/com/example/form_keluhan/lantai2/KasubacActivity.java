@@ -48,6 +48,7 @@ public class KasubacActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "KASUBAC AND KASI":
                     Intent intent = new Intent(KasubacActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "KASUBAC AND KASI");
                     startActivity(intent);
                     break;
             }

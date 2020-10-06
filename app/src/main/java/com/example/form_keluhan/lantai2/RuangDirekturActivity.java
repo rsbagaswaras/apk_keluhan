@@ -44,6 +44,7 @@ public class RuangDirekturActivity extends AppCompatActivity implements OnClicka
             switch (text) {
                 case "RUANG DIREKTUR":
                     Intent intent = new Intent(RuangDirekturActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "RUANG DIREKTUR");
                     startActivity(intent);
                     break;
             }
