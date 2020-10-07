@@ -7,9 +7,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+
     <string-array name="list_kategori">
-        <item>a</item>
-        <item>b</item>
-        <item>c</item>
+        <item>Kebersihan</item>
+        <item>Sarana dan Prasarana</item>
+        <item>Listrik Air Telepon</item>
     </string-array>
 </resources>

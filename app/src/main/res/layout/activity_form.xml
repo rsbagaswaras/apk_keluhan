@@ -26,6 +26,9 @@
         android:text="Form Penyampaian Keluhan"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_marginLeft="25dp"
+        android:textColor="#D79C27B0"
+        android:gravity="center"
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/txt_nama"
@@ -116,8 +119,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:onClick="Click3"
-        android:background="@drawable/backgroundbutton"
+        android:background="@drawable/buttonform"
         android:text="Upload"
+       android:textStyle="bold"
         tools:ignore="OnClick" />
 
         </LinearLayout>
