@@ -52,8 +52,38 @@ public class GedungUActivity extends AppCompatActivity implements OnClickableAre
 
             switch (text) {
                 case "NS":
-                    Intent intent = new Intent(GedungUActivity. this, FormActivity.class);
-                    startActivity(intent);
+                    Intent N = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(N);
+                    break;
+
+                case "R. PERAWAT":
+                    Intent P = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(P);
+                    break;
+
+                case "R. DOKTER":
+                    Intent D = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(D);
+                    break;
+
+                case "R. KA INSTALASI":
+                    Intent K = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(K);
+                    break;
+
+                case "PERAWATAN KELAS 2":
+                    Intent R = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(R);
+                    break;
+
+                case "SELASAR PETUGAS":
+                    Intent S = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(S);
+                    break;
+
+                case "PERAWATAN KELAS 3":
+                    Intent W = new Intent(GedungUActivity. this, FormActivity.class);
+                    startActivity(W);
                     break;
             }
         }
@@ -64,7 +94,15 @@ public class GedungUActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 3000, 3000, new State("NS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("NS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. PERAWAT")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. DOKTER")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. KA INSTALASI")));
+
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("PERAWATAN KELAS 2")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("SELASAR PETUGAS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("PERAWATAN KELAS 3")));
+
 
         return clickableAreas;
     }

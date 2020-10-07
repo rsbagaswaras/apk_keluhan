@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -49,11 +50,37 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "ADMIN":
                     Intent K = new Intent(GedungPActivity. this, FormActivity.class);
                     startActivity(K);
+                    break;
+
+                case "US/TENSTRAKSI":
+                    Intent U = new Intent(GedungPActivity. this, FormActivity.class);
+                    startActivity(U);
+                    break;
+
+                case "REHABILITASI MEDIK":
+                    Intent R = new Intent(GedungPActivity. this, FormActivity.class);
+                    startActivity(R);
+                    break;
+
+                case "ES / IR":
+                    Intent E = new Intent(GedungPActivity. this, FormActivity.class);
+                    startActivity(E);
+                    break;
+
+                case "EXERCISE/PARAREL BAR":
+                    Intent B = new Intent(GedungPActivity. this, FormActivity.class);
+                    startActivity(B);
+                    break;
+
+                case "LAV":
+                    Intent L = new Intent(GedungPActivity. this, FormActivity.class);
+                    startActivity(L);
                     break;
             }
         }
@@ -65,6 +92,13 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
         clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("US/TENSTRAKSI")));
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("REHABILITASI MEDIK")));
+
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("AES / IR")));
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("EXERCISE/PARAREL BAR")));
+        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("LAV")));
+
         return clickableAreas;
     }
 
