@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -53,11 +54,12 @@ public class GedungAIActivity extends AppCompatActivity implements OnClickableAr
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
-                case "PENERIMAAN":
+                case "PARKIR MOBIL JENAZAH":
                     Intent K = new Intent(GedungAIActivity. this, FormActivity.class);
-                    K.putExtra("data1", "PENERIMAAN");
+                    K.putExtra("data1", "PARKIR MOBIL JENAZAH");
                     startActivity(K);
                     break;
 
@@ -72,7 +74,7 @@ public class GedungAIActivity extends AppCompatActivity implements OnClickableAr
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1293, new State("PENERIMAAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1293, new State("PARKIR MOBIL JENAZAH")));
 
 
         return clickableAreas;
