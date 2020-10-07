@@ -50,6 +50,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
             switch (text) {
                 case "PANEL LISTRIK":
                     Intent intent = new Intent(PanelListrikActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "PANEL LISTRIK");
                     startActivity(intent);
                     break;
             }

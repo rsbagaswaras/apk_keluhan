@@ -45,7 +45,7 @@
         <activity android:name=".lantai2.RuangAkreditasiActivity" />
         <activity android:name=".lantai2.RuangDirekturActivity" />
         <activity android:name=".lantai2.RekapMedikActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FormActivity" />
         <activity android:name=".Lantai2Activity" />
         <activity

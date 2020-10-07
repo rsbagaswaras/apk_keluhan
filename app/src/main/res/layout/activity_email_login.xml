@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmailLoginActivity"
-    android:background="#fff">
+    tools:context=".EmailLoginActivity">
 
     <ImageView
         android:id="@+id/login_photo"

@@ -5,9 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/colorgabung"
     android:orientation="vertical"
+    android:id="@+id/login"
     tools:context=".LoginActivity">
 
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
@@ -16,8 +33,8 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:layout_width="325dp"
-        android:layout_height="50dp"
+        android:layout_width="321dp"
+        android:layout_height="48dp"
         android:text="Sign in with phone number"
         android:textSize="10dp"
         android:background="#ffff"/>
@@ -53,7 +70,16 @@
             android:text="Login"
             tools:ignore="RtlCompat" />
 
+
+
     </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saya Admin ?"
+            android:id="@+id/sayaadmin"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"/>
 
 </LinearLayout>

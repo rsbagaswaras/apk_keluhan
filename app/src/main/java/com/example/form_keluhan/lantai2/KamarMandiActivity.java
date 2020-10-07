@@ -52,6 +52,7 @@ public class KamarMandiActivity extends AppCompatActivity implements OnClickable
             switch (text) {
                 case "KAMAR MANDI":
                     Intent intent = new Intent(KamarMandiActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "KAMAR MANDI");
                     startActivity(intent);
                     break;
             }

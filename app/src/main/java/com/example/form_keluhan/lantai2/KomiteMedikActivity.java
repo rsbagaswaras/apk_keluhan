@@ -68,6 +68,7 @@ public class KomiteMedikActivity extends AppCompatActivity implements OnClickabl
             switch (text) {
                 case "KOMITE MEDIK":
                     Intent intent = new Intent(KomiteMedikActivity.this, FormActivity.class);
+                    intent.putExtra("data1", "KOMITE MEDIK");
                     startActivity(intent);
                     break;
             }
