@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.form_keluhan.lantai1.GedungAAActivity;
@@ -105,6 +106,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+
 
             switch (text) {
                 case "L. RADIOLOGI" :

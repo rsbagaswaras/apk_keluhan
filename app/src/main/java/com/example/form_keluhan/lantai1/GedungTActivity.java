@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -49,6 +50,7 @@ public class GedungTActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "R.DOKTER":
@@ -96,13 +98,13 @@ public class GedungTActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R.DOKTER")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("R.KA INTALSI")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(40, 30, 100, 50, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(70, 30, 100, 50, new State("R.KA INTALASI")));
+        clickableAreas.add(new ClickableArea(40, 100, 50, 70, new State("SH")));
+        clickableAreas.add(new ClickableArea(70, 280, 50, 50, new State("LAV")));
         clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PANTRY")));
         clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.ALAT & LINEN")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PERAWATAN KELAS 1")));
+        clickableAreas.add(new ClickableArea(100, 50, 50, 50, new State("PERAWATAN KELAS 1")));
 
 
         return clickableAreas;

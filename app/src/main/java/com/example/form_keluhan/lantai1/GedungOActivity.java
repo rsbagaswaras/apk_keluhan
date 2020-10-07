@@ -52,9 +52,45 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
 
             switch (text) {
                 case "GUDANG CAIRAN":
+                    Intent G = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(G);
+                    break;
+
+                case "R. REUSE":
+                    Intent R = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(R);
+                    break;
+
+                case "R. KONSULTASI":
                     Intent K = new Intent(GedungOActivity. this, FormActivity.class);
                     startActivity(K);
                     break;
+
+                case "NURSE STATION":
+                    Intent N = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(N);
+                    break;
+
+                case "R. GANTI":
+                    Intent T = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(T);
+                    break;
+
+                case "LAV":
+                    Intent L = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(L);
+                    break;
+
+                case "SH":
+                    Intent H = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(H);
+                    break;
+
+                case "R. RO":
+                    Intent O = new Intent(GedungOActivity. this, FormActivity.class);
+                    startActivity(O);
+                    break;
+
 
             }
         }
@@ -65,7 +101,15 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 709, 3264, new State("GUDANG CAIRAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("GUDANG CAIRAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. REUSE")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. KONSULTASI")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("NURSE STATION")));
+
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. GANTI")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("LAV")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. RO")));
         return clickableAreas;
     }
 
