@@ -57,6 +57,7 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "CT.SCAN":
                     Intent K = new Intent(GedungLActivity. this, FormActivity.class);
+                    K.putExtra("data1",  "CT.SCAN");
                     startActivity(K);
                     break;
 

@@ -60,18 +60,22 @@ public class GedungAHActivity extends AppCompatActivity implements OnClickableAr
             switch (text) {
                 case "Mandi Jenazah":
                     Intent intent = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent.putExtra("data1", "R. REUSE");
                     startActivity(intent);
                     break;
                 case "Admin":
                     Intent intent1 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "ADMIN");
                     startActivity(intent1);
                     break;
                 case "R.Jenazah":
                     Intent intent2 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "R. JENAZAH");
                     startActivity(intent2);
                     break;
                 case "R.Tunggu":
                     Intent intent3 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "R. TUNGGU");
                     startActivity(intent3);
                     break;
             }
