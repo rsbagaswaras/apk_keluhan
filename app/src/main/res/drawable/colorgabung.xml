@@ -2,13 +2,13 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/colorsatu"
-        android:duration="5000"/>
+        android:duration="3000"/>
 
     <item
         android:drawable="@drawable/colordua"
-        android:duration="5000"/>
+        android:duration="3000"/>
 
     <item
         android:drawable="@drawable/colortiga"
-        android:duration="5000"/>
+        android:duration="3000"/>
 </animation-list>

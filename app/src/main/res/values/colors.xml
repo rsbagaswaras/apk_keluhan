@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#57DCCF</color>
-    <color name="colorPrimaryDark">#23DAC8</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#CD3318</color>
+    <color name="colorPrimaryDark">#B52E17</color>
+    <color name="colorAccent">#B52E17</color>
 
 
     <!--color untuk gradient tansition-->
-    <color name="purple_500">#9c27b0</color>
-    <color name="deep_purple_500">#673ab7</color>
-    <color name="indigo_500">#3f51b5</color>
-    <color name="blue_500">#2196f3</color>
-    <color name="cyan_500">#00bcd4</color>
-    <color name="light_blue_500">#03a9f4</color>
+    <color name="purple_500">#FFC107</color>
+    <color name="deep_purple_500">#FF9800</color>
+    <color name="indigo_500">#FF5722</color>
+    <color name="blue_500">#F83E31</color>
+    <color name="cyan_500">#B52E17</color>
+    <color name="light_blue_500">#8A1805</color>
 
 </resources>

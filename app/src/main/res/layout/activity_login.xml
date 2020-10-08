@@ -58,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:textColor="#B52E17"
             android:text="OR" />
 
         <Button
@@ -79,6 +80,7 @@
             android:layout_height="wrap_content"
             android:text="Saya Admin ?"
             android:id="@+id/sayaadmin"
+            android:textColor="#B52E17"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"/>
 
