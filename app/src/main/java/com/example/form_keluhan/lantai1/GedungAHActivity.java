@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -52,28 +53,45 @@ public class GedungAHActivity extends AppCompatActivity implements OnClickableAr
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
-            String text = ((State) item).getName();
+
+            String text = ((State) item).getName() ;
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
-                case "R":
-                    Intent K = new Intent(GedungAHActivity. this, FormActivity.class);
-                    startActivity(K);
+                case "Mandi Jenazah":
+                    Intent intent = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent.putExtra("data1", "R. REUSE");
+                    startActivity(intent);
                     break;
-
-
-
+                case "Admin":
+                    Intent intent1 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "ADMIN");
+                    startActivity(intent1);
+                    break;
+                case "R.Jenazah":
+                    Intent intent2 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "R. JENAZAH");
+                    startActivity(intent2);
+                    break;
+                case "R.Tunggu":
+                    Intent intent3 = new Intent(GedungAHActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "R. TUNGGU");
+                    startActivity(intent3);
+                    break;
             }
         }
     }
+
 
     @NonNull
     private List<ClickableArea> getClickableAreas() {
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2573, new State("R")));
-
-
+        clickableAreas.add(new ClickableArea(600, 300, 400, 400, new State("Mandi Jenazah")));
+        clickableAreas.add(new ClickableArea(200, 200, 400, 400, new State("Admin")));
+        clickableAreas.add(new ClickableArea(600, 700, 300, 300, new State("R.Jenazah")));
+        clickableAreas.add(new ClickableArea(500, 900, 300, 300, new State("R.Tunggu")));
 
         return clickableAreas;
     }

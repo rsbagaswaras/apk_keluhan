@@ -55,8 +55,10 @@ public class GedungSActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
+
                 case "PERAWATAN KELAS VIP":
                     Intent S = new Intent(GedungSActivity. this, FormActivity.class);
+                    S.putExtra("data1", "R.VIP (SRIKANDI)");
                     startActivity(S);
                     break;
 
