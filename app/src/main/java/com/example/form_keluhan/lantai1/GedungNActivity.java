@@ -59,63 +59,68 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "R.ALAT LINEN":
                     Intent intent = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent.putExtra("data1",  "R.ALAT LINEN");
                     startActivity(intent);
                     break;
 
                 case "DAPUR SUSU":
                     Intent intent1 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent1.putExtra("data1",  "DAPUR SUSU");
                     startActivity(intent1);
                     break;
 
 
                 case "R.OBAT":
                     Intent intent2 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent2.putExtra("data1",  "R.OBAT");
                     startActivity(intent2);
                     break;
 
 
                 case "NURSE STATION":
                     Intent intent3 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent3.putExtra("data1",  "NURSE STATION");
                     startActivity(intent3);
                     break;
 
 
                 case "SH":
                     Intent intent4 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent4.putExtra("data1",  "SH");
                     startActivity(intent4);
                     break;
 
 
                 case "BBRT NDN INFEKSIUS":
                     Intent intent5 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent5.putExtra("data1",  "BBRT NDN INFEKSIUS");
                     startActivity(intent5);
                     break;
 
 
                 case "LAV":
                     Intent intent6 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent6.putExtra("data1",  "LAV");
                     startActivity(intent6);
                     break;
 
 
                 case "LAV 2":
                     Intent intent7 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent7.putExtra("data1",  "LAV 2");
                     startActivity(intent7);
                     break;
 
 
                 case "BBRT INFEKSIUS":
                     Intent intent8 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent8.putExtra("data1",  "BBRT INFEKSIUS");
                     startActivity(intent8);
-
-                    Intent K = new Intent(GedungNActivity. this, FormActivity.class);
-                    K.putExtra("data1", "R. ALAT LINEN");
-                    startActivity(K);
-                    break;
 
 
                 case "BBRT DIARE":
                     Intent intent9 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent9.putExtra("data1",  "BBRT DIARE");
                     startActivity(intent9);
                     break;
             }
