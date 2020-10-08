@@ -107,6 +107,10 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
                 case "BBRT INFEKSIUS":
                     Intent intent8 = new Intent(GedungNActivity. this, FormActivity.class);
                     startActivity(intent8);
+
+                    Intent K = new Intent(GedungNActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. ALAT LINEN");
+                    startActivity(K);
                     break;
 
 

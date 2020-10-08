@@ -7,6 +7,23 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <string name="group1">Group 1</string>
+    <string name="group2">Group 2</string>
+
+    <string-array name="group1">
+        <item>item1</item>
+    </string-array>
+
+    <string-array name="group2">
+        <item>item1</item>
+        <item>item2</item>
+    </string-array>
+
+    <string-array name="group3">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+    </string-array>
 
     <string-array name="list_kategori">
         <item>Kebersihan</item>

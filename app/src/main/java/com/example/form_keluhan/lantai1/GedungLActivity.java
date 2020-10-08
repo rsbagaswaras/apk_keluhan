@@ -58,6 +58,7 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
 
             switch (text) {
                 case "CT.SCAN":
+
                     Intent intent = new Intent(GedungLActivity. this, FormActivity.class);
                     startActivity(intent);
                     break;
@@ -120,6 +121,10 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
                 case "RJK 2":
                     Intent intent12 = new Intent(GedungLActivity. this, FormActivity.class);
                     startActivity(intent12);
+
+                    Intent K = new Intent(GedungLActivity. this, FormActivity.class);
+                    K.putExtra("data1",  "CT.SCAN");
+                    startActivity(K);
                     break;
 
 

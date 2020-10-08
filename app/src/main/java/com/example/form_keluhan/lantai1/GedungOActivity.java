@@ -53,21 +53,25 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "GUDANG CAIRAN":
                     Intent G = new Intent(GedungOActivity. this, FormActivity.class);
+                    G.putExtra("data1", "GUDANG CAIRAN");
                     startActivity(G);
                     break;
 
                 case "R. REUSE":
                     Intent R = new Intent(GedungOActivity. this, FormActivity.class);
+                    R.putExtra("data1", "R. REUSE");
                     startActivity(R);
                     break;
 
                 case "R. KONSULTASI":
                     Intent K = new Intent(GedungOActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. KONSULTASI");
                     startActivity(K);
                     break;
 
                 case "NURSE STATION":
                     Intent N = new Intent(GedungOActivity. this, FormActivity.class);
+                    N.putExtra("data1", "NURSE STATION");
                     startActivity(N);
                     break;
 
@@ -78,16 +82,19 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
 
                 case "LAV":
                     Intent L = new Intent(GedungOActivity. this, FormActivity.class);
+                    L.putExtra("data1", "LAV");
                     startActivity(L);
                     break;
 
                 case "SH":
                     Intent H = new Intent(GedungOActivity. this, FormActivity.class);
+                    H.putExtra("data1", "SH");
                     startActivity(H);
                     break;
 
                 case "R. RO":
                     Intent O = new Intent(GedungOActivity. this, FormActivity.class);
+                    O.putExtra("data1", "R. RO");
                     startActivity(O);
                     break;
 

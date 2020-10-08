@@ -55,36 +55,43 @@ public class GedungTActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "R.DOKTER":
                     Intent K = new Intent(GedungTActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. DOKTOR");
                     startActivity(K);
                     break;
 
-                case "R.KA INTALASI":
+                case "R.KA INSTALASI":
                     Intent G = new Intent(GedungTActivity. this, FormActivity.class);
+                    G.putExtra("data1", "R. KA INSTALASI");
                     startActivity(G);
                     break;
 
                 case "SH":
                     Intent S = new Intent(GedungTActivity. this, FormActivity.class);
+                    S.putExtra("data1", "SH");
                     startActivity(S);
                     break;
 
                 case "LAV":
                     Intent intent = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent.putExtra("data1", "LAV");
                     startActivity(intent);
                     break;
 
                 case "PANTRY":
                     Intent intent1 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "PANTRY");
                     startActivity(intent1);
                     break;
 
                 case "R.ALAT & LINEN":
                     Intent intent2 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "R. ALAT & LINEN");
                     startActivity(intent2);
                     break;
 
                 case "PERAWATAN KELAS 1":
                     Intent intent3 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "PERAWATAN KELAS 1");
                     startActivity(intent3);
                     break;
 

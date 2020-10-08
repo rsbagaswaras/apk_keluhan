@@ -54,46 +54,55 @@ public class GedungQActivity extends AppCompatActivity implements OnClickableAre
             switch (text) {
                 case "NS":
                     Intent G = new Intent(GedungQActivity. this, FormActivity.class);
+                    G.putExtra("data1", "NS");
                     startActivity(G);
                     break;
 
                 case "R. PERAWAT":
                     Intent R = new Intent(GedungQActivity. this, FormActivity.class);
+                    R.putExtra("data1", "R. PERAWAT");
                     startActivity(R);
                     break;
 
                 case "R. DOKTER":
                     Intent K = new Intent(GedungQActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. DOKTOR");
                     startActivity(K);
                     break;
 
                 case "R. KA INSTALASI":
                     Intent N = new Intent(GedungQActivity. this, FormActivity.class);
+                    N.putExtra("data1", "R. KA INSTALASI");
                     startActivity(N);
                     break;
 
                 case "TOILET":
                     Intent T = new Intent(GedungQActivity. this, FormActivity.class);
+                    T.putExtra("data1", "TOILET");
                     startActivity(T);
                     break;
 
                 case "R ALAT & LINEN":
                     Intent L = new Intent(GedungQActivity. this, FormActivity.class);
+                    L.putExtra("data1", "R ALAT & LINEN");
                     startActivity(L);
                     break;
 
                 case "PANTRY":
                     Intent H = new Intent(GedungQActivity. this, FormActivity.class);
+                    H.putExtra("data1", "PANTRY");
                     startActivity(H);
                     break;
 
                 case "LAV":
                     Intent O = new Intent(GedungQActivity. this, FormActivity.class);
+                    O.putExtra("data1", "LAV");
                     startActivity(O);
                     break;
 
                 case "SH":
                     Intent A = new Intent(GedungQActivity. this, FormActivity.class);
+                    A.putExtra("data1", "SH");
                     startActivity(A);
                     break;
 
