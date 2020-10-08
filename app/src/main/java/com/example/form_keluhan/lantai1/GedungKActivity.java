@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -53,15 +54,94 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "HEMATOLOGI":
+
+                    Intent intent = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent);
+
                     Intent H = new Intent(GedungKActivity. this, FormActivity.class);
                     H.putExtra("data1",  "HEMATOLOGI");
                     startActivity(H);
+
                     break;
 
+                case "PATOLOGI ANATOMI":
+                    Intent intent1 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent1);
+                    break;
 
+                case "SEROLOGI":
+                    Intent intent2 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case "URINE & FACES":
+                    Intent intent3 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case "GUDANG":
+                    Intent intent4 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent4);
+                    break;
+
+                case "SAMPLE TAKING":
+                    Intent intent5 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent5);
+                    break;
+
+                case "LAV PETUGAS":
+                    Intent intent6 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent6);
+                    break;
+
+                case "LAV":
+                    Intent intent7 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent7);
+                    break;
+
+                case "ADMIN BANK DARAH":
+                    Intent intent8 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent8);
+                    break;
+
+                case "BANK DARAH":
+                    Intent intent9 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent9);
+                    break;
+
+                case "R.TUNGGU":
+                    Intent intent10 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent10);
+                    break;
+
+                case "R.REAGEN & ALAT":
+                    Intent intent11 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent11);
+                    break;
+
+                case "R.ANALISIS":
+                    Intent intent12 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent12);
+                    break;
+
+                case "KEPALA LAB /R DOKTER":
+                    Intent intent13 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent13);
+                    break;
+
+                case "ADMIN":
+                    Intent intent14 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent14);
+                    break;
+
+                case "PENDAFTARAN":
+                    Intent intent15 = new Intent(GedungKActivity. this, FormActivity.class);
+                    startActivity(intent15);
+                    break;
 
             }
         }
@@ -73,6 +153,21 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
         clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("HEMATOLOGI")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("PATOLOGI ANATOMI")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("SEROLOGI")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("URINE & FACES")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("SAMPLE TAKING")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("LAV PETUGAS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("LAV")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("ADMIN BANK DARAH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("BANK DARAH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.TUNGGU")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.REAGEN & ALAT")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.ANALISIS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("KEPALA LAB /R DOKTER")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("PENDAFTARAN")));
 
 
 
