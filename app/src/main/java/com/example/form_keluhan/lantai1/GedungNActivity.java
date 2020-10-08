@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -53,14 +54,66 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "R.ALAT LINEN":
-                    Intent K = new Intent(GedungNActivity. this, FormActivity.class);
-                    startActivity(K);
+                    Intent intent = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case "DAPUR SUSU":
+                    Intent intent1 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent1);
                     break;
 
 
+                case "R.OBAT":
+                    Intent intent2 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent2);
+                    break;
+
+
+                case "NURSE STATION":
+                    Intent intent3 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent3);
+                    break;
+
+
+                case "SH":
+                    Intent intent4 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent4);
+                    break;
+
+
+                case "BBRT NDN INFEKSIUS":
+                    Intent intent5 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent5);
+                    break;
+
+
+                case "LAV":
+                    Intent intent6 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent6);
+                    break;
+
+
+                case "LAV 2":
+                    Intent intent7 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent7);
+                    break;
+
+
+                case "BBRT INFEKSIUS":
+                    Intent intent8 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent8);
+                    break;
+
+
+                case "BBRT DIARE":
+                    Intent intent9 = new Intent(GedungNActivity. this, FormActivity.class);
+                    startActivity(intent9);
+                    break;
             }
         }
     }
@@ -71,6 +124,21 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
         clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("R.ALAT LINEN")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("DAPUR SUSU")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT NDN INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("LAV")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT DIARE")));
+
+
+
+
+
+
 
 
 
