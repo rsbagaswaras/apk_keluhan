@@ -55,8 +55,10 @@ public class GedungSActivity extends AppCompatActivity implements OnClickableAre
             String text = ((State) item).getName();
 
             switch (text) {
-                case "S":
+
+                case "PERAWATAN KELAS VIP":
                     Intent S = new Intent(GedungSActivity. this, FormActivity.class);
+                    S.putExtra("data1", "R.VIP (SRIKANDI)");
                     startActivity(S);
                     break;
 
@@ -70,7 +72,7 @@ public class GedungSActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1723, new State("S")));
+        clickableAreas.add(new ClickableArea(0, 0, 1840, 1723, new State("PERAWATAN KELAS VIP")));
 
 
 

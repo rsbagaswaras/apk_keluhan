@@ -2,7 +2,6 @@ package com.example.form_keluhan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,10 +29,14 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
     private Button btnMasuk;
     private Button btnDaftar;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
 
         //variabel tadi untuk memanggil fungsi
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -167,5 +169,6 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
         } else if (i == R.id.btn_daftar) {
             signUp();
         }
+
     }
 }

@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -53,11 +54,42 @@ public class GedungTTActivity extends AppCompatActivity implements OnClickableAr
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
-                case "S":
+                case "R.DOKTER":
+                    Intent K = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(K);
+                    break;
+
+                case "R.KA INTALASI":
+                    Intent G = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(G);
+                    break;
+
+                case "SH":
                     Intent S = new Intent(GedungTTActivity. this, FormActivity.class);
                     startActivity(S);
+                    break;
+
+                case "LAV":
+                    Intent intent = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case "PANTRY":
+                    Intent intent1 = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case "R.ALAT & LINEN":
+                    Intent intent2 = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case "PERAWATAN KELAS 1":
+                    Intent intent3 = new Intent(GedungTTActivity. this, FormActivity.class);
+                    startActivity(intent3);
                     break;
 
 
@@ -70,10 +102,13 @@ public class GedungTTActivity extends AppCompatActivity implements OnClickableAr
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1075, 1723, new State("S")));
-
-
-
+        clickableAreas.add(new ClickableArea(5, 30, 100, 100, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(30, 30, 100, 100, new State("R.KA INTALASI")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.ALAT & LINEN")));
+        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PERAWATAN KELAS 1")));
         return clickableAreas;
     }
 

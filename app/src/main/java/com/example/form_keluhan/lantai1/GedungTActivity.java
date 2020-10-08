@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -49,40 +50,48 @@ public class GedungTActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "R.DOKTER":
                     Intent K = new Intent(GedungTActivity. this, FormActivity.class);
+                    K.putExtra("data1", "R. DOKTOR");
                     startActivity(K);
                     break;
 
-                case "R.KA INTALASI":
+                case "R.KA INSTALASI":
                     Intent G = new Intent(GedungTActivity. this, FormActivity.class);
+                    G.putExtra("data1", "R. KA INSTALASI");
                     startActivity(G);
                     break;
 
                 case "SH":
                     Intent S = new Intent(GedungTActivity. this, FormActivity.class);
+                    S.putExtra("data1", "SH");
                     startActivity(S);
                     break;
 
                 case "LAV":
                     Intent intent = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent.putExtra("data1", "LAV");
                     startActivity(intent);
                     break;
 
                 case "PANTRY":
                     Intent intent1 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "PANTRY");
                     startActivity(intent1);
                     break;
 
                 case "R.ALAT & LINEN":
                     Intent intent2 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "R. ALAT & LINEN");
                     startActivity(intent2);
                     break;
 
                 case "PERAWATAN KELAS 1":
                     Intent intent3 = new Intent(GedungTActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "PERAWATAN KELAS 1");
                     startActivity(intent3);
                     break;
 
@@ -96,13 +105,13 @@ public class GedungTActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(480, 240, 50, 50, new State("R.DOKTER")));
-        clickableAreas.add(new ClickableArea(480, 260, 50, 50, new State("R.KA INTALSI")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("SH")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(40, 30, 100, 50, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(70, 30, 100, 50, new State("R.KA INTALASI")));
+        clickableAreas.add(new ClickableArea(40, 100, 50, 70, new State("SH")));
+        clickableAreas.add(new ClickableArea(70, 280, 50, 50, new State("LAV")));
         clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PANTRY")));
         clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("R.ALAT & LINEN")));
-        clickableAreas.add(new ClickableArea(480, 280, 50, 50, new State("PERAWATAN KELAS 1")));
+        clickableAreas.add(new ClickableArea(100, 50, 50, 50, new State("PERAWATAN KELAS 1")));
 
 
         return clickableAreas;
