@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         linearLayout = (LinearLayout) findViewById(R.id.login);
         animationDrawable = (AnimationDrawable) linearLayout.getBackground();
 
-        animationDrawable.setEnterFadeDuration(3000);
+        animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
 
         sayaadmin = (TextView) findViewById(R.id.sayaadmin);
