@@ -81,6 +81,7 @@
             android:text="Saya Admin ?"
             android:id="@+id/sayaadmin"
             android:textColor="#B52E17"
+            android:textStyle="bold"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"/>
 

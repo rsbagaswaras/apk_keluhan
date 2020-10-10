@@ -57,7 +57,7 @@
         <activity android:name=".Lantai2Activity" />
         <activity
             android:name=".Lantai1Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+           />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

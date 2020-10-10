@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean doubleBacktoExit = false;
 
-    private TextView sayaadmin;
+     TextView sayaadmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,16 @@ public class LoginActivity extends AppCompatActivity {
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
 
-        sayaadmin = (TextView) findViewById(R.id.sayaadmin);
+        sayaadmin =(TextView)findViewById(R.id.sayaadmin);
+        sayaadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(LoginActivity.this, AdminActivity.class);
+                startActivity(intent1);
+
+                Toast.makeText(LoginActivity.this, "Anda Admin?", Toast.LENGTH_LONG).show();
+            }
+        });
 
         btn_reg = findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {
@@ -82,13 +91,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        sayaadmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           btn_login.setText("Login Admin");
-           sayaadmin.setVisibility(View.VISIBLE);
-            }
-        });
 
         mAuth = FirebaseAuth.getInstance();
 

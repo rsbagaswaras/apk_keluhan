@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminActivity"
-    tools:ignore="Orientation">
+    android:orientation="vertical"
+    android:gravity="center">
 
     <EditText
-        android:id="@+id/tv_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="210dp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Username"
+        android:id="@+id/username"
+        android:padding="10dp"
+        android:background="@drawable/reg_edittext_style"
+        />
 
     <EditText
-        android:id="@+id/tv_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/password"
         android:hint="Password"
-        android:inputType="textPassword"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="268dp" />
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/reg_edittext_style"/>
 
-    <Button
-        android:id="@+id/btn_masuk"
+    <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Masuk"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="371dp" />
+        android:id="@+id/active"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:layout_marginTop="30dp"
+        android:text="Remember me"/>
 
     <Button
-        android:id="@+id/btn_daftar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daftar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="419dp" />
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/backgroundbutton"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
