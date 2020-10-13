@@ -40,13 +40,13 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_reg, btn_login;
+    Button verify, btn_reg, btn_login, tes;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
     private boolean doubleBacktoExit = false;
 
-     TextView sayaadmin;
+    private TextView sayaadmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +59,18 @@ public class LoginActivity extends AppCompatActivity {
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
 
-        sayaadmin =(TextView)findViewById(R.id.sayaadmin);
-        sayaadmin.setOnClickListener(new View.OnClickListener() {
+        tes = findViewById(R.id.tes);
+        tes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(LoginActivity.this, AdminActivity.class);
-                startActivity(intent1);
-
-                Toast.makeText(LoginActivity.this, "Anda Admin?", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
+
+        sayaadmin =findViewById(R.id.sayaadmin);
+        Admin();
 
         btn_reg = findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +106,17 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    //On click listener to tv login to move to login activity
+    public void Admin() {
+        sayaadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,AdminActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
