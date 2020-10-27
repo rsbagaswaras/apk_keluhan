@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_reg, btn_login, tes;
+    Button verify, btn_reg, btn_login;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
@@ -58,16 +58,6 @@ public class LoginActivity extends AppCompatActivity {
 
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
-
-        tes = findViewById(R.id.tes);
-        tes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         sayaadmin =findViewById(R.id.sayaadmin);
         Admin();
@@ -113,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         sayaadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,AdminActivity.class);
+                Intent intent = new Intent(LoginActivity.this,AdminActivityy.class);
                 startActivity(intent);
             }
         });

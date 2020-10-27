@@ -55,11 +55,44 @@ public class GedungABActivity extends AppCompatActivity implements OnClickableAr
             String text = ((State) item).getName();
 
             switch (text) {
-                case "R. KONSULTASI":
-                    Intent K = new Intent(GedungABActivity. this, FormActivity.class);
-                    K.putExtra("data1", "R. KONSULTASI");
-                    startActivity(K);
+                case "PENERIMAAN LINER KOTOR":
+                    Intent intent = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent.putExtra("data1", "PENERIMAAN LINER KOTOR");
+                    startActivity(intent);
                     break;
+
+                case "ADMINISTRASI LAUNDRY":
+                    Intent intent1 = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "ADMINISTRASI LAUNDRY");
+                    startActivity(intent1);
+                    break;
+
+                case "SETRIKA DAN JAHIT":
+                    Intent intent2 = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "SETRIKA DAN JAHIT");
+                    startActivity(intent2);
+                    break;
+
+                case "DELIVERY":
+                    Intent intent3 = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "DELIVERY");
+                    startActivity(intent3);
+                    break;
+
+                case "INFEKSIUS":
+                    Intent intent4 = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent4.putExtra("data1", "INFEKSIUS");
+                    startActivity(intent4);
+                    break;
+
+                case "CUCI":
+                    Intent intent5 = new Intent(GedungABActivity. this, FormActivity.class);
+                    intent5.putExtra("data1", "CUCI");
+                    startActivity(intent5);
+                    break;
+
+
+
 
             }
         }

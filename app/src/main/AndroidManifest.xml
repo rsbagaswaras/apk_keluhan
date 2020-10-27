@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FetchActivity"></activity>
+        <activity android:name=".AdminActivityy"></activity>
+        <activity android:name=".FetchActivity" />
         <activity android:name=".PhoneLoginActivity" />
         <activity android:name=".VerifyOtpActivity" />
         <activity android:name=".EmailLoginActivity" />
@@ -55,9 +56,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FormActivity" />
         <activity android:name=".Lantai2Activity" />
-        <activity
-            android:name=".Lantai1Activity"
-           />
+        <activity android:name=".Lantai1Activity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
