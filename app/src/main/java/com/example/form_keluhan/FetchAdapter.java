@@ -59,7 +59,7 @@ public class FetchAdapter  extends RecyclerView.Adapter<FetchAdapter.MyViewHolde
             nama_responden = (TextView) itemView.findViewById(R.id.nama_responden);
             ruangan = (TextView) itemView.findViewById(R.id.ruangan);
             kategori = (TextView) itemView.findViewById(R.id.kategori);
-            keluhan = (TextView) itemView.findViewById(R.id.keluhan);
+            
             img_keluhan = (ImageView) itemView.findViewById(R.id.img_keluhan);
             btn = (Button) itemView.findViewById(R.id.checkDetails);
         }
