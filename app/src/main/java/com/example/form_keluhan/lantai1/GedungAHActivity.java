@@ -88,10 +88,10 @@ public class GedungAHActivity extends AppCompatActivity implements OnClickableAr
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(600, 300, 400, 400, new State("Mandi Jenazah")));
-        clickableAreas.add(new ClickableArea(200, 200, 400, 400, new State("Admin")));
-        clickableAreas.add(new ClickableArea(600, 700, 300, 300, new State("R.Jenazah")));
-        clickableAreas.add(new ClickableArea(500, 900, 300, 300, new State("R.Tunggu")));
+        clickableAreas.add(new ClickableArea(560, 800, 400, 400, new State("Mandi Jenazah")));
+        clickableAreas.add(new ClickableArea(1060, 760, 200, 200, new State("Admin")));
+        clickableAreas.add(new ClickableArea(680, 1200, 500, 300, new State("R.Jenazah")));
+        clickableAreas.add(new ClickableArea(560, 1400, 500, 300, new State("R.Tunggu")));
 
         return clickableAreas;
     }

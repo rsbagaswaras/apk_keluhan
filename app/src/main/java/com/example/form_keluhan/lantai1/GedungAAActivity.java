@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -54,12 +55,15 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
         if (item instanceof State) {
             String text = ((State) item).getName();
 
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+
             switch (text) {
-                case "RUANG DELIVERY ":
+                case "RUANG DELIVERY":
                     Intent intent = new Intent(GedungAAActivity. this, FormActivity.class);
                     intent.putExtra("data1", "RUANG DELIVERY");
                     startActivity(intent);
                     break;
+
                 case "RUANG SAJI":
                     Intent intent1 = new Intent(GedungAAActivity. this, FormActivity.class);
                     intent1.putExtra("data1", "RUANG SAJI");
@@ -84,9 +88,9 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
                     startActivity(intent4);
                     break;
 
-                case "INSTALASI":
+                case "INSTALASI GIZI":
                     Intent intent5 = new Intent(GedungAAActivity. this, FormActivity.class);
-                    intent5.putExtra("data1", "INSTALASI");
+                    intent5.putExtra("data1", "INSTALASI GIZI");
                     startActivity(intent5);
                     break;
 
@@ -120,9 +124,9 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
                     startActivity(intent10);
                     break;
 
-                case "GUDANG KERING":
+                case "GUDANG BASAH":
                     Intent intent11 = new Intent(GedungAAActivity. this, FormActivity.class);
-                    intent11.putExtra("data1", "GUDANG KERING");
+                    intent11.putExtra("data1", "GUDANG BASAH");
                     startActivity(intent11);
                     break;
 
@@ -150,6 +154,12 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
                     startActivity(intent15);
                     break;
 
+                case "GUDANG KERING":
+                    Intent intent16 = new Intent(GedungAAActivity. this, FormActivity.class);
+                    intent16.putExtra("data1", "GUDANG KERING");
+                    startActivity(intent16);
+                    break;
+
             }
         }
     }
@@ -159,37 +169,39 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG DELIVERY")));
+        clickableAreas.add(new ClickableArea(70, 60, 60, 60, new State("RUANG DELIVERY")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG SAJI")));
+        clickableAreas.add(new ClickableArea(70, 170, 40, 40, new State("RUANG SAJI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("GUDANG ALAT BERSIH")));
+        clickableAreas.add(new ClickableArea(70, 250, 40, 40, new State("GUDANG ALAT BERSIH")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG RACIK")));
+        clickableAreas.add(new ClickableArea(180, 120, 85, 85, new State("RUANG RACIK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG MASAK")));
+        clickableAreas.add(new ClickableArea(220, 180, 85, 85, new State("RUANG MASAK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("INSTALASI")));
+        clickableAreas.add(new ClickableArea(180, 220, 100, 80, new State("INSTALASI GIZI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG CUCI,")));
+        clickableAreas.add(new ClickableArea(70, 280, 80, 80, new State("RUANG CUCI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("TROLEY KOTOR,")));
+        clickableAreas.add(new ClickableArea(70, 350, 80, 80, new State("TROLEY KOTOR")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("DAPUR SUSU & SNACK")));
+        clickableAreas.add(new ClickableArea(350, 600, 200, 200, new State("DAPUR SUSU & SNACK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("RUANG PENGOLAHAN")));
+        clickableAreas.add(new ClickableArea(240, 275, 80, 80, new State("RUANG PENGOLAHAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("BASAH KERING")));
+        clickableAreas.add(new ClickableArea(240, 375, 80, 80, new State("BASAH KERING")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("GUDANG KERING")));
+        clickableAreas.add(new ClickableArea(350, 360, 80, 80, new State("GUDANG BASAH")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("KA INSTALASI GIZI")));
+        clickableAreas.add(new ClickableArea(470, 360, 80, 80, new State("GUDANG KERING")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("ADMIN R.GIZI & PENERIMAAN BAHAN")));
+        clickableAreas.add(new ClickableArea(600, 320, 70, 70, new State("KA INSTALASI GIZI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("TOILET 1")));
+        clickableAreas.add(new ClickableArea(660, 320, 70, 70, new State("ADMIN R.GIZI & PENERIMAAN BAHAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 750, 531, new State("TOILET 2")));
+        clickableAreas.add(new ClickableArea(670, 370, 40, 40, new State("TOILET 1")));
+
+        clickableAreas.add(new ClickableArea(690, 370, 40, 40, new State("TOILET 2")));
 
 
         return clickableAreas;
