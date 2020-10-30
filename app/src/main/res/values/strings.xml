@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Form_Keluhan</string>
+    <string name="app_name">E-Keluhan</string>
     <string name="title_activity_igd">IgdActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
