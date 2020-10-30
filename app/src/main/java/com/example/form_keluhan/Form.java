@@ -1,39 +1,42 @@
 package com.example.form_keluhan;
 
-
-import com.google.firebase.database.ServerValue;
-
 public class Form {
     private String postKey;
-    private String nama;
+    private String tanggal_penyampaian;
+    private String nama_responden;
     private String ruangan;
     private String keluhan;
     private String picture;
-    private String userId;
-    private String userPhoto;
-    private Object timeStamp ;
+    private String kategori;
 
-
-    public Form(String nama, String ruangan, String keluhan, String picture) {
+    public Form(String tanggal_penyampaian, String nama, String ruangan,String kategori, String keluhan, String picture) {
         this.postKey = postKey;
-        this.nama = nama;
+        this.tanggal_penyampaian = tanggal_penyampaian;
+        this.nama_responden = nama;
         this.ruangan = ruangan;
+        this.kategori = kategori;
         this.keluhan = keluhan;
         this.picture = picture;
-        this.timeStamp = ServerValue.TIMESTAMP;
     }
-
 
     public String getPostKey() {
         return postKey;
     }
 
-    public String getNama() {
-        return nama;
+    public String getTanggal_penyampaian() {
+        return tanggal_penyampaian;
+    }
+
+    public String getNama_responden() {
+        return nama_responden;
     }
 
     public String getRuangan() {
         return ruangan;
+    }
+
+    public String getKategori() {
+        return kategori;
     }
 
     public String getKeluhan() {
@@ -44,24 +47,24 @@ public class Form {
         return picture;
     }
 
-    public String getUserId() { return userId; }
-
-    public String getUserPhoto() { return userPhoto; }
-
-    public Object getTimeStamp() {
-        return timeStamp;
-    }
-
     public void setPostKey(String postKey) {
         this.postKey = postKey;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setTanggal_penyampaian(String tanggal_penyampaian) {
+        this.tanggal_penyampaian = tanggal_penyampaian;
+    }
+
+    public void setNama_responden(String nama_responden) {
+        this.nama_responden = nama_responden;
     }
 
     public void setRuangan(String ruangan) {
         this.ruangan = ruangan;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 
     public void setKeluhan(String keluhan) {
@@ -71,14 +74,5 @@ public class Form {
     public void setPicture(String picture) {
         this.picture = picture;
     }
-
-    public void setTimeStamp(Object timeStamp) {
-        this.timeStamp = timeStamp;
-    }
-
-    public void setUserId(String userId) { this.userId = userId; }
-
-    public void setUserPhoto(String userPhoto) { this.userPhoto = userPhoto; }
-
 
 }

@@ -74,7 +74,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         btn_fetch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Lantai1Activity.this, AdminActivity.class);
+                Intent intent = new Intent(Lantai1Activity.this, AdminActivityy.class);
                 startActivity(intent);
             }
         });

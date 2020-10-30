@@ -59,7 +59,8 @@ public class LoginActivity extends AppCompatActivity {
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
 
-        sayaadmin = (TextView) findViewById(R.id.sayaadmin);
+        sayaadmin =findViewById(R.id.sayaadmin);
+        Admin();
 
         btn_reg = findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {
@@ -82,13 +83,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        sayaadmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           btn_login.setText("Login Admin");
-           sayaadmin.setVisibility(View.VISIBLE);
-            }
-        });
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -102,6 +96,17 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    //On click listener to tv login to move to login activity
+    public void Admin() {
+        sayaadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,AdminActivityy.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

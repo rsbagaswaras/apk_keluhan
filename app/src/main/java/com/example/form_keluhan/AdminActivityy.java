@@ -2,40 +2,49 @@ package com.example.form_keluhan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class AdminActivity extends AppCompatActivity  implements View.OnClickListener{
+import org.json.JSONObject;
 
-    private static final String TAG = "LoginActivity";
+import java.text.Normalizer;
+import java.util.Map;
 
+public class AdminActivityy extends AppCompatActivity  implements View.OnClickListener {
+    private static final String TAG = "AdminActivityy";
+    private EditText emailet, passwordet ;
+    private ProgressDialog progressDialog;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    private EditText edtEmail;
-    private EditText edtPass;
     private Button btnMasuk;
     private Button btnDaftar;
-
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_admin_activityy);
 
 
         //variabel tadi untuk memanggil fungsi
@@ -43,14 +52,18 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
         mAuth = FirebaseAuth.getInstance();
 
         // diatur sesuai id komponennya
-        edtEmail = (EditText) findViewById(R.id.tv_email);
-        edtPass = (EditText) findViewById(R.id.tv_pass);
+        progressDialog = new ProgressDialog(this);
+        emailet = (EditText) findViewById(R.id.email);
+        passwordet = (EditText) findViewById(R.id.password);
         btnMasuk = (Button) findViewById(R.id.btn_masuk);
         btnDaftar = (Button) findViewById(R.id.btn_daftar);
 
         //nambahin method onClick, biar tombolnya bisa diklik
         btnMasuk.setOnClickListener(this);
         btnDaftar.setOnClickListener(this);
+
+
+
     }
 
     //fungsi signin untuk mengkonfirmasi data pengguna yang sudah mendaftar sebelumnya
@@ -58,11 +71,12 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
         Log.d(TAG, "signIn");
         if (!validateForm()) {
             return;
+
         }
 
         //showProgressDialog();
-        String email = edtEmail.getText().toString();
-        String password = edtPass.getText().toString();
+        String email = emailet.getText().toString();
+        String password = passwordet.getText().toString();
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -70,13 +84,15 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signIn:onComplete:" + task.isSuccessful());
                         //hideProgressDialog();
-
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(AdminActivity.this, "Sign In Failed",
+                            Toast.makeText(AdminActivityy.this, "Sign In Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
+                        progressDialog.setMessage("Please wait...");
+                        progressDialog.show();
+                        progressDialog.setCanceledOnTouchOutside(false);
                     }
                 });
     }
@@ -89,8 +105,8 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
         }
 
         //showProgressDialog();
-        String email = edtEmail.getText().toString();
-        String password = edtPass.getText().toString();
+        String email = emailet.getText().toString();
+        String password = passwordet.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -102,7 +118,7 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(AdminActivity.this, "Sign Up Failed",
+                            Toast.makeText(AdminActivityy.this, "Sign Up Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -117,7 +133,7 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
         writeNewAdmin(user.getUid(), username, user.getEmail());
 
         // Go to MainActivity
-        startActivity(new Intent(AdminActivity.this, MainActivity.class));
+        startActivity(new Intent(AdminActivityy.this, MainActivity.class));
         finish();
     }
 
@@ -137,18 +153,18 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
     //fungsi untuk memvalidasi EditText email dan password agar tak kosong dan sesuai format
     private boolean validateForm() {
         boolean result = true;
-        if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-            edtEmail.setError("Required");
+        if (TextUtils.isEmpty(emailet.getText().toString())) {
+            emailet.setError("Required");
             result = false;
         } else {
-            edtEmail.setError(null);
+            emailet.setError(null);
         }
 
-        if (TextUtils.isEmpty(edtPass.getText().toString())) {
-            edtPass.setError("Required");
+        if (TextUtils.isEmpty(passwordet.getText().toString())) {
+            passwordet.setError("Required");
             result = false;
         } else {
-            edtPass.setError(null);
+            passwordet.setError(null);
         }
 
         return result;
@@ -170,5 +186,9 @@ public class AdminActivity extends AppCompatActivity  implements View.OnClickLis
             signUp();
         }
 
+
     }
+
+
+
 }

@@ -60,71 +60,80 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
                 case "CT.SCAN":
 
                     Intent intent = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent.putExtra("data1",  "CT.SCAN");
                     startActivity(intent);
                     break;
 
                 case "R.GANTI":
                     Intent intent1 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent1.putExtra("data1",  "R.GANTI");
                     startActivity(intent1);
                     break;
 
                 case "TOILET":
                     Intent intent2 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent2.putExtra("data1",  "TOILET");
                     startActivity(intent2);
                     break;
 
                 case "MAMMOGRAPHY":
                     Intent intent3 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent3.putExtra("data1",  "MAMMOGRAPHY");
                     startActivity(intent3);
                     break;
 
                 case "R.MESIN":
                     Intent intent4 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent4.putExtra("data1",  "R.MESIN");
                     startActivity(intent4);
                     break;
 
                 case "OPERATOR":
                     Intent intent5 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent5.putExtra("data1",  "OPERATOR");
                     startActivity(intent5);
                     break;
 
                 case "KEPALA RADIOLOGI":
                     Intent intent6 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent6.putExtra("data1",  "KEPALA RADIOLOGI");
                     startActivity(intent6);
                     break;
 
                 case "ADMIN":
                     Intent intent7 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent7.putExtra("data1",  "ADMIN");
                     startActivity(intent7);
                     break;
 
                 case "NURSE STATION":
                     Intent intent8 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent8.putExtra("data1",  "NURSE STATION");
                     startActivity(intent8);
                     break;
 
                 case "RO 1":
                     Intent intent9 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent9.putExtra("data1",  "RO 1");
                     startActivity(intent9);
                     break;
 
                 case "R.GELAP":
                     Intent intent10 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent10.putExtra("data1",  "R.GELAP");
                     startActivity(intent10);
                     break;
 
                 case "OPERATOR 1":
                     Intent intent11 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent11.putExtra("data1",  "OPERATOR 1");
                     startActivity(intent11);
                     break;
 
                 case "RJK 2":
                     Intent intent12 = new Intent(GedungLActivity. this, FormActivity.class);
+                    intent12.putExtra("data1",  "RJK 2");
                     startActivity(intent12);
-
-                    Intent K = new Intent(GedungLActivity. this, FormActivity.class);
-                    K.putExtra("data1",  "CT.SCAN");
-                    startActivity(K);
                     break;
 
 
