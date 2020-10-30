@@ -4,17 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import com.example.form_keluhan.ClickableArea;
-import com.example.form_keluhan.ClickableAreasImage;
+import com.example.form_keluhan.Clikable.ClickableArea;
+import com.example.form_keluhan.Clikable.ClickableAreasImage;
 import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Lantai2Activity;
-import com.example.form_keluhan.OnClickableAreaClickedListener;
+import com.example.form_keluhan.Clikable.OnClickableAreaClickedListener;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.State;
+import com.example.form_keluhan.Clikable.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +47,8 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
+
 
             switch (text) {
                 case "GUDANG CAIRAN":
@@ -108,15 +108,15 @@ public class GedungOActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("GUDANG CAIRAN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. REUSE")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. KONSULTASI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(100, 40, 100, 50, new State("GUDANG CAIRAN")));
+        clickableAreas.add(new ClickableArea(100, 130, 100, 50, new State("R. REUSE")));
+        clickableAreas.add(new ClickableArea(100, 260, 100, 50, new State("R. KONSULTASI")));
+        clickableAreas.add(new ClickableArea(100, 430, 100, 50, new State("NURSE STATION")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. GANTI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("SH")));
-        clickableAreas.add(new ClickableArea(0, 0, 1895, 3264, new State("R. RO")));
+        clickableAreas.add(new ClickableArea(100, 600, 100, 50, new State("R. GANTI")));
+        clickableAreas.add(new ClickableArea(100, 690, 100, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(100, 800, 100, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(100, 870, 100, 50, new State("R. RO")));
         return clickableAreas;
     }
 

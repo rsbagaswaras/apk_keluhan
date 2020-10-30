@@ -4,18 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.form_keluhan.ClickableArea;
-import com.example.form_keluhan.ClickableAreasImage;
+import com.example.form_keluhan.Clikable.ClickableArea;
+import com.example.form_keluhan.Clikable.ClickableAreasImage;
 import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Lantai2Activity;
-import com.example.form_keluhan.OnClickableAreaClickedListener;
+import com.example.form_keluhan.Clikable.OnClickableAreaClickedListener;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.State;
+import com.example.form_keluhan.Clikable.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,13 +94,13 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("ADMIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("US/TENSTRAKSI")));
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("REHABILITASI MEDIK")));
+        clickableAreas.add(new ClickableArea(50, 40, 100, 50, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(50, 170, 100, 50, new State("US/TENSTRAKSI")));
+        clickableAreas.add(new ClickableArea(50, 400, 100, 100, new State("REHABILITASI MEDIK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("AES / IR")));
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("EXERCISE/PARAREL BAR")));
-        clickableAreas.add(new ClickableArea(0, 0, 724, 3264, new State("LAV")));
+        clickableAreas.add(new ClickableArea(40, 600, 100, 50, new State("ES / IR")));
+        clickableAreas.add(new ClickableArea(40, 750, 100, 50, new State("EXERCISE/PARAREL BAR")));
+        clickableAreas.add(new ClickableArea(40, 830, 100, 50, new State("LAV")));
 
         return clickableAreas;
     }
