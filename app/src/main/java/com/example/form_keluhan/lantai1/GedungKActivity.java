@@ -148,22 +148,22 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("HEMATOLOGI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("PATOLOGI ANATOMI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("SEROLOGI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("URINE & FACES")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("SAMPLE TAKING")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("LAV PETUGAS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("ADMIN BANK DARAH")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("BANK DARAH")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.TUNGGU")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.REAGEN & ALAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("R.ANALISIS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("KEPALA LAB /R DOKTER")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("ADMIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1778, new State("PENDAFTARAN")));
+        clickableAreas.add(new ClickableArea(70, 100, 250, 400, new State("HEMATOLOGI")));
+        clickableAreas.add(new ClickableArea(460, 100, 250, 400, new State("PATOLOGI ANATOMI")));
+        clickableAreas.add(new ClickableArea(800, 100, 250, 400, new State("SEROLOGI")));
+        clickableAreas.add(new ClickableArea(1400, 100, 250, 400, new State("URINE & FACES")));
+        clickableAreas.add(new ClickableArea(1400, 580, 200, 150, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(1450, 760, 200, 150, new State("SAMPLE TAKING")));
+        clickableAreas.add(new ClickableArea(1400, 900, 100, 100, new State("LAV PETUGAS")));
+        clickableAreas.add(new ClickableArea(1570, 900, 100, 200, new State("LAV")));
+        clickableAreas.add(new ClickableArea(380, 900, 250, 220, new State("ADMIN BANK DARAH")));
+        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("BANK DARAH")));
+        clickableAreas.add(new ClickableArea(70, 990, 250, 400, new State("R.TUNGGU")));
+        clickableAreas.add(new ClickableArea(460, 990, 200, 200, new State("R.REAGEN & ALAT")));
+        clickableAreas.add(new ClickableArea(460, 1200, 200, 200, new State("R.ANALISIS")));
+        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("KEPALA LAB /R DOKTER")));
+        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("PENDAFTARAN")));
 
 
 
