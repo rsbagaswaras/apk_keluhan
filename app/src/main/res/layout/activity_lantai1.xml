@@ -35,7 +35,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/backgroundbutton"
-                android:text="fetch"
+                android:text="Glosarium"
                 android:textStyle="bold" />
 
             <ImageView
