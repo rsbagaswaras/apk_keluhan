@@ -133,7 +133,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         writeNewAdmin(user.getUid(), username, user.getEmail());
 
         // Go to MainActivity
-        startActivity(new Intent(AdminActivityy.this, MainActivity.class));
+        startActivity(new Intent(AdminActivityy.this, FetchActivity.class));
         finish();
     }
 

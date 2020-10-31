@@ -160,10 +160,10 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
         clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("BANK DARAH")));
         clickableAreas.add(new ClickableArea(70, 990, 250, 400, new State("R.TUNGGU")));
         clickableAreas.add(new ClickableArea(460, 1200, 200, 200, new State("R.REAGEN & ALAT")));
-        clickableAreas.add(new ClickableArea(460, 1400, 200, 200, new State("R.ANALISIS")));
-        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("KEPALA LAB /R DOKTER")));
-        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("ADMIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("PENDAFTARAN")));
+        clickableAreas.add(new ClickableArea(460, 1500, 200, 200, new State("R.ANALISIS")));
+        clickableAreas.add(new ClickableArea(900, 1500, 200, 200, new State("KEPALA LAB /R DOKTER")));
+        clickableAreas.add(new ClickableArea(1200, 1500, 200, 200, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(1600, 1500, 200, 200, new State("PENDAFTARAN")));
 
 
 
