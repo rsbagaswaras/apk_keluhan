@@ -16,10 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.form_keluhan.lantai1.GedungAAActivity;
 import com.example.form_keluhan.lantai1.GedungABActivity;
 import com.example.form_keluhan.lantai1.GedungAHActivity;
@@ -74,7 +71,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         btn_fetch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Lantai1Activity.this, AdminActivityy.class);
+                Intent intent = new Intent(Lantai1Activity.this, FetchActivity.class);
                 startActivity(intent);
             }
         });

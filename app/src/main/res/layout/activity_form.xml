@@ -30,6 +30,29 @@
         android:textColor="#B52E17"
         android:gravity="center"
         tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txt_waktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Penyampaian"
+                android:textColor="#B52E17"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/idtanggal"
+                android:layout_width="370dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="8dp"
+                android:text="tanggal"
+                android:textSize="15sp"
+                android:padding="10dp"
+                android:ems="10"
+                android:background="#F1D991"
+                android:textColor="#0E0E0E"/>
+
     <TextView
         android:id="@+id/txt_nama"
         android:layout_width="wrap_content"

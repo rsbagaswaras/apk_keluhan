@@ -1,66 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FetchActivity"
-    android:orientation="vertical" >
+    tools:context=".FetchActivity">
 
-
-    <TextView
-        android:id="@+id/getkategori"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Kategori : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/getkeluhan"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Keluhan : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/getkoordinat"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Koordinat : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/getnama"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Nama : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/getruangan"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Ruangan : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/getstatus"
-        android:layout_width="345dp"
-        android:layout_height="wrap_content"
-        android:text="Status : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
-
-
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
