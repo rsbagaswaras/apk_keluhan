@@ -33,6 +33,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/btn_phonenumber"
         android:layout_width="321dp"
         android:layout_height="48dp"
         android:text="Sign in with phone number"

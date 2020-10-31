@@ -25,21 +25,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class KodeActivity extends AppCompatActivity {
 
-
     //Variable yang Dibutuhkan Untuk Autentikasi
     String verificationId;
     FirebaseAuth mAuth;
 
+    Intent intent;
 
     //Variable Untuk Komponen-komponen Yang Diperlukan
     EditText et_otp;
-    Button verify_btn;
+    Button verify_btn; // Resend;
     String otp;
     ProgressBar pb_bar;
-
-   // Intent intent;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,25 +43,22 @@ public class KodeActivity extends AppCompatActivity {
 
         et_otp = findViewById(R.id.et_otp);
         verify_btn = findViewById(R.id.verify_btn);
-        pb_bar=findViewById(R.id.pb_bar);
+        pb_bar = findViewById(R.id.pb_bar);
         pb_bar.setVisibility(View.GONE);
 
-        mAuth =FirebaseAuth.getInstance();
 
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
-
     private void verifyOtp(String verificationId, String otp) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,otp);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, otp);
 
         //sign in user
         signInWithPhoneAuthCredential(credential);
     }
 
-
-    // wktu user udh masukin kode verifikasi kmu login ke firebase authentication pake phoneCredential,
-    // biar data user yang login kesave
+    // wktu user udh masukin kode verifikasi kmu login ke firebase authentication pake phoneCredential, biar data user yang login kesave
     // di firebase
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
@@ -74,17 +67,16 @@ public class KodeActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        otp = et_otp.getText().toString().trim();
-
-
                         if (task.isSuccessful()) {
                             pb_bar.setVisibility(View.INVISIBLE);
-                            Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
-                            startActivity(intent);
-                            finish();
-                        } else  {
-                            et_otp.setError("Invalid otp");
 
+                        } else {
+                            // pb_bar.setVisibility(View.INVISIBLE);
+                            //  String message = "Verification failed , Please try again later.";
+
+                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                            //    message = "Invalid code entered...";
+                            //   }
                             Toast.makeText(KodeActivity.this, "Something Wrong ",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -115,8 +107,6 @@ public class KodeActivity extends AppCompatActivity {
         finish();
 
         Toast.makeText(getApplicationContext(), "Verifikasi Telah Selesai", Toast.LENGTH_SHORT).show();
-
-
 
     }
 }
