@@ -7,12 +7,13 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.form_keluhan.Clikable.ClickableArea;
-import com.example.form_keluhan.Clikable.ClickableAreasImage;
+import com.example.form_keluhan.ClickableAreasImage;
+import com.example.form_keluhan.ClickableArea;
+import com.example.form_keluhan.ClickableAreasImage;
 import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Clikable.OnClickableAreaClickedListener;
+import com.example.form_keluhan.OnClickableAreaClickedListener;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.Clikable.State;
+import com.example.form_keluhan.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class GedungPActivity extends AppCompatActivity implements OnClickableAreaClickedListener {
+public class GedungPActivity extends AppCompatActivity implements OnClickableAreaClickedListener{
     private final String TAG = getClass().getSimpleName();
 
     @Override

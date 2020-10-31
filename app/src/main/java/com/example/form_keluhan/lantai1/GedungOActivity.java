@@ -7,12 +7,12 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.form_keluhan.Clikable.ClickableArea;
-import com.example.form_keluhan.Clikable.ClickableAreasImage;
+import com.example.form_keluhan.ClickableArea;
+import com.example.form_keluhan.ClickableAreasImage;
 import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Clikable.OnClickableAreaClickedListener;
+import com.example.form_keluhan.OnClickableAreaClickedListener;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.Clikable.State;
+import com.example.form_keluhan.State;
 
 import java.util.ArrayList;
 import java.util.List;
