@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +32,9 @@ import org.json.JSONObject;
 import java.text.Normalizer;
 import java.util.Map;
 
+import cyd.awesome.material.AwesomeText;
+import cyd.awesome.material.FontCharacterMaps;
+
 public class AdminActivityy extends AppCompatActivity  implements View.OnClickListener {
     private static final String TAG = "AdminActivityy";
     private EditText emailet, passwordet ;
@@ -39,6 +43,9 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
     private FirebaseAuth mAuth;
     private Button btnMasuk;
     private Button btnDaftar;
+
+    private AwesomeText awesomeText;
+    private boolean pwd_status = true;
 
 
     @Override
@@ -61,6 +68,26 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         //nambahin method onClick, biar tombolnya bisa diklik
         btnMasuk.setOnClickListener(this);
         btnDaftar.setOnClickListener(this);
+
+        //show hide password
+        awesomeText = findViewById(R.id.awesome);
+        awesomeText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pwd_status){
+                    passwordet.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    pwd_status = false;
+                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY);
+                    passwordet.setSelection(passwordet.length());
+                }else {
+                    passwordet.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+                    pwd_status = true;
+                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY_OFF);
+                    passwordet.setSelection(passwordet.length());
+                }
+            }
+        });
+
 
 
 
@@ -133,7 +160,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         writeNewAdmin(user.getUid(), username, user.getEmail());
 
         // Go to MainActivity
-        startActivity(new Intent(AdminActivityy.this, MainActivity.class));
+        startActivity(new Intent(AdminActivityy.this, FetchActivity.class));
         finish();
     }
 

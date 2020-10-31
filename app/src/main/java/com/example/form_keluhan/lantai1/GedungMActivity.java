@@ -156,22 +156,20 @@ public class GedungMActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("DAPUR SUSU")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.BIDAN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("COUNTER BIDAN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.BAYI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("INSTALASI KEBIDANAN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.DOKTER")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.ISOLASI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("VK.PATOLOGIS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("LAV 3")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("LAV 4")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.BERSALIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1970, new State("R.BERSALIN 2")));
+        clickableAreas.add(new ClickableArea(200, 150, 200, 260, new State("DAPUR SUSU")));
+        clickableAreas.add(new ClickableArea(500, 150, 200, 250, new State("R.BIDAN")));
+        clickableAreas.add(new ClickableArea(100, 580, 100, 100, new State("LAV")));
+        clickableAreas.add(new ClickableArea(1400, 200, 100, 300, new State("COUNTER BIDAN")));
+        clickableAreas.add(new ClickableArea(1700, 200, 100, 500, new State("R.BAYI")));
+        clickableAreas.add(new ClickableArea(500, 580, 500, 150, new State("INSTALASI KEBIDANAN")));
+        clickableAreas.add(new ClickableArea(190, 700, 300, 300, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(400, 730, 300, 300, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(190, 1500, 270, 300, new State("R.ISOLASI")));
+        clickableAreas.add(new ClickableArea(420, 1550, 220, 300, new State("VK.PATOLOGIS")));
+        clickableAreas.add(new ClickableArea(490, 1600, 100, 100, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(530, 1600, 100, 100, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(1500, 1000, 100, 300, new State("R.BERSALIN")));
+        clickableAreas.add(new ClickableArea(1500, 1600, 100, 300, new State("R.BERSALIN 2")));
 
 
 
