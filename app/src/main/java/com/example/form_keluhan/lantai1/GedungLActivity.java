@@ -133,6 +133,7 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
                 case "RJK 2":
                     Intent intent12 = new Intent(GedungLActivity. this, FormActivity.class);
                     intent12.putExtra("data1",  "RJK 2");
+
                     startActivity(intent12);
                     break;
 
@@ -148,19 +149,19 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("CT.SCAN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("R.GANTI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("TOILET")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("MAMMOGRAPHY")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("R.MESIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("OPERATOR")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("KEPALA RADIOLOGI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("ADMIN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("NURSE STATION")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("RO 1")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("R.GELAP")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("OPERATOR 1")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2713, new State("RJK 2")));
+        clickableAreas.add(new ClickableArea(300, 200, 300, 300, new State("CT.SCAN")));
+        clickableAreas.add(new ClickableArea(1000, 150, 150, 150, new State("R.GANTI")));
+        clickableAreas.add(new ClickableArea(1250, 120, 150, 150, new State("TOILET")));
+        clickableAreas.add(new ClickableArea(1500, 250, 300, 300, new State("MAMMOGRAPHY")));
+        clickableAreas.add(new ClickableArea(200, 780, 200, 200, new State("R.MESIN")));
+        clickableAreas.add(new ClickableArea(470, 800, 200, 200, new State("OPERATOR")));
+        clickableAreas.add(new ClickableArea(1500, 800, 300, 300, new State("KEPALA RADIOLOGI")));
+        clickableAreas.add(new ClickableArea(1500, 1300, 300, 300, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(1500, 1900, 200, 200, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(300, 1400, 200, 200, new State("RO 1")));
+        clickableAreas.add(new ClickableArea(200, 1800, 200, 200, new State("R.GELAP")));
+        clickableAreas.add(new ClickableArea(500, 1800, 300, 200, new State("OPERATOR 1")));
+        clickableAreas.add(new ClickableArea(240, 2300, 200, 200, new State("RJK 2")));
 
 
 

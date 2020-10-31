@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.ClickableArea;
 import com.example.form_keluhan.ClickableAreasImage;
@@ -53,7 +54,7 @@ public class GedungGActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
-
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
             switch (text) {
                 case "TRANSFER STRECHER KELUAR":
                     Intent intent = new Intent(GedungGActivity. this, FormActivity.class);
@@ -208,51 +209,51 @@ public class GedungGActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("TRANSFER STRECHER KELUAR")));
+        clickableAreas.add(new ClickableArea(200, 500, 200, 200, new State("TRANSFER STRECHER KELUAR")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("COUNTER")));
+        clickableAreas.add(new ClickableArea(200, 0, 200, 200, new State("COUNTER")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("ADMIN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("TRANSFER STRECHER MASUK")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("TRANSFER STRECHER MASUK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.KONSULTASI")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.KONSULTASI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("SH")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("LOKER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("LOKER LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("LOKER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("LOKER PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("PANTRY")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.DOKTER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.DOKTER PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.DISKUSI")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.DISKUSI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.DOKTER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 000, new State("R.DOKTER LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("RECOVERY")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("RECOVERY")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.PERAWAT PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.PERAWAT PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.PERAWAT LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.PERAWAT LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("OK 4")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("OK 4")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("OK 1")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("OK 1")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("INSTALASI BEDAH SENTRAL")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("INSTALASI BEDAH SENTRAL")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.OBAT")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("R.OBAT1")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.OBAT1")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("GUDANG STERIL")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG STERIL")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 720, 1421, new State("GUDANG NON STERIL")));
+        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG NON STERIL")));
 
 
 
