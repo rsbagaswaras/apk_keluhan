@@ -132,16 +132,16 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("R.ALAT LINEN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("DAPUR SUSU")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("R.OBAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("NURSE STATION")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("SH")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT NDN INFEKSIUS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT INFEKSIUS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 1418, new State("BBRT DIARE")));
+        clickableAreas.add(new ClickableArea(20, 100, 50, 50, new State("R.ALAT LINEN")));
+        clickableAreas.add(new ClickableArea(20, 120, 50, 50, new State("DAPUR SUSU")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("SH")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT NDN INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("LAV")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT DIARE")));
 
 
 
