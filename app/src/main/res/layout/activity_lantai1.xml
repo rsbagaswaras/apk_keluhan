@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
     tools:context=".Lantai1Activity">
 
     <LinearLayout
@@ -18,45 +17,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/btn_lant2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/backgroundbutton"
+                android:text="Lantai  2"
+                android:textStyle="bold" />
+
+            <Button
+
+                android:id="@+id/btn_fetch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/backgroundbutton"
+                android:text="Glosarium"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"/>
-
-            <Button
-                android:background="@drawable/backgroundbutton"
-                android:id="@+id/btn_lant2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lantai  2"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"/>
-
-            <Button
-                android:background="@drawable/backgroundbutton"
-                android:id="@+id/btn_fetch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="fetch"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="100dp"/>
+                android:layout_centerVertical="true" />
 
         </FrameLayout>
 
     </LinearLayout>
 
-    <ExpandableListView
-        android:id="@+id/expandable_listview"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="left|start"
-        android:background="#ffff"
-        android:divider="#80CBC4"
-        android:dividerHeight="0.5sp"
-        android:indicatorLeft="?android:attr/expandableListPreferredChildIndicatorLeft"/>
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

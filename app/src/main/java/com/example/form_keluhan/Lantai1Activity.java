@@ -16,10 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.form_keluhan.lantai1.GedungAAActivity;
 import com.example.form_keluhan.lantai1.GedungABActivity;
 import com.example.form_keluhan.lantai1.GedungAHActivity;
@@ -49,7 +46,7 @@ import java.util.List;
 
 public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener{
 
-    Button btn_lant2, btn_fetch;
+    Button btn_lant2, btn_fetch, btn_logout;
     FirebaseUser currentUser ;
     Toolbar toolbar;
 
@@ -74,7 +71,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         btn_fetch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Lantai1Activity.this, AdminActivityy.class);
+                Intent intent = new Intent(Lantai1Activity.this, FetchActivity.class);
                 startActivity(intent);
             }
         });
@@ -90,13 +87,6 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         List<ClickableArea> clickableAreas = getClickableAreas();
         clickableAreasImage.setClickableAreas(clickableAreas);
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
 
     }
@@ -290,25 +280,26 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_lantai1_drawer, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.nav_Logout) {
+            FirebaseAuth.getInstance().signOut();
+            Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(loginActivity);
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
 
 
 }

@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_reg, btn_login;
+    Button verify, btn_reg, btn_login, btn_number;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
@@ -61,6 +61,17 @@ public class LoginActivity extends AppCompatActivity {
 
         sayaadmin =findViewById(R.id.sayaadmin);
         Admin();
+
+        btn_number = findViewById(R.id.btn_phonenumber);
+        btn_number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         btn_reg = findViewById(R.id.btn_reg);
         btn_reg.setOnClickListener(new View.OnClickListener() {

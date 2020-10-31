@@ -13,30 +13,35 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tgl_penyampaian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tanggal Penyampaian"
             android:textSize="15dp"
             android:textStyle="bold"/>
         <TextView
+            android:id="@+id/nama_responden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nama"
             android:textSize="15dp"
             android:textStyle="bold"/>
         <TextView
+            android:id="@+id/ruangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ruangan"
             android:textSize="15dp"
             android:textStyle="bold"/>
         <TextView
+            android:id="@+id/kategori"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kategori"
             android:textSize="15dp"
             android:textStyle="bold"/>
         <TextView
+            android:id="@+id/keluhan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Keluhan"

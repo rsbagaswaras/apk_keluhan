@@ -207,9 +207,10 @@ public class FormActivity extends AppCompatActivity  {
         //untuk memasukkan ke firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //membuat server pada realtime database
-        // Referensi database yang dituju
+        DatabaseReference ref = database.getReference("RSBW").child("Keluhan").push();
+
+        //Referensi database yang dituju
         //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
-        DatabaseReference ref = database.getReference("RSBW/Keluhan").push();
 
         ref.setValue(form).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
