@@ -217,29 +217,29 @@ public class GedungGActivity extends AppCompatActivity implements OnClickableAre
 
         clickableAreas.add(new ClickableArea(240, 100, 80, 90, new State("TRANSFER STRECHER MASUK")));
 
-        clickableAreas.add(new ClickableArea(300, 200, 200, 200, new State("R.KONSULTASI")));
+        clickableAreas.add(new ClickableArea(380, 20, 100, 90, new State("R.KONSULTASI")));
 
-        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(380, 80, 100, 100, new State("GUDANG")));
 
-        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("SH")));
+        clickableAreas.add(new ClickableArea(380, 200, 100, 100, new State("SH")));
 
-        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("LOKER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(300, 10, 100, 100, new State("LOKER LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(600, 400, 200, 200, new State("LOKER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(600, 10, 100, 100, new State("LOKER PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(600, 700, 200, 200, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(500, 100, 90, 90, new State("PANTRY")));
 
-        clickableAreas.add(new ClickableArea(400, 100, 100, 200, new State("R.DOKTER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(490, 230, 100, 200, new State("R.DOKTER PEREMPUAN")));
 
         clickableAreas.add(new ClickableArea(470, 300, 150, 150, new State("R.DISKUSI")));
 
-        clickableAreas.add(new ClickableArea(470, 480, 150, 150, new State("R.DOKTER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(470, 440, 150, 150, new State("R.DOKTER LAKI LAKI")));
 
         clickableAreas.add(new ClickableArea(110, 300, 200, 200, new State("RECOVERY")));
 
-        clickableAreas.add(new ClickableArea(350, 60, 200, 200, new State("R.PERAWAT PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(400, 280, 100, 100, new State("R.PERAWAT PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(400, 300, 150, 150, new State("R.PERAWAT LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(400, 380, 150, 90, new State("R.PERAWAT LAKI LAKI")));
 
         clickableAreas.add(new ClickableArea(110, 500, 200, 200, new State("OK 4")));
 

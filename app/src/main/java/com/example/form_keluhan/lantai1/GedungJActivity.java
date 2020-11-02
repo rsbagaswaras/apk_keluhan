@@ -165,23 +165,23 @@ public class GedungJActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("LOKER PETUGAS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("ICU INFEKSIUS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("R.TRANSISI")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("NURSE STATION")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("HALL")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("LOKER UMUM")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("LOKER PETUGAS 1")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("R.OBAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("R.ALAT & LINEN")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("R.PERAWAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("PANTRY")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("SPOTCHECK")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("LAV 1")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("NICU")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("PICU")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2684, new State("NURSE INFEKSIUS STATION")));
+        clickableAreas.add(new ClickableArea(100, 10, 200, 200, new State("LOKER PETUGAS")));
+        clickableAreas.add(new ClickableArea(100, 100, 200, 200, new State("ICU INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(100, 200, 200, 200, new State("R.TRANSISI")));
+        clickableAreas.add(new ClickableArea(100, 300, 200, 200, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(100, 400, 200, 200, new State("HALL")));
+        clickableAreas.add(new ClickableArea(100, 500,200, 200, new State("LOKER UMUM")));
+        clickableAreas.add(new ClickableArea(100, 600, 200, 200, new State("LOKER PETUGAS 1")));
+        clickableAreas.add(new ClickableArea(100, 700, 200, 200, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(100, 800, 200, 200, new State("R.ALAT & LINEN")));
+        clickableAreas.add(new ClickableArea(100, 900, 200, 200, new State("R.PERAWAT")));
+        clickableAreas.add(new ClickableArea(100, 1000, 200, 200, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(100, 600, 200, 200, new State("SPOTCHECK")));
+        clickableAreas.add(new ClickableArea(100, 650, 200, 200, new State("LAV")));
+        clickableAreas.add(new ClickableArea(100, 700, 200, 200, new State("LAV 1")));
+        clickableAreas.add(new ClickableArea(100, 750, 200, 200, new State("NICU")));
+        clickableAreas.add(new ClickableArea(100, 800, 200, 200, new State("PICU")));
+        clickableAreas.add(new ClickableArea(100, 850, 200, 200, new State("NURSE INFEKSIUS STATION")));
 
 
 
