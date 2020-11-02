@@ -36,7 +36,10 @@ import com.example.form_keluhan.lantai1.GedungSActivity;
 import com.example.form_keluhan.lantai1.GedungSSActivity;
 import com.example.form_keluhan.lantai1.GedungTActivity;
 import com.example.form_keluhan.lantai1.GedungUActivity;
-import com.google.android.material.navigation.NavigationView;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -51,6 +54,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
     Toolbar toolbar;
 
     private final String TAG = getClass().getSimpleName();
+
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +84,8 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         clickableAreasImage.setClickableAreas(clickableAreas);
 
 
-
     }
+
 
     // Listen for touches on your images:
     @Override
@@ -284,10 +289,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_Logout) {
-            FirebaseAuth.getInstance().signOut();
-            Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
-            startActivity(loginActivity);
-            finish();
+            signOut();
         }else if(id== R.id.nav_fetch){
             Intent intent = new Intent(Lantai1Activity.this, FetchActivity.class);
             startActivity(intent);
@@ -298,6 +300,19 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         return super.onOptionsItemSelected(item);
     }
 
+    private void signOut(){
+        AuthUI.getInstance()
+                .signOut(Lantai1Activity.this)
+                .addOnCompleteListener(new OnCompleteListener<Void>(){
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent loginActivity = new Intent(Lantai1Activity.this,LoginActivity.class);
+                        startActivity(loginActivity);
+
+                    }
+                });
+    }
 
 }
 
