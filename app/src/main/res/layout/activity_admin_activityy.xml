@@ -8,6 +8,15 @@
     android:orientation="vertical"
     android:gravity="center">
 
+
+    <TextView
+        android:text="LOGIN ADMIN"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="140dp"
+        android:layout_height="66dp"
+        />
+
     <ImageView
         android:id="@+id/login_photo"
         android:layout_width="90dp"
@@ -24,6 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_person_24"
         tools:ignore="VectorDrawableCompat" />
+
 
     <EditText
         android:id="@+id/email"
@@ -97,7 +107,7 @@
         android:id="@+id/btn_daftar"
         android:layout_marginTop="30dp"
         android:background="@drawable/reg_btn_style"
-        android:visibility="invisible"/>
+       />/ android:visibility="invisible"/>
 
 
 

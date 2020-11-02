@@ -209,51 +209,51 @@ public class GedungGActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(200, 500, 200, 200, new State("TRANSFER STRECHER KELUAR")));
+        clickableAreas.add(new ClickableArea(50, 120, 80, 100, new State("TRANSFER STRECHER KELUAR")));
 
-        clickableAreas.add(new ClickableArea(200, 0, 200, 200, new State("COUNTER")));
+        clickableAreas.add(new ClickableArea(120, 50, 100, 60, new State("COUNTER")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("ADMIN")));
+        clickableAreas.add(new ClickableArea(120, 160, 100, 100, new State("ADMIN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("TRANSFER STRECHER MASUK")));
+        clickableAreas.add(new ClickableArea(240, 100, 80, 90, new State("TRANSFER STRECHER MASUK")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.KONSULTASI")));
+        clickableAreas.add(new ClickableArea(300, 200, 200, 200, new State("R.KONSULTASI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("GUDANG")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("SH")));
+        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("SH")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("LOKER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(400, 10, 200, 200, new State("LOKER LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("LOKER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(600, 400, 200, 200, new State("LOKER PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("PANTRY")));
+        clickableAreas.add(new ClickableArea(600, 700, 200, 200, new State("PANTRY")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.DOKTER PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(400, 100, 100, 200, new State("R.DOKTER PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.DISKUSI")));
+        clickableAreas.add(new ClickableArea(470, 300, 150, 150, new State("R.DISKUSI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 000, new State("R.DOKTER LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(470, 480, 150, 150, new State("R.DOKTER LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("RECOVERY")));
+        clickableAreas.add(new ClickableArea(110, 300, 200, 200, new State("RECOVERY")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.PERAWAT PEREMPUAN")));
+        clickableAreas.add(new ClickableArea(350, 60, 200, 200, new State("R.PERAWAT PEREMPUAN")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.PERAWAT LAKI LAKI")));
+        clickableAreas.add(new ClickableArea(400, 300, 150, 150, new State("R.PERAWAT LAKI LAKI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("OK 4")));
+        clickableAreas.add(new ClickableArea(110, 500, 200, 200, new State("OK 4")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("OK 1")));
+        clickableAreas.add(new ClickableArea(400, 600, 200, 200, new State("OK 1")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("INSTALASI BEDAH SENTRAL")));
+        clickableAreas.add(new ClickableArea(300, 500, 80, 300, new State("INSTALASI BEDAH SENTRAL")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(100, 760, 200, 120, new State("R.OBAT")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("R.OBAT1")));
+        clickableAreas.add(new ClickableArea(500, 760, 200, 120, new State("R.OBAT1")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG STERIL")));
+        clickableAreas.add(new ClickableArea(200, 860, 200, 200, new State("GUDANG STERIL")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 200, 200, new State("GUDANG NON STERIL")));
+        clickableAreas.add(new ClickableArea(400, 860, 200, 200, new State("GUDANG NON STERIL")));
 
 
 
