@@ -290,9 +290,6 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_Logout) {
             signOut();
-        }else if(id== R.id.nav_fetch){
-            Intent intent = new Intent(Lantai1Activity.this, FetchActivity.class);
-            startActivity(intent);
         }else if (id== R.id.nav_lantai2){
             Intent i = new Intent(Lantai1Activity.this, Lantai2Activity.class);
             startActivity(i);
