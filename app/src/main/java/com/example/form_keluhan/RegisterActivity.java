@@ -69,8 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
-
         //Init
         inputNama = findViewById(R.id.regName);
         inputEmail = findViewById(R.id.regMail);
@@ -154,8 +152,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     private void ValidateDataAndDoRegister() {
 
@@ -299,7 +295,6 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
     }
 
-
     private void sendVerificationEmail()
     {
         if (mAuth.getCurrentUser()!=null)
@@ -330,17 +325,13 @@ public class RegisterActivity extends AppCompatActivity {
         //forgot to start activity
         startActivity(intent);
     }
-
     private void openGallery() {
         //TODO: open gallery intent and wait for user to pick an image !
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent,REQUESCODE);
     }
-
-
     private void checkAndRequestForPermission() {
-
         if (ContextCompat.checkSelfPermission(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {

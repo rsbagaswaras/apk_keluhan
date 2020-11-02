@@ -41,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Register"
+        android:text="VERIF"
         android:background="@drawable/reg_btn_style"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

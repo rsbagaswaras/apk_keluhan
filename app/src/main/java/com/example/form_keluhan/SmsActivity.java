@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SmsActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,6 @@ public class SmsActivity extends AppCompatActivity {
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                                 progressBar.setVisibility(View.GONE);
                                 buttonGetOTP.setVisibility(View.VISIBLE);
-
                             }
 
                             @Override
