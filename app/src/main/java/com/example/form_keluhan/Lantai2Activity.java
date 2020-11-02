@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.form_keluhan.lantai2.AuditoriumActivity;
@@ -26,12 +28,21 @@ import java.util.List;
 public class Lantai2Activity extends AppCompatActivity implements OnClickableAreaClickedListener,
         com.example.form_keluhan.OnClickableAreaClickedListener {
 
-
+    Button btn_glosarium;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lantai2);
+
+        btn_glosarium= findViewById(R.id.btn_glosarium);
+        btn_glosarium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Lantai2Activity.this, Glosarium2Activity.class);
+                startActivity(intent);
+            }
+        });
 
         // Add image
         ImageView image = (ImageView) findViewById(R.id.imageView);

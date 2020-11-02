@@ -43,7 +43,6 @@ public class EmailLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_login);
 
-
         userMail = findViewById(R.id.login_mail);
         userPassword = findViewById(R.id.login_password);
         btnLogin = findViewById(R.id.loginBtn);
@@ -69,8 +68,6 @@ public class EmailLoginActivity extends AppCompatActivity {
                 } else {
                     signIn(mail, password);
                 }
-
-
             }
         });
 
@@ -91,62 +88,40 @@ public class EmailLoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void signIn(String mail, String password) {
-
-
         mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
-
                 if (task.isSuccessful()) {
-
                     loginProgress.setVisibility(View.INVISIBLE);
                     btnLogin.setVisibility(View.VISIBLE);
                     updateUI();
-
                 } else {
                     showMessage(task.getException().getMessage());
                     btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }
-
-
             }
         });
-
-
     }
-
     private void updateUI() {
-
         startActivity(Lantai1Activity);
         finish();
-
     }
 
     private void showMessage(String text) {
-
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
     }
-
 
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
-
         if (user != null) {
             //user is already connected  so we need to redirect him to home page
             updateUI();
-
         }
-
     }
-
-
 }

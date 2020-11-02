@@ -46,7 +46,7 @@ import java.util.List;
 
 public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener{
 
-    Button btn_lant2, btn_fetch, btn_logout;
+    Button btn_glosarium;
     FirebaseUser currentUser ;
     Toolbar toolbar;
 
@@ -57,18 +57,9 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lantai1);
 
-        btn_lant2= findViewById(R.id.btn_lant2);
-        btn_lant2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Lantai1Activity.this, Lantai2Activity.class);
-                startActivity(intent);
-            }
-        });
 
-
-        btn_fetch= findViewById(R.id.btn_fetch);
-        btn_fetch.setOnClickListener(new View.OnClickListener() {
+        btn_glosarium= findViewById(R.id.btn_glosarium);
+        btn_glosarium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Lantai1Activity.this, GolosariumActivity.class);
