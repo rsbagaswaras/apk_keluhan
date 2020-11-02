@@ -19,6 +19,10 @@ public class Form {
         this.picture = picture;
     }
 
+    public Form() {
+
+    }
+
     public String getPostKey() {
         return postKey;
     }
