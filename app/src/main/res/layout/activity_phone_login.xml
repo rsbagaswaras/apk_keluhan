@@ -10,9 +10,10 @@
     tools:context=".PhoneLoginActivity">
 
     <TextView
+        android:id="@+id/txt_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masukkan Kode Verifikasi"
+        android:text="Masukkan Nomor Telephone "
         android:layout_marginTop="50dp"/>
 
     <EditText
@@ -44,6 +45,8 @@
         android:text="VERIF"
         android:background="@drawable/reg_btn_style"
         android:textColor="#ffffff"
+        android:onClick="ClickPhone"
+        tools:ignore="OnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

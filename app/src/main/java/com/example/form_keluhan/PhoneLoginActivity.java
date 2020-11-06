@@ -10,12 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +29,10 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private ProgressBar loadingProgress;
     private Button regBtn;
 
+    TextView txt_phone;
     EditText et_phone;
     String phoneNumber;
+
 
     private FirebaseAuth mAuth;
 
@@ -40,7 +45,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
         loadingProgress = findViewById(R.id.regProgressBar);
         loadingProgress.setVisibility(View.INVISIBLE);
 
-        //9
+        //variabel tadi untuk memanggil fungsi
         mAuth = FirebaseAuth.getInstance();
 
         regBtn = findViewById(R.id.regBtn);
@@ -102,5 +107,19 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     };
 
+    public void ClickPhone(View view){
 
+        et_phone = findViewById(R.id.et_phone);
+        txt_phone = findViewById(R.id.txt_phone);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        //Referensi database yang dituju
+        DatabaseReference myRef =
+                database.getReference("Login Number").child(txt_phone.getText().toString());
+
+        //memberi nilai pada referensi yang dituju
+        myRef.child("Phone").setValue(et_phone.getText().toString());
+
+    }
 }
