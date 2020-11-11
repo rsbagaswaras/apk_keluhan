@@ -40,6 +40,7 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
 
+    //memberikan toast pada setiap nama ruangan
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
@@ -55,6 +56,7 @@ public class AuditoriumActivity extends AppCompatActivity implements OnClickable
         }
     }
 
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 

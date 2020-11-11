@@ -35,6 +35,7 @@ public class RuangAkreditasiActivity extends AppCompatActivity implements OnClic
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
 
+    // Listen for touches on your images:
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
@@ -51,6 +52,7 @@ public class RuangAkreditasiActivity extends AppCompatActivity implements OnClic
 
     }
 
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 

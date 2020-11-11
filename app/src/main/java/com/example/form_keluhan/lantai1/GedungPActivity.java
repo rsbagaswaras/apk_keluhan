@@ -90,6 +90,8 @@ public class GedungPActivity extends AppCompatActivity implements OnClickableAre
         }
     }
 
+
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     @NonNull
     private List<ClickableArea> getClickableAreas() {
 

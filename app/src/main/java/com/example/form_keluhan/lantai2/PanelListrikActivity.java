@@ -41,6 +41,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
 
+    // Listen for touches on your images:
     @Override
     public void onClickableAreaTouched(Object item) {
 
@@ -58,6 +59,7 @@ public class PanelListrikActivity extends AppCompatActivity implements OnClickab
 
     }
 
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     private List<ClickableArea> getClickableAreas() {
         List<ClickableArea> clickableAreas = new ArrayList<>();
 

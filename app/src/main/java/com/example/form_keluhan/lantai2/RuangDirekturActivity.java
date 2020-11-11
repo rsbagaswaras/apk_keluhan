@@ -35,7 +35,7 @@ public class RuangDirekturActivity extends AppCompatActivity implements OnClicka
         List<ClickableArea> clickableAreas = getClickableAreas();
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
-
+    // Listen for touches on your images:
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {

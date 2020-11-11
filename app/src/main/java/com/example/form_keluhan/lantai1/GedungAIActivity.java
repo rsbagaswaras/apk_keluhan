@@ -69,6 +69,8 @@ public class GedungAIActivity extends AppCompatActivity implements OnClickableAr
         }
     }
 
+
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     @NonNull
     private List<ClickableArea> getClickableAreas() {
 

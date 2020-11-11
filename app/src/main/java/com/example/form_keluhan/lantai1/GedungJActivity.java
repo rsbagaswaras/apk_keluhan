@@ -37,6 +37,7 @@ public class GedungJActivity extends AppCompatActivity implements OnClickableAre
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
 
+    //Listen for touches on your image:
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
@@ -160,13 +161,13 @@ public class GedungJActivity extends AppCompatActivity implements OnClickableAre
             }
         }
     }
-
+//untuk menentukan titik koordinat disesuaikan dengan nama state nya
     private List<ClickableArea> getClickableAreas() {
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
         clickableAreas.add(new ClickableArea(100, 10, 200, 200, new State("LOKER PETUGAS")));
-        clickableAreas.add(new ClickableArea(100, 100, 200, 200, new State("ICU INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(100, 200, 200, 200, new State("ICU INFEKSIUS")));
         clickableAreas.add(new ClickableArea(100, 200, 200, 200, new State("R.TRANSISI")));
         clickableAreas.add(new ClickableArea(100, 300, 200, 200, new State("NURSE STATION")));
         clickableAreas.add(new ClickableArea(100, 400, 200, 200, new State("HALL")));

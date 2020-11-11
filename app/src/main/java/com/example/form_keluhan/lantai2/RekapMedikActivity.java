@@ -36,7 +36,7 @@ public class RekapMedikActivity extends AppCompatActivity implements OnClickable
         clickableAreasImage.setClickableAreas(clickableAreas);
     }
 
-
+    // Listen for touches on your images:
     @Override
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
@@ -52,6 +52,7 @@ public class RekapMedikActivity extends AppCompatActivity implements OnClickable
         }
     }
 
+    //untuk menentukan titik koordinat disesuaikan dengan nama state nya
     private List<ClickableArea> getClickableAreas() {
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
