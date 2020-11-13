@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.Clickable;
 
 import android.app.Application;
 

@@ -13,17 +13,17 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Glosarium2Activity"></activity>
-        <activity android:name=".GolosariumActivity" />
-        <activity android:name=".AdminActivityy" />
-        <activity android:name=".FetchActivity" />
-        <activity android:name=".PhoneLoginActivity" />
-        <activity android:name=".VerifyOtpActivity" />
-        <activity android:name=".EmailLoginActivity" />
-        <activity android:name=".SmsActivity" />
-        <activity android:name=".VerifyActivity" />
-        <activity android:name=".KodeActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".lantai2.Glosarium2Activity"></activity>
+        <activity android:name=".lantai1.GolosariumActivity" />
+        <activity android:name=".Admin.AdminActivityy" />
+        <activity android:name=".Fetching.FetchActivity" />
+        <activity android:name=".RegLogin.PhoneLoginActivity" />
+        <activity android:name=".RegLogin.VerifyOtpActivity" />
+        <activity android:name=".RegLogin.EmailLoginActivity" />
+        <activity android:name=".RegLogin.SmsActivity" />
+        <activity android:name=".RegLogin.VerifyActivity" />
+        <activity android:name=".RegLogin.KodeActivity" />
+        <activity android:name=".RegLogin.RegisterActivity" />
         <activity android:name=".lantai1.GedungOActivity" />
         <activity android:name=".lantai1.GedungPActivity" />
         <activity android:name=".lantai1.GedungQActivity" />
@@ -54,11 +54,11 @@
         <activity android:name=".lantai2.RuangDirekturActivity" />
         <activity android:name=".lantai2.RekapMedikActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Form.Form$LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FormActivity" />
-        <activity android:name=".Lantai2Activity" />
-        <activity android:name=".Lantai1Activity" />
+        <activity android:name=".Form.FormActivity" />
+        <activity android:name=".lantai2.Lantai2Activity" />
+        <activity android:name=".lantai1.Lantai1Activity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

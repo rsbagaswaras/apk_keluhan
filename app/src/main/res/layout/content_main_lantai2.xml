@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_lantai2"
-    tools:context=".Lantai2Activity"
+    tools:context=".lantai2.Lantai2Activity"
     android:background="#e0e0e0">
 
 

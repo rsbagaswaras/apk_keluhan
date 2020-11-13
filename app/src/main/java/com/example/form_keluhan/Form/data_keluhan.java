@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.Form;
 
 public class data_keluhan {
     public String getKoordinat() {

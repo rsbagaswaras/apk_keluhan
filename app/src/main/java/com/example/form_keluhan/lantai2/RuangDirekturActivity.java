@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.example.form_keluhan.ClickableArea;
-import com.example.form_keluhan.ClickableAreasImage;
-import com.example.form_keluhan.FormActivity;
+import com.example.form_keluhan.Clickable.ClickableArea;
+import com.example.form_keluhan.Clickable.ClickableAreasImage;
+import com.example.form_keluhan.Form.FormActivity;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.State;
+import com.example.form_keluhan.Clickable.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import at.lukle.clickableareasimage.OnClickableAreaClickedListener;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class RuangDirekturActivity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.OnClickableAreaClickedListener {
+public class RuangDirekturActivity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.Clickable.OnClickableAreaClickedListener {
 
     private final String TAG = getClass().getSimpleName();
     @Override

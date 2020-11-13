@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.Clickable;
 
 public class PixelPosition {
     private int x;

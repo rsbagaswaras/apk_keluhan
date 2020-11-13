@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,20 +13,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.form_keluhan.lantai2.AuditoriumActivity;
-import com.example.form_keluhan.lantai2.KamarMandiActivity;
-import com.example.form_keluhan.lantai2.KasubacActivity;
-import com.example.form_keluhan.lantai2.KomiteMedikActivity;
-import com.example.form_keluhan.lantai2.PanelListrikActivity;
-import com.example.form_keluhan.lantai2.RekapMedikActivity;
-import com.example.form_keluhan.lantai2.RuangAkreditasiActivity;
-import com.example.form_keluhan.lantai2.RuangDirekturActivity;
+import com.example.form_keluhan.Clickable.ClickableArea;
+import com.example.form_keluhan.Clickable.ClickableAreasImage;
+import com.example.form_keluhan.Clickable.State;
+import com.example.form_keluhan.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Lantai2Activity extends AppCompatActivity implements OnClickableAreaClickedListener,
-        com.example.form_keluhan.OnClickableAreaClickedListener {
+        com.example.form_keluhan.Clickable.OnClickableAreaClickedListener {
 
     Button btn_glosarium;
 

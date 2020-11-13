@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.RegLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.form_keluhan.R;
 import com.google.firebase.FirebaseException;
 
 import com.google.firebase.auth.PhoneAuthCredential;
