@@ -1,21 +1,19 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.RegLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.form_keluhan.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -48,7 +46,7 @@ public class EmailLoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.loginBtn);
         loginProgress = findViewById(R.id.login_progress);
         mAuth = FirebaseAuth.getInstance();
-        Lantai1Activity = new Intent(this, Lantai1Activity.class);
+        Lantai1Activity = new Intent(this, com.example.form_keluhan.lantai1.Lantai1Activity.class);
         loginPhoto = findViewById(R.id.login_photo);
 
         loginProgress.setVisibility(View.INVISIBLE);

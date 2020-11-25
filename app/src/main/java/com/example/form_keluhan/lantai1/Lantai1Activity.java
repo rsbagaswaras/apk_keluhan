@@ -1,11 +1,8 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai1;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -17,37 +14,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.form_keluhan.lantai1.GedungAAActivity;
-import com.example.form_keluhan.lantai1.GedungABActivity;
-import com.example.form_keluhan.lantai1.GedungAHActivity;
-import com.example.form_keluhan.lantai1.GedungAIActivity;
-import com.example.form_keluhan.lantai1.GedungAJActivity;
-import com.example.form_keluhan.lantai1.GedungGActivity;
-import com.example.form_keluhan.lantai1.GedungJActivity;
-import com.example.form_keluhan.lantai1.GedungKActivity;
-import com.example.form_keluhan.lantai1.GedungLActivity;
-import com.example.form_keluhan.lantai1.GedungMActivity;
-import com.example.form_keluhan.lantai1.GedungNActivity;
-import com.example.form_keluhan.lantai1.GedungOActivity;
-import com.example.form_keluhan.lantai1.GedungPActivity;
-import com.example.form_keluhan.lantai1.GedungQActivity;
-import com.example.form_keluhan.lantai1.GedungRActivity;
-import com.example.form_keluhan.lantai1.GedungSActivity;
-import com.example.form_keluhan.lantai1.GedungSSActivity;
-import com.example.form_keluhan.lantai1.GedungTActivity;
-import com.example.form_keluhan.lantai1.GedungUActivity;
+import com.example.form_keluhan.Clickable.ClickableArea;
+import com.example.form_keluhan.Clickable.ClickableAreasImage;
+import com.example.form_keluhan.Clickable.OnClickableAreaClickedListener;
+import com.example.form_keluhan.Clickable.State;
+import com.example.form_keluhan.Form.Form;
+import com.example.form_keluhan.lantai2.Lantai2Activity;
+import com.example.form_keluhan.R;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener{
+public class Lantai1Activity extends AppCompatActivity implements OnClickableAreaClickedListener {
 
     Button btn_glosarium;
     FirebaseUser currentUser ;
@@ -304,7 +288,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Intent loginActivity = new Intent(Lantai1Activity.this,LoginActivity.class);
+                        Intent loginActivity = new Intent(Lantai1Activity.this, Form.LoginActivity.class);
                         startActivity(loginActivity);
 
                     }

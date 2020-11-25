@@ -4,17 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.form_keluhan.ClickableArea;
-import com.example.form_keluhan.ClickableAreasImage;
-import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Lantai2Activity;
-import com.example.form_keluhan.OnClickableAreaClickedListener;
+import com.example.form_keluhan.Clickable.ClickableArea;
+import com.example.form_keluhan.Clickable.ClickableAreasImage;
+import com.example.form_keluhan.Form.FormActivity;
+import com.example.form_keluhan.Clickable.OnClickableAreaClickedListener;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.State;
+import com.example.form_keluhan.Clickable.State;
 
 import java.util.ArrayList;
 import java.util.List;

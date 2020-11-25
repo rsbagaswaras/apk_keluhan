@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.RegLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.form_keluhan.R;
+import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;

@@ -1,8 +1,10 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.lantai2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.form_keluhan.R;
 
 public class Glosarium2Activity extends AppCompatActivity {
 

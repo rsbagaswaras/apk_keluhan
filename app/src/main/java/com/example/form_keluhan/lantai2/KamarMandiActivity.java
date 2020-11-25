@@ -2,26 +2,22 @@ package com.example.form_keluhan.lantai2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.example.form_keluhan.ClickableArea;
-import com.example.form_keluhan.ClickableAreasImage;
-import com.example.form_keluhan.FormActivity;
-import com.example.form_keluhan.Lantai2Activity;
+import com.example.form_keluhan.Clickable.ClickableArea;
+import com.example.form_keluhan.Clickable.ClickableAreasImage;
+import com.example.form_keluhan.Form.FormActivity;
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.State;
+import com.example.form_keluhan.Clickable.State;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import at.lukle.clickableareasimage.OnClickableAreaClickedListener;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class KamarMandiActivity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.OnClickableAreaClickedListener {
+public class KamarMandiActivity extends AppCompatActivity implements OnClickableAreaClickedListener, com.example.form_keluhan.Clickable.OnClickableAreaClickedListener {
     private final String TAG = getClass().getSimpleName();
 
 
