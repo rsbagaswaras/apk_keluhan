@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/colorgabung"
     android:id="@+id/login"
-   android:gravity="center_vertical"
+    android:gravity="center_vertical"
     tools:context=".LoginActivity">
 
     <LinearLayout

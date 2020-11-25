@@ -15,6 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.form_keluhan.Admin.AdminActivityy;
+import com.example.form_keluhan.RegLogin.EmailLoginActivity;
+import com.example.form_keluhan.RegLogin.PhoneLoginActivity;
+import com.example.form_keluhan.RegLogin.RegisterActivity;
+import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -112,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
         sayaadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,AdminActivityy.class);
+                Intent intent = new Intent(LoginActivity.this, AdminActivityy.class);
                 startActivity(intent);
             }
         });
