@@ -166,7 +166,7 @@
         android:layout_marginTop="10dp"
         android:onClick="Click3"
         android:background="@drawable/backgroundbutton"
-        android:text="Upload"
+        android:text="Kirim"
        android:textStyle="bold"
         tools:ignore="OnClick" />
 

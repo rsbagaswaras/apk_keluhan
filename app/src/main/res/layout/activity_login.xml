@@ -1,90 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/colorgabung"
-    android:orientation="vertical"
     android:id="@+id/login"
+   android:gravity="center_vertical"
     tools:context=".LoginActivity">
 
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="325dp"
-        android:layout_height="50dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btn_phonenumber"
-        android:layout_width="321dp"
-        android:layout_height="48dp"
-        android:text="Sign in with phone number"
-        android:textSize="10dp"
-        android:background="#ffff"/>
-
     <LinearLayout
+        android:id="@+id/layoutInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/background_white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btn_reg"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:background="@drawable/reg_btn_style"
-            android:text="Register" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:textColor="#B52E17"
-            android:text="OR" />
+            android:id="@+id/btn_phonenumber"
+            android:layout_width="321dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="#09DDCA"
+            android:text="Sign in with Phone Number"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/reg_btn_style"
-            android:text="Login"
-            tools:ignore="RtlCompat" />
+            android:layout_width="321dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="#EC0808"
+            android:text="Sign in with Email"
+            android:textAllCaps="false" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="25dp">
 
+            <TextView
+                android:id="@+id/txt_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="Belum punya akun?" />
+
+            <TextView
+                android:id="@+id/btn_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Daftar"
+                android:textColor="#B52E17"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/txt_header"
+        android:textSize="22sp"
+        android:textColor="#FFF"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:text="Selamat Datang di Aplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#A14A4343"/>
+
+    <TextView
+        android:textSize="22sp"
+        android:textColor="#FFF"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_below="@id/txt_header"
+        android:text=" E-Keluhan RSUD Bagas Waras Klaten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#A14A4343"/>
+
         <TextView
+            android:id="@+id/sayaadmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login sebagai Admin ?"
-            android:id="@+id/sayaadmin"
-            android:textColor="#B52E17"
-            android:textStyle="bold"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="50dp"/>
+            android:layout_below="@id/layoutInput"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentRight="true"
+            android:padding="18dp"
+            android:text="Login sebagai Admin ->"
+            android:textColor="#090808"
+            android:textStyle="bold" />
 
-
-</LinearLayout>
+</RelativeLayout>

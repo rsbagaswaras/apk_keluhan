@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,28 +34,28 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    LinearLayout linearLayout;
+    RelativeLayout relativeLayout;
     AnimationDrawable animationDrawable;
 
     private static final String TAG = "Login" ;
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_reg, btn_login, btn_number;
+    Button verify, btn_login, btn_number;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
     private boolean doubleBacktoExit = false;
 
-    private TextView sayaadmin;
+    private TextView sayaadmin, btn_reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        linearLayout = (LinearLayout) findViewById(R.id.login);
-        animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        relativeLayout = findViewById(R.id.login);
+        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
 
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
@@ -68,7 +69,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -79,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -90,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, EmailLoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
