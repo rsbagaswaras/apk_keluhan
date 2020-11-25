@@ -54,7 +54,7 @@
         <activity android:name=".lantai2.RuangDirekturActivity" />
         <activity android:name=".lantai2.RekapMedikActivity" />
         <activity
-            android:name=".Form.Form$LoginActivity"
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Form.FormActivity" />
         <activity android:name=".lantai2.Lantai2Activity" />

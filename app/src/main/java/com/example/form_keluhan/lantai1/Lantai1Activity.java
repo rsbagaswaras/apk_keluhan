@@ -19,6 +19,7 @@ import com.example.form_keluhan.Clickable.ClickableAreasImage;
 import com.example.form_keluhan.Clickable.OnClickableAreaClickedListener;
 import com.example.form_keluhan.Clickable.State;
 import com.example.form_keluhan.Form.Form;
+import com.example.form_keluhan.LoginActivity;
 import com.example.form_keluhan.lantai2.Lantai2Activity;
 import com.example.form_keluhan.R;
 import com.firebase.ui.auth.AuthUI;
@@ -288,7 +289,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Intent loginActivity = new Intent(Lantai1Activity.this, Form.LoginActivity.class);
+                        Intent loginActivity = new Intent(Lantai1Activity.this, LoginActivity.class);
                         startActivity(loginActivity);
 
                     }

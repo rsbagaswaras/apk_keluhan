@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_lantai1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".lantai1.Lantai1Activity"
     android:background="#e0e0e0">
 
@@ -20,13 +21,15 @@
         android:background="@drawable/backgroundbutton"
         android:text="Glosarium"
         android:textStyle="bold"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,8 +39,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:text="Klik pada huruf untuk melanjutkan ke menu selanjutnya"
-        android:textColor="#000000"/>
+        android:textColor="#000000"
+        tools:ignore="MissingConstraints" />
 
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

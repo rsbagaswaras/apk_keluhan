@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 //setelah loading maka akan langsung berpindah ke bottom nav activity
-                Intent home=new Intent(MainActivity.this, Form.LoginActivity.class);
+                Intent home=new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(home);
                 finish();
 
