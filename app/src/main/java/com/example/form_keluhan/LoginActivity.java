@@ -2,25 +2,20 @@ package com.example.form_keluhan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.form_keluhan.Admin.AdminActivityy;
 import com.example.form_keluhan.RegLogin.EmailLoginActivity;
 import com.example.form_keluhan.RegLogin.PhoneLoginActivity;
 import com.example.form_keluhan.RegLogin.RegisterActivity;
 import com.example.form_keluhan.lantai1.Lantai1Activity;
-import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,19 +29,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class LoginActivity extends AppCompatActivity {
 
-    RelativeLayout relativeLayout;
-    AnimationDrawable animationDrawable;
+    ImageView img1;
 
     private static final String TAG = "Login" ;
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
-    Button verify, btn_login, btn_number;
+    Button btn_login, btn_number;
     private FirebaseAuth mAuth;
     private GoogleSignInOptions gso;
 
@@ -59,11 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        relativeLayout = findViewById(R.id.login);
-        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
-
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(2000);
+        img1 = findViewById(R.id.img1);
 
         sayaadmin =findViewById(R.id.sayaadmin);
         Admin();
@@ -218,23 +205,6 @@ public class LoginActivity extends AppCompatActivity {
         }, 2000);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        if (animationDrawable != null && animationDrawable.isRunning()){
-            animationDrawable.stop();
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (animationDrawable != null && !animationDrawable.isRunning()){
-            animationDrawable.start();
-        }
-    }
 
 
 }
