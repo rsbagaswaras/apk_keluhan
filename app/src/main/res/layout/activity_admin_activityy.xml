@@ -106,8 +106,8 @@
         android:text="Sign up"
         android:id="@+id/btn_daftar"
         android:layout_marginTop="30dp"
-        android:background="@drawable/reg_btn_style"/>
-<!--        android:visibility="invisible"-->
+        android:background="@drawable/reg_btn_style"
+      android:visibility="invisible"/>
 
 
 

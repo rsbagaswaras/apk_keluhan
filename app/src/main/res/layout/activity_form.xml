@@ -126,19 +126,19 @@
         android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"/>
 
-    <EditText
-        android:id="@+id/edt_keluhan"
-        android:layout_width="370dp"
-        android:layout_height="91dp"
-        android:layout_below="@+id/txt_keluhan"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="8dp"
-        android:background="#F1D991"
-        android:ems="10"
-        android:lines="3"
-        android:inputType="textPersonName"
-        tools:ignore="MissingConstraints" />
 
+            <EditText
+                android:id="@+id/edt_keluhan"
+                android:layout_width="370dp"
+                android:layout_height="91dp"
+                android:layout_below="@+id/txt_keluhan"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:background="#F1D991"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:lines="3"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/gambar"
@@ -169,6 +169,7 @@
         android:text="Kirim"
        android:textStyle="bold"
         tools:ignore="OnClick" />
+
 
         </LinearLayout>
     </ScrollView>

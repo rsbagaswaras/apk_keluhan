@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +43,7 @@ public class FormActivity extends AppCompatActivity  {
     TextView txt_namru;
     TextView textView;
     int hari, bulan, tahun;
-
+    private ProgressDialog progressDialog;
 
     private Uri pickedImgUri = null;
     private static final int PReqCode = 2 ;
@@ -53,6 +55,8 @@ public class FormActivity extends AppCompatActivity  {
 
         imageClick();
         uploadPicture();
+
+        progressDialog = new ProgressDialog(this);
 
         edt_nama = findViewById(R.id.edt_nama);
         edt_keluhan = findViewById(R.id.edt_keluhan);
@@ -152,11 +156,17 @@ public class FormActivity extends AppCompatActivity  {
     }
 
     private void uploadPicture() {
+
         btn_add = findViewById(R.id.btn_add);
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // we need to test all input fields (Title and description ) and post image
+
+                progressDialog.setMessage("Please wait...");
+                progressDialog.show();
+                progressDialog.setCanceledOnTouchOutside(false);
 
                 if (!textView.getText().toString().isEmpty()
                         && !edt_nama.getText().toString().isEmpty()
@@ -187,7 +197,10 @@ public class FormActivity extends AppCompatActivity  {
 
                                     // Add form to firebase database
 
+
                                     Click3(form);
+
+
 
                                 }
                             });
