@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
@@ -77,6 +78,13 @@ public class FetchActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_fetching_drawer, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -85,9 +93,6 @@ public class FetchActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_Logout) {
             signOut();
-        }else if (id== R.id.nav_denah){
-            Intent i = new Intent(FetchActivity.this, Lantai1Activity.class);
-            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -101,7 +106,7 @@ public class FetchActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         Intent loginActivity = new Intent(FetchActivity.this, LoginActivity.class);
                         startActivity(loginActivity);
-
+                        finish();
                     }
                 });
     }

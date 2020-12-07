@@ -4,12 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_denah"
-        android:orderInCategory="100"
-        android:title="Denah"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/nav_Logout"
         android:orderInCategory="100"
         android:title="Logout"
