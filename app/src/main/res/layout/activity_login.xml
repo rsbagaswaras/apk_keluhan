@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="210dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/background_white"
             android:orientation="vertical"
@@ -93,7 +93,7 @@
 
         <ImageView
             android:id="@+id/imageVIew"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/background_white"
             android:src="@drawable/logo"
@@ -108,7 +108,7 @@
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:layout_below="@id/imageVIew"
-            android:text="Login"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layoutInput"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_alignParentRight="true"
             android:padding="18dp"
             android:text="Login sebagai Admin ->"
