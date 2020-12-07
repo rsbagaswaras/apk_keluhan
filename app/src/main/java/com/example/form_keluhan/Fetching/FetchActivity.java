@@ -3,17 +3,25 @@ package com.example.form_keluhan.Fetching;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
 import com.example.form_keluhan.Form.Form;
+import com.example.form_keluhan.LoginActivity;
 import com.example.form_keluhan.R;
+import com.example.form_keluhan.lantai1.Lantai1Activity;
+import com.example.form_keluhan.lantai2.Lantai2Activity;
+import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
@@ -66,5 +74,35 @@ public class FetchActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.nav_Logout) {
+            signOut();
+        }else if (id== R.id.nav_denah){
+            Intent i = new Intent(FetchActivity.this, Lantai1Activity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void signOut(){
+        AuthUI.getInstance()
+                .signOut(FetchActivity.this)
+                .addOnCompleteListener(new OnCompleteListener<Void>(){
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent loginActivity = new Intent(FetchActivity.this, LoginActivity.class);
+                        startActivity(loginActivity);
+
+                    }
+                });
     }
 }

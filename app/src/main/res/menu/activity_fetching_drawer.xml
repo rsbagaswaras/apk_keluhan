@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_lantai2"
+        android:id="@+id/nav_denah"
         android:orderInCategory="100"
-        android:title="Lantai 2"
+        android:title="Denah"
         app:showAsAction="never" />
 
     <item
