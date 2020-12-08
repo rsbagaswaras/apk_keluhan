@@ -43,10 +43,13 @@ public class FormActivity extends AppCompatActivity  {
     TextView txt_namru;
     TextView textView;
     int hari, bulan, tahun;
-    private ProgressDialog progressDialog;
+    ProgressDialog progressDialog;
 
     private Uri pickedImgUri = null;
     private static final int PReqCode = 2 ;
+
+    String nama_responden, keluhan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,10 +167,6 @@ public class FormActivity extends AppCompatActivity  {
             public void onClick(View v) {
                 // we need to test all input fields (Title and description ) and post image
 
-                progressDialog.setMessage("Please wait...");
-                progressDialog.show();
-                progressDialog.setCanceledOnTouchOutside(false);
-
                 if (!textView.getText().toString().isEmpty()
                         && !edt_nama.getText().toString().isEmpty()
                         && !txt_namru.getText().toString().isEmpty()
@@ -197,18 +196,44 @@ public class FormActivity extends AppCompatActivity  {
 
                                     // Add form to firebase database
 
-
                                     Click3(form);
-
-
 
                                 }
                             });
                         }
                     });
                 }
+                else {
+                    validateForm();;
+                }
             }
         });
+    }
+
+
+    private void validateForm() {
+        nama_responden = edt_nama.getText().toString().trim();
+        keluhan = edt_keluhan.getText().toString().trim();
+
+        if (nama_responden.isEmpty())
+        {
+            edt_nama.setError("Masukkan Nama ");
+            edt_nama.requestFocus();
+        }
+
+        else if(keluhan.isEmpty())
+        {
+            edt_keluhan.setError("Masukkan Keluhan");
+            edt_keluhan.requestFocus();
+        }
+
+    }
+
+    private void showProgressDialog(){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading.....");
+        progressDialog.show();
+
     }
 
     public void Click3(Form form) {
@@ -224,6 +249,7 @@ public class FormActivity extends AppCompatActivity  {
         ref.setValue(form).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
+                showProgressDialog();
                 Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
 
                 //mengosongkan isian setelah klik button upload
