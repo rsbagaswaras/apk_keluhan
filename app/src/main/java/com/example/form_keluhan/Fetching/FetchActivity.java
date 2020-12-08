@@ -38,7 +38,7 @@ public class FetchActivity extends AppCompatActivity {
 
         Query query = FirebaseDatabase.getInstance().getReference().child("Keluhan");
 
-        lv = findViewById(R.id.ListView);
+        lv = findViewById(R.id.Listview);
 
         FirebaseListOptions<Form> options = new FirebaseListOptions.Builder<Form>()
                 .setLayout(R.layout.cardview)
