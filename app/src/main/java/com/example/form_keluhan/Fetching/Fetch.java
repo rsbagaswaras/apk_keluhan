@@ -1,8 +1,7 @@
-package com.example.form_keluhan.Form;
+package com.example.form_keluhan.Fetching;
 
+public class Fetch {
 
-public class Form {
-    private String postKey;
     private String tanggal_penyampaian;
     private String nama_responden;
     private String ruangan;
@@ -10,23 +9,17 @@ public class Form {
     private String picture;
     private String kategori;
 
+    Fetch(){
 
-    public Form(String tanggal_penyampaian, String nama, String ruangan,String kategori, String keluhan, String picture) {
-        this.postKey = postKey;
+    }
+
+    public Fetch(String tanggal_penyampaian, String nama, String ruangan,String kategori, String keluhan, String picture) {
         this.tanggal_penyampaian = tanggal_penyampaian;
         this.nama_responden = nama;
         this.ruangan = ruangan;
         this.kategori = kategori;
         this.keluhan = keluhan;
         this.picture = picture;
-    }
-
-   Form() {
-
-    }
-
-    public String getPostKey() {
-        return postKey;
     }
 
     public String getTanggal_penyampaian() {
@@ -53,10 +46,6 @@ public class Form {
         return picture;
     }
 
-    public void setPostKey(String postKey) {
-        this.postKey = postKey;
-    }
-
     public void setTanggal_penyampaian(String tanggal_penyampaian) {
         this.tanggal_penyampaian = tanggal_penyampaian;
     }
@@ -80,6 +69,4 @@ public class Form {
     public void setPicture(String picture) {
         this.picture = picture;
     }
-
-
 }
