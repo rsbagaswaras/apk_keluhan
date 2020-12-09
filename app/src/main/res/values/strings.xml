@@ -26,8 +26,10 @@
     </string-array>
 
     <string-array name="list_kategori">
+        <item>Pelayanan</item>
         <item>Kebersihan</item>
-        <item>Sarana dan Prasarana</item>
         <item>Listrik Air Telepon</item>
+        <item>Sarana dan Prasarana</item>
+
     </string-array>
 </resources>

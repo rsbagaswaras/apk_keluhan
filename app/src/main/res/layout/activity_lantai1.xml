@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".lantai2.Lantai2Activity">
+    tools:context=".lantai1.Lantai1Activity">
 
 
     <include layout="@layout/content_main_lantai1"/>

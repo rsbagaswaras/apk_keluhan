@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,10 +45,13 @@ public class FormActivity extends AppCompatActivity  {
     TextView txt_namru;
     TextView textView;
     int hari, bulan, tahun;
-
+    ProgressDialog progressDialog;
 
     private Uri pickedImgUri = null;
     private static final int PReqCode = 2 ;
+
+    String nama_responden, keluhan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,8 @@ public class FormActivity extends AppCompatActivity  {
 
         imageClick();
         uploadPicture();
+
+        progressDialog = new ProgressDialog(this);
 
         edt_nama = findViewById(R.id.edt_nama);
         edt_keluhan = findViewById(R.id.edt_keluhan);
@@ -154,7 +161,9 @@ public class FormActivity extends AppCompatActivity  {
     }
 
     private void uploadPicture() {
+
         btn_add = findViewById(R.id.btn_add);
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,8 +205,37 @@ public class FormActivity extends AppCompatActivity  {
                         }
                     });
                 }
+                else {
+                    validateForm();;
+                }
             }
         });
+    }
+
+
+    private void validateForm() {
+        nama_responden = edt_nama.getText().toString().trim();
+        keluhan = edt_keluhan.getText().toString().trim();
+
+        if (nama_responden.isEmpty())
+        {
+            edt_nama.setError("Masukkan Nama ");
+            edt_nama.requestFocus();
+        }
+
+        else if(keluhan.isEmpty())
+        {
+            edt_keluhan.setError("Masukkan Keluhan");
+            edt_keluhan.requestFocus();
+        }
+
+    }
+
+    private void showProgressDialog(){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading.....");
+        progressDialog.show();
+
     }
 
     public void Click3(Form form) {
@@ -205,7 +243,7 @@ public class FormActivity extends AppCompatActivity  {
         //untuk memasukkan ke firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //membuat server pada realtime database
-        DatabaseReference ref = database.getReference("RSBW").child("Keluhan").push();
+        DatabaseReference ref = database.getReference("RSBW_KELUHAN").push();
 
         //Referensi database yang dituju
         //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
@@ -214,10 +252,9 @@ public class FormActivity extends AppCompatActivity  {
             @Override
             public void onSuccess(Void aVoid) {
 
-                //setelah loading maka akan langsung berpindah ke bottom nav activity
-                Intent home=new Intent(FormActivity.this, Checklist.class);
-                startActivity(home);
-                finish();
+                showProgressDialog();
+                Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
+
 
                 //mengosongkan isian setelah klik button upload
                 edt_nama.setText("");

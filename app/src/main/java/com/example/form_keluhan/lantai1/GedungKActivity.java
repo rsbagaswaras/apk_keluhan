@@ -63,11 +63,13 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
 
                 case "PATOLOGI ANATOMI":
                     Intent intent1 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent1.putExtra("data1", "PATOLOGI ANATOMI");
                     startActivity(intent1);
                     break;
 
                 case "SEROLOGI":
                     Intent intent2 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent2.putExtra("data1", "SEROLOGI");
                     startActivity(intent2);
                     break;
 
