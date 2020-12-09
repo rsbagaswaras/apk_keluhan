@@ -22,7 +22,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.form_keluhan.Checklist;
 import com.example.form_keluhan.R;
+import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -211,7 +213,11 @@ public class FormActivity extends AppCompatActivity  {
         ref.setValue(form).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
+
+                //setelah loading maka akan langsung berpindah ke bottom nav activity
+                Intent home=new Intent(FormActivity.this, Checklist.class);
+                startActivity(home);
+                finish();
 
                 //mengosongkan isian setelah klik button upload
                 edt_nama.setText("");

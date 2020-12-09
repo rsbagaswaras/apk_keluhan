@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.Clickable.ClickableArea;
 import com.example.form_keluhan.Clickable.ClickableAreasImage;
@@ -46,6 +47,7 @@ public class GedungUActivity extends AppCompatActivity implements OnClickableAre
     public void onClickableAreaTouched(Object item) {
         if (item instanceof State) {
             String text = ((State) item).getName();
+            Toast.makeText(this,text, Toast.LENGTH_SHORT).show();
 
             switch (text) {
                 case "NS":
@@ -100,14 +102,14 @@ public class GedungUActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("NS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. PERAWAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. DOKTER")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("R. KA INSTALASI")));
+        clickableAreas.add(new ClickableArea(50, 20, 50, 50, new State("NS")));
+        clickableAreas.add(new ClickableArea(70, 20, 50, 50, new State("R. PERAWAT")));
+        clickableAreas.add(new ClickableArea(90, 20, 50, 50, new State("R. DOKTER")));
+        clickableAreas.add(new ClickableArea(100, 20, 50, 50, new State("R. KA INSTALASI")));
 
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("PERAWATAN KELAS 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("SELASAR PETUGAS")));
-        clickableAreas.add(new ClickableArea(0, 0, 1840, 2840, new State("PERAWATAN KELAS 3")));
+        clickableAreas.add(new ClickableArea(120, 20, 50, 50, new State("PERAWATAN KELAS 2")));
+        clickableAreas.add(new ClickableArea(130, 20, 50, 50, new State("SELASAR PETUGAS")));
+        clickableAreas.add(new ClickableArea(150, 20, 50, 50, new State("PERAWATAN KELAS 3")));
 
 
         return clickableAreas;
