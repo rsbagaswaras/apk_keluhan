@@ -17,7 +17,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/backgroundbutton"
+        android:background="@drawable/background_btn_style"
         android:text="Glosarium"
         android:textStyle="bold"
         android:textSize="12sp"/>

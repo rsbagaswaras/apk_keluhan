@@ -4,13 +4,12 @@
     <color name="colorPrimaryDark">#B52E17</color>
     <color name="colorAccent">#B52E17</color>
 
+    <color name="background">#2E2A38</color>
+    <color name="green">#37BA3C</color>
+    <color name="red">#EB4b4b</color>
+    <color name="white">#fff</color>
 
-    <!--color untuk gradient tansition-->
-    <color name="purple_500">#FFC107</color>
-    <color name="deep_purple_500">#FF9800</color>
-    <color name="indigo_500">#FF5722</color>
-    <color name="blue_500">#F83E31</color>
-    <color name="cyan_500">#B52E17</color>
-    <color name="light_blue_500">#8A1805</color>
+    <color name="background_dialog">#F7F7F7</color>
+    <color name="text">#A3A3A3</color>
 
 </resources>

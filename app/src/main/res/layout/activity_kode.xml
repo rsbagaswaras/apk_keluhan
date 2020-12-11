@@ -6,7 +6,6 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/colorsatu"
     tools:context=".RegLogin.KodeActivity">
 
     <TextView
@@ -53,7 +52,7 @@
         android:onClick="ClickKode"
         tools:ignore="OnClick"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/reg_btn_style"
+        android:background="@drawable/background_btn_style"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

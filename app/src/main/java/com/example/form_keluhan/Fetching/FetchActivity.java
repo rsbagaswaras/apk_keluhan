@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.form_keluhan.Form.Form;
@@ -33,6 +35,7 @@ public class FetchActivity extends AppCompatActivity {
 
     RecyclerView recview;
     FetchAdapter fetchAdapter;
+    private boolean doubleBacktoExit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,4 +99,22 @@ public class FetchActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBacktoExit){
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBacktoExit = true;
+        Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBacktoExit = false;
+            }
+        }, 2000);
+    }
+
 }

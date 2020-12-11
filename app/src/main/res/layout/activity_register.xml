@@ -140,7 +140,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/reg_btn_style"
+        android:background="@drawable/background_btn_style"
         android:text="Register"
         android:textColor="#ffffff"
         android:onClick="ClickRegister"
