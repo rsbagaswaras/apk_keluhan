@@ -13,4 +13,6 @@
     <color name="cyan_500">#B52E17</color>
     <color name="light_blue_500">#8A1805</color>
 
+    <color name="red">#F44336</color>
+    <color name="green">#4CAF50</color>
 </resources>
