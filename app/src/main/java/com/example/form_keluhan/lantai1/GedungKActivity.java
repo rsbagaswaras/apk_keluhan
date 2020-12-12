@@ -75,66 +75,79 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
 
                 case "URINE & FACES":
                     Intent intent3 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent3.putExtra("data1", "URINE & FACES");
                     startActivity(intent3);
                     break;
 
                 case "GUDANG":
                     Intent intent4 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent4.putExtra("data1", "GUDANG");
                     startActivity(intent4);
                     break;
 
                 case "SAMPLE TAKING":
                     Intent intent5 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent5.putExtra("data1", "SAMPLE TAKING");
                     startActivity(intent5);
                     break;
 
                 case "LAV PETUGAS":
                     Intent intent6 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent6.putExtra("data1", "LAV PETUGAS");
                     startActivity(intent6);
                     break;
 
                 case "LAV":
                     Intent intent7 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent7.putExtra("data1", "LAV");
                     startActivity(intent7);
                     break;
 
                 case "ADMIN BANK DARAH":
                     Intent intent8 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent8.putExtra("data1", "ADMIN BANK DARAH");
                     startActivity(intent8);
                     break;
 
                 case "BANK DARAH":
                     Intent intent9 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent9.putExtra("data1", "BANK DARAH");
                     startActivity(intent9);
                     break;
 
                 case "R.TUNGGU":
                     Intent intent10 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent10.putExtra("data1", "R.TUNGGU");
                     startActivity(intent10);
                     break;
 
                 case "R.REAGEN & ALAT":
                     Intent intent11 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent11.putExtra("data1", "R.REAGEN & ALAT");
                     startActivity(intent11);
                     break;
 
                 case "R.ANALISIS":
                     Intent intent12 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent12.putExtra("data1", "R.ANALISIS");
                     startActivity(intent12);
                     break;
 
                 case "KEPALA LAB /R DOKTER":
                     Intent intent13 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent13.putExtra("data1", "KEPALA LAB /R DOKTER");
                     startActivity(intent13);
                     break;
 
                 case "ADMIN":
                     Intent intent14 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent14.putExtra("data1", "ADMIN");
                     startActivity(intent14);
                     break;
 
                 case "PENDAFTARAN":
                     Intent intent15 = new Intent(GedungKActivity. this, FormActivity.class);
+                    intent15.putExtra("data1", "PENDAFTARAN");
                     startActivity(intent15);
                     break;
 
@@ -158,7 +171,7 @@ public class GedungKActivity extends AppCompatActivity implements OnClickableAre
         clickableAreas.add(new ClickableArea(1400, 900, 100, 100, new State("LAV PETUGAS")));
         clickableAreas.add(new ClickableArea(1570, 900, 100, 200, new State("LAV")));
         clickableAreas.add(new ClickableArea(380, 900, 250, 220, new State("ADMIN BANK DARAH")));
-        clickableAreas.add(new ClickableArea(0, 0, 100, 100, new State("BANK DARAH")));
+        clickableAreas.add(new ClickableArea(390, 900, 100, 100, new State("BANK DARAH")));
         clickableAreas.add(new ClickableArea(70, 990, 250, 400, new State("R.TUNGGU")));
         clickableAreas.add(new ClickableArea(460, 1200, 200, 200, new State("R.REAGEN & ALAT")));
         clickableAreas.add(new ClickableArea(460, 1500, 200, 200, new State("R.ANALISIS")));
