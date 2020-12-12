@@ -148,8 +148,8 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
             keluhan = (TextView)itemView.findViewById(R.id.keluhan);
             imgg = (ImageView)itemView.findViewById(R.id.imgedit);
 
-            edit = (ImageView)itemView.findViewById(R.id.editicon);
-            delete =(ImageView)itemView.findViewById(R.id.deleteicon);
+            edit = (ImageView)itemView.findViewById(R.id.edit);
+            delete =(ImageView)itemView.findViewById(R.id.delete);
         }
     }
 }
