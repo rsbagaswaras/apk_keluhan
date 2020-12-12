@@ -7,7 +7,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.ProgressDialog;
+import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,18 +16,17 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.form_keluhan.Checklist;
+
 import com.example.form_keluhan.R;
-import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,20 +38,19 @@ import java.util.Calendar;
 
 public class FormActivity extends AppCompatActivity  {
 
-    ImageView postImage;
-    Button btn_add;
+    ImageView postImage, img_ceklist;
+    Button btn_add, btn_oke;
     EditText edt_nama, edt_keluhan;
     Spinner spinner;
-    TextView txt_namru;
-    TextView textView;
+    TextView txt_namru, txt_tgl_penyampaian, txt_berhasil, txt_berhasil2;
     int hari, bulan, tahun;
-    ProgressDialog progressDialog;
 
     private Uri pickedImgUri = null;
     private static final int PReqCode = 2 ;
 
     String nama_responden, keluhan;
 
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +59,6 @@ public class FormActivity extends AppCompatActivity  {
 
         imageClick();
         uploadPicture();
-
-        progressDialog = new ProgressDialog(this);
 
         edt_nama = findViewById(R.id.edt_nama);
         edt_keluhan = findViewById(R.id.edt_keluhan);
@@ -77,8 +74,8 @@ public class FormActivity extends AppCompatActivity  {
 
         String finalTanggal = hari + "/" + bulan + "/" + tahun;
 
-        textView = findViewById(R.id.idtanggal);
-        textView.setText(finalTanggal);
+        txt_tgl_penyampaian = findViewById(R.id.idtanggal);
+        txt_tgl_penyampaian.setText(finalTanggal);
 
     }
 
@@ -167,14 +164,14 @@ public class FormActivity extends AppCompatActivity  {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // we need to test all input fields (Title and description ) and post image
-
-                if (!textView.getText().toString().isEmpty()
+                // we need to test all input fields (tgl_penyampaian, edt_nama, txt_namru, spinner, edt_keluhan) and post image
+                if (!txt_tgl_penyampaian.getText().toString().isEmpty()
                         && !edt_nama.getText().toString().isEmpty()
                         && !txt_namru.getText().toString().isEmpty()
                         && !spinner.getSelectedItem().toString().isEmpty()
                         && !edt_keluhan.getText().toString().isEmpty()
                         && pickedImgUri != null ){
+
                     //everything is okey no empty or null value
                     // TODO Create Post Object and add it to firebase database
                     // first we need to upload post Image
@@ -189,7 +186,7 @@ public class FormActivity extends AppCompatActivity  {
                                 public void onSuccess(Uri uri) {
                                     String imageDownlaodLink = uri.toString();
                                     // create post Object
-                                    Form form = new Form(textView.getText().toString(),
+                                    Form form = new Form(txt_tgl_penyampaian.getText().toString(),
                                             edt_nama.getText().toString(),
                                             txt_namru.getText().toString(),
                                             spinner.getSelectedItem().toString(),
@@ -197,7 +194,6 @@ public class FormActivity extends AppCompatActivity  {
                                             imageDownlaodLink);
 
                                     // Add form to firebase database
-
                                     Click3(form);
 
                                 }
@@ -232,9 +228,30 @@ public class FormActivity extends AppCompatActivity  {
     }
 
     private void showProgressDialog(){
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading.....");
-        progressDialog.show();
+
+        dialog = new Dialog(FormActivity.this);
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        Window window = dialog.getWindow();
+        window.setGravity(Gravity.CENTER);
+        window.getAttributes().windowAnimations = R.style.DialogAnimation;
+
+        btn_oke = dialog.findViewById(R.id.btn_oke);
+        txt_berhasil = dialog.findViewById(R.id.txt_berhasil);
+        txt_berhasil2 = dialog.findViewById(R.id.txt_berhasil2);
+        img_ceklist = dialog.findViewById(R.id.img_ceklist);
+
+
+        btn_oke.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setCancelable(true);
+        window.setLayout(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT);
+        dialog.show();
 
     }
 
@@ -243,18 +260,17 @@ public class FormActivity extends AppCompatActivity  {
         //untuk memasukkan ke firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //membuat server pada realtime database
-        DatabaseReference ref = database.getReference("RSBW_KELUHAN").push();
-
         //Referensi database yang dituju
         //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
+        DatabaseReference ref = database.getReference("RSBW_KELUHAN").push();
+
+
 
         ref.setValue(form).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
 
                 showProgressDialog();
-                Toast.makeText(getApplicationContext(), "Data Keluhan Sudah Tersimpan", Toast.LENGTH_SHORT).show();
-
 
                 //mengosongkan isian setelah klik button upload
                 edt_nama.setText("");

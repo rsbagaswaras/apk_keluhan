@@ -15,7 +15,6 @@ import com.example.form_keluhan.Admin.AdminActivityy;
 import com.example.form_keluhan.RegLogin.EmailLoginActivity;
 import com.example.form_keluhan.RegLogin.PhoneLoginActivity;
 import com.example.form_keluhan.RegLogin.RegisterActivity;
-import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -116,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
         if(user!=null){
-            Intent intent = new Intent(getApplicationContext(), Lantai1Activity.class );
+            Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class );
             startActivity(intent);
             finish();
         }

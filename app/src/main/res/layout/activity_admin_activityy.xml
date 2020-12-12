@@ -98,7 +98,7 @@
         android:text="Sign In"
         android:id="@+id/btn_masuk"
         android:layout_marginTop="30dp"
-        android:background="@drawable/reg_btn_style"/>
+        android:background="@drawable/background_btn_style"/>
 
     <Button
         android:layout_width="250dp"
@@ -106,7 +106,7 @@
         android:text="Sign up"
         android:id="@+id/btn_daftar"
         android:layout_marginTop="30dp"
-        android:background="@drawable/reg_btn_style"
+        android:background="@drawable/background_btn_style"
       android:visibility="invisible"/>
 
 

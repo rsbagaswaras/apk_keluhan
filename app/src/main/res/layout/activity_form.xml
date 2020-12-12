@@ -156,19 +156,17 @@
                 android:textColor="#B52E17"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"/>
-
-
             <Button
-        android:id="@+id/btn_add"
-        android:layout_width="323dp"
-        android:layout_height="56dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:onClick="Click3"
-        android:background="@drawable/backgroundbutton"
-        android:text="Kirim"
-       android:textStyle="bold"
-        tools:ignore="OnClick" />
+                android:id="@+id/btn_add"
+                android:layout_width="323dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="Click3"
+                android:background="@drawable/background_btn_style"
+                android:text="Kirim"
+                android:textStyle="bold"
+                tools:ignore="OnClick" />
 
 
         </LinearLayout>
