@@ -152,8 +152,8 @@ public class GedungLActivity extends AppCompatActivity implements OnClickableAre
         clickableAreas.add(new ClickableArea(1000, 150, 150, 150, new State("R.GANTI")));
         clickableAreas.add(new ClickableArea(1250, 120, 150, 150, new State("TOILET")));
         clickableAreas.add(new ClickableArea(1500, 250, 300, 300, new State("MAMMOGRAPHY")));
-        clickableAreas.add(new ClickableArea(200, 780, 200, 200, new State("R.MESIN")));
-        clickableAreas.add(new ClickableArea(470, 800, 200, 200, new State("OPERATOR")));
+        clickableAreas.add(new ClickableArea(200, 900, 300, 300, new State("R.MESIN")));
+        clickableAreas.add(new ClickableArea(800, 900, 300, 300, new State("OPERATOR")));
         clickableAreas.add(new ClickableArea(1500, 800, 300, 300, new State("KEPALA RADIOLOGI")));
         clickableAreas.add(new ClickableArea(1500, 1300, 300, 300, new State("ADMIN")));
         clickableAreas.add(new ClickableArea(1500, 1900, 200, 200, new State("NURSE STATION")));
