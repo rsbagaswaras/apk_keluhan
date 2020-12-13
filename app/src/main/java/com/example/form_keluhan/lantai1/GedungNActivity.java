@@ -120,6 +120,12 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
                     intent9.putExtra("data1",  "BBRT DIARE");
                     startActivity(intent9);
                     break;
+
+                case "PERINOTOLOGI":
+                    Intent intent10 = new Intent(GedungNActivity. this, FormActivity.class);
+                    intent10.putExtra("data1",  "PERINOTOLOGI");
+                    startActivity(intent10);
+                    break;
             }
         }
     }
@@ -131,23 +137,21 @@ public class GedungNActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(20, 100, 50, 50, new State("R.ALAT LINEN")));
-        clickableAreas.add(new ClickableArea(20, 120, 50, 50, new State("DAPUR SUSU")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("R.OBAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("NURSE STATION")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("SH")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT NDN INFEKSIUS")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("LAV")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT INFEKSIUS")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("BBRT DIARE")));
 
-
-
-
-
-
-
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        // , H semakin besar angknay semakin PANJANG
+        clickableAreas.add(new ClickableArea(100, 320, 200, 200, new State("R.ALAT LINEN")));
+        clickableAreas.add(new ClickableArea(450, 200, 200, 250, new State("DAPUR SUSU")));
+        clickableAreas.add(new ClickableArea(820, 200, 200, 250, new State("R.OBAT")));
+        clickableAreas.add(new ClickableArea(1300, 120, 200, 250, new State("NURSE STATION")));
+        clickableAreas.add(new ClickableArea(1700, 120, 200, 250, new State("SH")));
+        clickableAreas.add(new ClickableArea(950, 500, 150, 200, new State("PERINOTOLOGI")));
+        clickableAreas.add(new ClickableArea(380, 850, 200, 350, new State("BBRT NDN INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(820, 750, 150, 150, new State("LAV")));
+        clickableAreas.add(new ClickableArea(980, 750, 150, 150, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(900, 1000, 100, 100, new State("BBRT INFEKSIUS")));
+        clickableAreas.add(new ClickableArea(1500, 1200, 100, 100, new State("BBRT DIARE")));
 
 
 

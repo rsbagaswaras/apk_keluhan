@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Tgl Penyampaian"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="#000"
             android:layout_toRightOf="@id/imgFetch"/>
         <TextView
@@ -33,8 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nama Responden"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="#000"
             android:layout_toRightOf="@id/imgFetch"
             android:layout_below="@+id/tgl_penyampaian"
@@ -44,8 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ruangan"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="#000"
             android:layout_toRightOf="@id/imgFetch"
             android:layout_below="@+id/nama_responden"
@@ -55,8 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kategori"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="#000"
             android:layout_toRightOf="@id/imgFetch"
             android:layout_below="@+id/ruangan"
@@ -66,26 +63,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Keluhan"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textColor="#000"
             android:layout_toRightOf="@id/imgFetch"
             android:layout_below="@+id/kategori"
             android:layout_marginLeft="10dp"/>
 
-        <Button
-            android:id="@+id/checkDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Detail"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@id/imgFetch"
-            android:layout_below="@+id/keluhan"
-            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/editicon"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/edit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="110dp"
+            android:layout_toRightOf="@id/imgFetch"/>
+
+        <ImageView
+            android:id="@+id/deleteicon"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/delete"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="110dp"
+            android:layout_toRightOf="@id/imgFetch"/>
 
     </RelativeLayout>
-
 
 </androidx.cardview.widget.CardView>

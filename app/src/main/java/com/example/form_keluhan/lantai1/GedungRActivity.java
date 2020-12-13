@@ -100,15 +100,20 @@ public class GedungRActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
-        clickableAreas.add(new ClickableArea(80, 20, 50, 50, new State("NS")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("R. PERAWAT")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("R. DOKTER")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("R. KA INSTALASI")));
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        //H semakin besar angknay semakin PANJANG
 
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("PERAWATAN KELAS 2")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("SELASAR PETUGAS")));
-        clickableAreas.add(new ClickableArea(0, 0, 50, 50, new State("PERAWATAN KELAS 3")));
 
+        clickableAreas.add(new ClickableArea(150, 40, 100, 80, new State("NS")));
+        clickableAreas.add(new ClickableArea(750, 60, 80, 80, new State("NS")));
+        clickableAreas.add(new ClickableArea(250, 40, 80, 80, new State("R. PERAWAT")));
+        clickableAreas.add(new ClickableArea(430, 40, 60, 60, new State("R. DOKTER")));
+        clickableAreas.add(new ClickableArea(600, 30, 60, 60, new State("R. KA INSTALASI")));
+
+        clickableAreas.add(new ClickableArea(900, 400, 80, 800, new State("PERAWATAN KELAS 2")));
+        clickableAreas.add(new ClickableArea(470, 400, 80, 800, new State("SELASAR PETUGAS")));
+        clickableAreas.add(new ClickableArea(30, 400, 70, 800, new State("PERAWATAN KELAS 3")));
 
         return clickableAreas;
     }

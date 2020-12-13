@@ -208,6 +208,10 @@ public class GedungGActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        // , H semakin besar angknay semakin PANJANG
+
         clickableAreas.add(new ClickableArea(50, 120, 80, 100, new State("TRANSFER STRECHER KELUAR")));
 
         clickableAreas.add(new ClickableArea(120, 50, 100, 60, new State("COUNTER")));

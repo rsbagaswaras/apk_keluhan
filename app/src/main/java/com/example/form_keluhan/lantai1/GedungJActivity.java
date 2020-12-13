@@ -166,6 +166,10 @@ public class GedungJActivity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
+
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        // , H semakin besar angknay semakin PANJANG
         clickableAreas.add(new ClickableArea(100, 10, 200, 200, new State("LOKER PETUGAS")));
         clickableAreas.add(new ClickableArea(100, 200, 200, 200, new State("ICU INFEKSIUS")));
         clickableAreas.add(new ClickableArea(100, 200, 200, 200, new State("R.TRANSISI")));
