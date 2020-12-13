@@ -22,10 +22,12 @@ public class WelcomeActivity extends AppCompatActivity {
         btn_welcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent welcome = new Intent(WelcomeActivity.this, Lantai1Activity.class);
+                Intent welcome = new Intent(WelcomeActivity.this, DashboardActivity.class);
                 startActivity(welcome);
                 finish();
             }
         });
     }
+
+
 }

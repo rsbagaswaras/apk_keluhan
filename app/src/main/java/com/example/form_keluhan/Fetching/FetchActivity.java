@@ -42,7 +42,7 @@ public class FetchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fetch);
 
-        recview = (RecyclerView)findViewById(R.id.recview);
+        recview = findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Form> options =
