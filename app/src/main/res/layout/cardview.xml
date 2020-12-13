@@ -71,7 +71,7 @@
 
 
         <ImageView
-            android:id="@+id/edit"
+            android:id="@+id/editicon"
             android:layout_width="50dp"
             android:layout_height="30dp"
             app:srcCompat="@drawable/edit"
@@ -80,7 +80,7 @@
             android:layout_toRightOf="@id/imgFetch"/>
 
         <ImageView
-            android:id="@+id/delete"
+            android:id="@+id/deleteicon"
             android:layout_width="50dp"
             android:layout_height="30dp"
             app:srcCompat="@drawable/delete"
