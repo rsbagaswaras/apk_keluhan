@@ -153,7 +153,10 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
 
             edit = (ImageView)itemView.findViewById(R.id.edit);
             delete =(ImageView)itemView.findViewById(R.id.delete);
+
             myCalender = (EditText)itemView.findViewById(R.id.datedeparture);
+
+
         }
     }
 }
