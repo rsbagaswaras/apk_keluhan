@@ -167,6 +167,9 @@ public class GedungAAActivity extends AppCompatActivity implements OnClickableAr
     private List<ClickableArea> getClickableAreas() {
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        // , H semakin besar angknay semakin PANJANG
 
         clickableAreas.add(new ClickableArea(70, 60, 60, 60, new State("RUANG DELIVERY")));
 
