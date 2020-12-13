@@ -94,6 +94,8 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
                                                 dialogPlus.dismiss();
                                             }
                                         });
+
+
                             }
                         });
                 }
@@ -103,7 +105,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder=new AlertDialog.Builder(holder.img.getContext());
-                    builder.setTitle("Delete Panel");
+                    builder.setTitle("Delete Data");
                     builder.setMessage("Delete....?");
 
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -136,6 +138,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
     class myviewholder extends RecyclerView.ViewHolder{
 
         ImageView img,edit,imgg,delete;
+        EditText myCalender;
         TextView tgl_penyampaian, nama_responden, ruangan, kategori, keluhan;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -148,8 +151,9 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
             keluhan = (TextView)itemView.findViewById(R.id.keluhan);
             imgg = (ImageView)itemView.findViewById(R.id.imgedit);
 
-            edit = (ImageView)itemView.findViewById(R.id.editicon);
-            delete =(ImageView)itemView.findViewById(R.id.deleteicon);
+            edit = (ImageView)itemView.findViewById(R.id.edit);
+            delete =(ImageView)itemView.findViewById(R.id.delete);
+            myCalender = (EditText)itemView.findViewById(R.id.datedeparture);
         }
     }
 }

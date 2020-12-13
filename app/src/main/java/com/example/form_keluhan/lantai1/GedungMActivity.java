@@ -161,13 +161,13 @@ public class GedungMActivity extends AppCompatActivity implements OnClickableAre
         clickableAreas.add(new ClickableArea(1400, 200, 100, 300, new State("COUNTER BIDAN")));
         clickableAreas.add(new ClickableArea(1700, 200, 100, 500, new State("R.BAYI")));
         clickableAreas.add(new ClickableArea(500, 580, 500, 150, new State("INSTALASI KEBIDANAN")));
-        clickableAreas.add(new ClickableArea(190, 700, 300, 300, new State("GUDANG")));
-        clickableAreas.add(new ClickableArea(400, 730, 300, 300, new State("R.DOKTER")));
+        clickableAreas.add(new ClickableArea(190, 800, 300, 300, new State("GUDANG")));
+        clickableAreas.add(new ClickableArea(490, 800, 300, 300, new State("R.DOKTER")));
         clickableAreas.add(new ClickableArea(190, 1500, 270, 300, new State("R.ISOLASI")));
         clickableAreas.add(new ClickableArea(420, 1550, 220, 300, new State("VK.PATOLOGIS")));
-        clickableAreas.add(new ClickableArea(490, 1600, 100, 100, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(530, 1600, 100, 100, new State("LAV 2")));
-        clickableAreas.add(new ClickableArea(1500, 1000, 100, 300, new State("R.BERSALIN")));
+        clickableAreas.add(new ClickableArea(600, 1650, 100, 100, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(600, 1650, 100, 100, new State("LAV 2")));
+        clickableAreas.add(new ClickableArea(1500, 800, 100, 300, new State("R.BERSALIN")));
         clickableAreas.add(new ClickableArea(1500, 1600, 100, 300, new State("R.BERSALIN 2")));
 
 
