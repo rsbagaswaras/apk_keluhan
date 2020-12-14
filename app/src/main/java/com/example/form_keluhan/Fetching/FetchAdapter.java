@@ -59,7 +59,6 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
                     final EditText ruangan=myview.findViewById(R.id.ruangan);
                     final EditText kategori=myview.findViewById(R.id.kategori);
                     final EditText keluhan=myview.findViewById(R.id.keluhan);
-                    Glide.with(holder.img.getContext()).load(form.getPicture()).into(holder.img);
                     EditText tanggal_dirubah=myview.findViewById(R.id.datedeparture);
                     Button submit=myview.findViewById(R.id.usubmit);
 
@@ -145,7 +144,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
     class myviewholder extends RecyclerView.ViewHolder{
 
         //Deklarasi
-        ImageView img,edit,imgg,delete;
+        ImageView img,edit,delete;
         EditText myCalender;
         TextView tgl_penyampaian, nama_responden, ruangan, kategori, keluhan;
         public myviewholder(@NonNull View itemView) {
@@ -157,7 +156,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
             ruangan = (TextView)itemView.findViewById(R.id.ruangan);
             kategori = (TextView)itemView.findViewById(R.id.kategori);
             keluhan = (TextView)itemView.findViewById(R.id.keluhan);
-            imgg = (ImageView)itemView.findViewById(R.id.imgedit);
+
 
             edit = (ImageView)itemView.findViewById(R.id.editicon);
             delete =(ImageView)itemView.findViewById(R.id.deleteicon);
