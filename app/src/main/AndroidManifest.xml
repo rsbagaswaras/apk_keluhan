@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        
-        <activity android:name=".Checklist" />
+        <activity android:name=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar2"/>
         <activity android:name=".lantai2.Glosarium2Activity" />
         <activity android:name=".lantai1.GolosariumActivity" />
         <activity android:name=".Admin.AdminActivityy" />
@@ -54,11 +54,14 @@
         <activity android:name=".Form.FormActivity" />
         <activity android:name=".lantai2.Lantai2Activity" />
         <activity android:name=".lantai1.Lantai1Activity" />
-        <activity android:name=".WelcomeActivity"
-            android:theme="@style/AppTheme.NoActionBar2"/>
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar2" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,9 +70,9 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

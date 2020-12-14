@@ -32,7 +32,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
     private EditText emailet, passwordet ;
     private ProgressDialog progressDialog;
     private DatabaseReference mDatabase;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuthAdmin;
     private Button btnMasuk;
     private Button btnDaftar;
 
@@ -48,7 +48,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
 
         //variabel tadi untuk memanggil fungsi
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
+        mAuthAdmin = FirebaseAuth.getInstance();
 
         // diatur sesuai id komponennya
         progressDialog = new ProgressDialog(this);
@@ -97,7 +97,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         String email = emailet.getText().toString();
         String password = passwordet.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
+        mAuthAdmin.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -127,7 +127,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         String email = emailet.getText().toString();
         String password = passwordet.getText().toString();
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuthAdmin.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -205,9 +205,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
             signUp();
         }
 
-
     }
-
 
 
 }
