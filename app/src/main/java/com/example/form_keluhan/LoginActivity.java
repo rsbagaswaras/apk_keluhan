@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void createRequest() {
-        // Configure Google Sign In
+        // konfigurasi akun google yang ada dihp
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -142,17 +142,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+
+        //hasil nek stlh peluncuran intent google signin
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 //Google Sign In was successful, authenticate with Firebase
+                //google berhasil login menggunakan auth firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                //  Log.w(TAG, "Google sign in failed", e);
-                // ...
+
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -167,20 +168,14 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            //sign in sukses, llalu mengupdate ui selanjutnya stlh login
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class );
                             startActivity(intent);
                             finish();
 
-                            // } else {
-                            //   Toast.makeText(MainActivity.this, "Sorry Auth Failed", Toast.LENGTH_SHORT).show();
-                            // If sign in fails, display a message to the user.
-                            // Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            //  updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }
