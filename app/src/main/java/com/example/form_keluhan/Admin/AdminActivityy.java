@@ -153,9 +153,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
 
         // Go to FetchActivity
        Intent fetch = new Intent(AdminActivityy.this, FetchActivity.class);
-        fetch.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(fetch);
-        finish();
     }
 
     /*

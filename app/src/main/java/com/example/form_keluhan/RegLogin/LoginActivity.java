@@ -1,4 +1,4 @@
-package com.example.form_keluhan;
+package com.example.form_keluhan.RegLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.form_keluhan.Admin.AdminActivityy;
-import com.example.form_keluhan.RegLogin.EmailLoginActivity;
-import com.example.form_keluhan.RegLogin.PhoneLoginActivity;
-import com.example.form_keluhan.RegLogin.RegisterActivity;
+import com.example.form_keluhan.R;
+import com.example.form_keluhan.WelcomeActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -171,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
                             //sign in sukses, llalu mengupdate ui selanjutnya stlh login
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class );
+                            Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class );
                             startActivity(intent);
                             finish();
 
@@ -185,8 +184,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (doubleBacktoExit){
-            super.onBackPressed();
-            return;
+            finishAffinity();
+            finish();
         }
         this.doubleBacktoExit = true;
         Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();

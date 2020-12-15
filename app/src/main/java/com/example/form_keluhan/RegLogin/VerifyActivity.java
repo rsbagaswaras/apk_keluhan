@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.form_keluhan.R;
 
@@ -13,6 +15,7 @@ public class VerifyActivity extends AppCompatActivity {
 
 
     private TextView tvLogin, tvPhone;
+    private boolean doubleBacktoExit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +49,24 @@ public class VerifyActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBacktoExit){
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
+        }
+        this.doubleBacktoExit = true;
+        Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBacktoExit = false;
+            }
+        }, 2000);
     }
 }

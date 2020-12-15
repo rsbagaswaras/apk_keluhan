@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.form_keluhan.RegLogin.LoginActivity;
 import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.example.form_keluhan.lantai2.Lantai2Activity;
 import com.firebase.ui.auth.AuthUI;
@@ -75,8 +76,10 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (doubleBacktoExit){
-            super.onBackPressed();
-            return;
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
         this.doubleBacktoExit = true;
         Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();

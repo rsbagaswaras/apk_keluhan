@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.form_keluhan.Form.Form;
 import com.example.form_keluhan.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,6 +30,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -42,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
     ImageView ImgUserPhoto;
     static int PReqCode = 1 ;
     static int REQUESCODE = 1 ;
-    Uri pickedImgUri ;
 
     private EditText inputNama, inputEmail, inputPassword, inputConfirmPassword, inputPhone;
     private Button btnRegister;
@@ -66,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputConfirmPassword = findViewById(R.id.regConfirmPassword);
 
         loadingProgress = findViewById(R.id.regProgressBar);
-        loadingProgress.setVisibility(View.INVISIBLE);
+        loadingProgress.setVisibility(View.GONE);
 
         btnRegister = findViewById(R.id.regBtn);
 
@@ -112,22 +114,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-        ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
-        ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= 22) {
-                    checkAndRequestForPermission();
-                }
-                else
-                {
-                    openGallery();
-                }
-            }
-        });
-
 
 
     }
@@ -200,11 +186,11 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else
         {
-            doRegister(nama, email,password);
+            doRegister(email,password);
         }
     }
 
-    private void doRegister( final String nama, String email, String password)
+    private void doRegister(String email, String password)
     {
         btnRegister.setEnabled(false);
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -212,14 +198,20 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful())
                 {
-                    updateUserInfo( nama ,pickedImgUri,mAuth.getCurrentUser());
+                    Register register = new Register(inputNama.getText().toString(),
+                            inputEmail.getText().toString(),
+                            inputPassword.getText().toString());
+
+                    updateUserInfo(register);
+                    loadingProgress.setVisibility(View.VISIBLE);
                     sendVerificationEmail();
+
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                if (e instanceof FirebaseAuthUserCollisionException) //this exception means email already registered
+                if (e instanceof FirebaseAuthUserCollisionException) //Apabila Email Sudah Register
                 {
                     btnRegister.setEnabled(true);
                     inputEmail.setError("Email Already Registered");
@@ -235,42 +227,33 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void updateUserInfo(final String nama, Uri pickedImgUri, final FirebaseUser currentUser) {
+    private void updateUserInfo(Register register) {
 
-        // first we need to upload user photo to firebase storage and get url
-        StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
-        final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
-        imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+        //untuk memasukkan ke firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //membuat server pada realtime database
+        //Referensi database yang dituju("RSBW KELUHAN")
+        //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
+        DatabaseReference reg = database.getReference("Register").push();
+
+        //memberi nilai pada referensi yang dituju
+        reg.child("Nama").setValue(inputNama.getText().toString());
+        reg.child("Email").setValue(inputEmail.getText().toString());
+        reg.child("Password").setValue(inputPassword.getText().toString());
+
+        reg.setValue(register).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+            public void onSuccess(Void aVoid) {
 
-                // image uploaded succesfully
-                // now we can get our image url
-                imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
+                loadingProgress.setVisibility(View.INVISIBLE);
+                showMessage("Berhasil Mendaftar!");
+                updateUI();
 
-                        // uri contain user image url
-                        UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(nama)
-                                .setPhotoUri(uri)
-                                .build();
 
-                        currentUser.updateProfile(profleUpdate)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            // user info updated successfully
-                                            showMessage("Register Complete");
-                                            updateUI();
-                                        }
-                                    }
-                                });
-                    }
-                });
             }
         });
+
     }
 
     //11
@@ -295,7 +278,6 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful())
                     {
                         btnRegister.setEnabled(true);
-                        sendToLoginWithEmailAndPassword();
                     }
                     else
                     {
@@ -307,49 +289,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void sendToLoginWithEmailAndPassword()
-    {
-        Intent intent = new Intent(getApplicationContext(), VerifyActivity.class);
-        intent.putExtra("email",email);
-        intent.putExtra("password",password);
-        //forgot to start activity
-        startActivity(intent);
-    }
-    private void openGallery() {
-        //TODO: open gallery intent and wait for user to pick an image !
-        Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent,REQUESCODE);
-    }
-    private void checkAndRequestForPermission() {
-        if (ContextCompat.checkSelfPermission(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                Toast.makeText(RegisterActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                ActivityCompat.requestPermissions(RegisterActivity.this,
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        PReqCode);
-            }
-        }
-        else
-            openGallery();
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
-            // the user has successfully picked an image
-            // we need to save its reference to a Uri variable
-            pickedImgUri = data.getData() ;
-            ImgUserPhoto.setImageURI(pickedImgUri);
-        }
-    }
 
 
 }

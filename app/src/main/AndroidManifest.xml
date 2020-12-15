@@ -58,7 +58,7 @@
             android:name=".WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar2" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".RegLogin.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar2" />
         <activity
             android:name=".MainActivity"

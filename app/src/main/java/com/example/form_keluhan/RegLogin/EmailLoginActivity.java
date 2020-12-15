@@ -41,28 +41,26 @@ public class EmailLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email_login);
 
+        loginPhoto = findViewById(R.id.login_photo);
         userMail = findViewById(R.id.login_mail);
         userPassword = findViewById(R.id.login_password);
-        btnLogin = findViewById(R.id.loginBtn);
+
         loginProgress = findViewById(R.id.login_progress);
+        loginProgress.setVisibility(View.GONE);
+
         mAuth = FirebaseAuth.getInstance();
         Lantai1Activity = new Intent(this, com.example.form_keluhan.lantai1.Lantai1Activity.class);
-        loginPhoto = findViewById(R.id.login_photo);
 
-        loginProgress.setVisibility(View.INVISIBLE);
+        btnLogin = findViewById(R.id.loginBtn);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginProgress.setVisibility(View.VISIBLE);
-                btnLogin.setVisibility(View.INVISIBLE);
 
                 final String mail = userMail.getText().toString();
                 final String password = userPassword.getText().toString();
 
                 if (mail.isEmpty() || password.isEmpty()) {
                     showMessage("Please Verify All Field");
-                    btnLogin.setVisibility(View.VISIBLE);
-                    loginProgress.setVisibility(View.INVISIBLE);
                 } else {
                     signIn(mail, password);
                 }
@@ -93,12 +91,10 @@ public class EmailLoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    loginProgress.setVisibility(View.INVISIBLE);
-                    btnLogin.setVisibility(View.VISIBLE);
+                    loginProgress.setVisibility(View.VISIBLE);
                     updateUI();
                 } else {
                     showMessage(task.getException().getMessage());
-                    btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }
             }

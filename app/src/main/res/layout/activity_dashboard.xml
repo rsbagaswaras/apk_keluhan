@@ -9,10 +9,13 @@
 
     <View
         android:id="@+id/view1"
-        android:layout_width="412dp"
+        android:layout_width="wrap_content"
         android:layout_height="290dp"
         android:layout_marginBottom="80dp"
         android:background="@drawable/motif_wave"
+        android:layout_weight="1"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toTopOf="@+id/linear1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

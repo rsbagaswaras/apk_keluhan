@@ -17,6 +17,11 @@ import com.example.form_keluhan.Clickable.ClickableArea;
 import com.example.form_keluhan.Clickable.ClickableAreasImage;
 import com.example.form_keluhan.Clickable.State;
 import com.example.form_keluhan.R;
+import com.example.form_keluhan.RegLogin.LoginActivity;
+import com.example.form_keluhan.lantai1.Lantai1Activity;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,17 +139,36 @@ public class Lantai2Activity extends AppCompatActivity implements OnClickableAre
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_lantai1_drawer, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.nav_Logout) {
+            signOut();
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    private void signOut(){
+        AuthUI.getInstance()
+                .signOut(Lantai2Activity.this)
+                .addOnCompleteListener(new OnCompleteListener<Void>(){
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent loginActivity = new Intent(Lantai2Activity.this, LoginActivity.class);
+                        startActivity(loginActivity);
 
+                    }
+                });
     }
+
 }

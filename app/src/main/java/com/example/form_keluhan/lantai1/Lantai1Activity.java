@@ -18,9 +18,7 @@ import com.example.form_keluhan.Clickable.ClickableArea;
 import com.example.form_keluhan.Clickable.ClickableAreasImage;
 import com.example.form_keluhan.Clickable.OnClickableAreaClickedListener;
 import com.example.form_keluhan.Clickable.State;
-import com.example.form_keluhan.Form.Form;
-import com.example.form_keluhan.LoginActivity;
-import com.example.form_keluhan.lantai2.Lantai2Activity;
+import com.example.form_keluhan.RegLogin.LoginActivity;
 import com.example.form_keluhan.R;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -292,6 +290,7 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
                     }
                 });
     }
+
 
 }
 

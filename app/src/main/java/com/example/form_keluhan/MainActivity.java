@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.form_keluhan.Fetching.FetchActivity;
+import com.example.form_keluhan.RegLogin.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,19 +27,11 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //apabila sudah login, maka berpindah ke dashboard activity
-                if (mAuth == null){
+
+                //berpindah ke login activity
                     Intent home = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(home);
                     finish();
-               }else {
-                    //sapabila belum login, maka berpindah ke login activity
-                    Intent login = new Intent(MainActivity.this, DashboardActivity.class);
-                    login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(login);
-                    finish();
-
-                }
 
             }
         },waktu_loading);
