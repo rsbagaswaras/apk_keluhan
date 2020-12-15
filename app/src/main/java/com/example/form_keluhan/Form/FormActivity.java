@@ -99,14 +99,14 @@ public class FormActivity extends AppCompatActivity  {
             public void onClick(DialogInterface dialog, int item) {
                 if (options[item].equals("Ambil Foto"))
                 {
-                    //Request for camera permission
+                    //Izin untuk membuka kamera
                     if (ContextCompat.checkSelfPermission(FormActivity.this,
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         ActivityCompat.requestPermissions(FormActivity.this,
                                 new String[] { Manifest.permission.CAMERA}, PReqCode);
                     }
                     else {
-                        //Open Camera
+                        //perintah untuk membuka kamera
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivityForResult(intent, 1);
@@ -164,7 +164,7 @@ public class FormActivity extends AppCompatActivity  {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // we need to test all input fields (tgl_penyampaian, edt_nama, txt_namru, spinner, edt_keluhan) and post image
+                // test semua data yang diinput (tgl_penyampaian, edt_nama, txt_namru, spinner, edt_keluhan) dan post image
                 if (!txt_tgl_penyampaian.getText().toString().isEmpty()
                         && !edt_nama.getText().toString().isEmpty()
                         && !txt_namru.getText().toString().isEmpty()
@@ -185,7 +185,7 @@ public class FormActivity extends AppCompatActivity  {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String imageDownlaodLink = uri.toString();
-                                    // create post Object
+                                    // create form Object
                                     Form form = new Form(txt_tgl_penyampaian.getText().toString(),
                                             edt_nama.getText().toString(),
                                             txt_namru.getText().toString(),
@@ -260,7 +260,7 @@ public class FormActivity extends AppCompatActivity  {
         //untuk memasukkan ke firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //membuat server pada realtime database
-        //Referensi database yang dituju
+        //Referensi database yang dituju("RSBW KELUHAN")
         //Fungsi push() untuk menghasilkan kunci unik untuk setiap turunan baru
         DatabaseReference ref = database.getReference("RSBW_KELUHAN").push();
 

@@ -21,13 +21,14 @@ public class DashboardActivity extends AppCompatActivity {
 
     LinearLayout linear1, linear2;
     TextView txt_logout;
+    View view;
     private boolean doubleBacktoExit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        view = findViewById(R.id.view1);
         linear1 = findViewById(R.id.linear1);
         linear1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +67,7 @@ public class DashboardActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         Intent loginActivity = new Intent(DashboardActivity.this, LoginActivity.class);
                         startActivity(loginActivity);
-
+                        finish();
                     }
                 });
     }

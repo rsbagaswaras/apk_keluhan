@@ -151,8 +151,10 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         // membuat User admin baru
         writeNewAdmin(user.getUid(), username, user.getEmail());
 
-        // Go to MainActivity
-        startActivity(new Intent(AdminActivityy.this, FetchActivity.class));
+        // Go to FetchActivity
+       Intent fetch = new Intent(AdminActivityy.this, FetchActivity.class);
+        fetch.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(fetch);
         finish();
     }
 

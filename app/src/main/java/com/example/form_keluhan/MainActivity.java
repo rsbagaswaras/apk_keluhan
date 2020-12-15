@@ -28,17 +28,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //apabila sudah login, maka berpindah ke dashboard activity
-                if (mAuth != null){
-                    Intent home = new Intent(MainActivity.this, DashboardActivity.class);
-                    home.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                if (mAuth == null){
+                    Intent home = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(home);
                     finish();
-               }else{
+               }else {
                     //sapabila belum login, maka berpindah ke login activity
-                    Intent login = new Intent(MainActivity.this, LoginActivity.class);
-                    login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Intent login = new Intent(MainActivity.this, DashboardActivity.class);
+                    login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(login);
                     finish();
 
