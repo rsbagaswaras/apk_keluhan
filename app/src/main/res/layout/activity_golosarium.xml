@@ -12,11 +12,12 @@
 
         <ImageView
             android:id="@+id/glosarium"
-            android:layout_marginTop="830dp"
+            android:layout_marginTop="800dp"
             android:layout_gravity="center"
+            android:padding="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/glosarium" />
+            app:srcCompat="@drawable/glosarium_min" />
 
     </ScrollView>
 

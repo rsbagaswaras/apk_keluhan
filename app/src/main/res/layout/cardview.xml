@@ -74,7 +74,7 @@
             android:id="@+id/editicon"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/edit"
+            app:srcCompat="@drawable/edit_min"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="110dp"
             android:layout_toRightOf="@id/imgFetch"/>
@@ -83,7 +83,7 @@
             android:id="@+id/deleteicon"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/delete"
+            app:srcCompat="@drawable/delete_min"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="110dp"
             android:layout_toRightOf="@id/imgFetch"/>
