@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="290dp"
         android:layout_marginBottom="80dp"
-        android:background="@drawable/motif_wave"
+        android:background="@drawable/motif_wave_min"
         android:layout_weight="1"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"

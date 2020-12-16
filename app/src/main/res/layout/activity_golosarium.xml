@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/glosarium1" />
 
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

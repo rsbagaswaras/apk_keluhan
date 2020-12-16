@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +43,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
         holder.ruangan.setText(form.getRuangan());
         holder.kategori.setText(form.getKategori());
         holder.keluhan.setText(form.getKeluhan());
+
         Glide.with(holder.img.getContext()).load(form.getPicture()).into(holder.img);
 
         //Agar button edit bisa diintent
@@ -54,20 +56,24 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
                             .create();
             //Proses saat edit text pada dialogcontent.xml bisa muncul
                 View myview=dialogPlus.getHolderView();
-                    final EditText tgl_penyampaian=myview.findViewById(R.id.tanggal_penyampaian);
+                    final EditText tanggal_selesai_diproses=myview.findViewById(R.id.tanggal_admin);
                     final EditText nama_responden=myview.findViewById(R.id.nama_responden);
                     final EditText ruangan=myview.findViewById(R.id.ruangan);
                     final EditText kategori=myview.findViewById(R.id.kategori);
                     final EditText keluhan=myview.findViewById(R.id.keluhan);
-                    EditText tanggal_dirubah=myview.findViewById(R.id.datedeparture);
+
+
                     Button submit=myview.findViewById(R.id.usubmit);
 
                     //Proses pemanggilan data pada card view dibagian form.java dengan menggunakaan getter setter nya
-                    tgl_penyampaian.setText(form.getTanggal_penyampaian());
+
+                    tanggal_selesai_diproses.setText(form.getTanggal_penyampaian());
                     nama_responden.setText(form.getNama_responden());
                     ruangan.setText(form.getRuangan());
                     kategori.setText(form.getKategori());
                     keluhan.setText(form.getKeluhan());
+
+
 
                 //dialogcontent.xml berhasil dimunculkan
                     dialogPlus.show();
@@ -77,11 +83,13 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
                             @Override
                             public void onClick(View v) {
                                 Map<String,Object> map=new HashMap<>();
-                                map.put("tgl_penyampaian",tgl_penyampaian.getText().toString());
+                                map.put("tanggal_selesai_diproses",tanggal_selesai_diproses.getText().toString());
                                 map.put("nama_responden",nama_responden.getText().toString());
                                 map.put("ruangan",ruangan.getText().toString());
                                 map.put("kategori",kategori.getText().toString());
                                 map.put("keluhan",keluhan.getText().toString());
+
+
 
                                //Data yang sudah diedit lalu berhasil di update akan otomatis berubah pada card view di fetching data
                                 // dan juga pada firebase (data akan diperbaharui)
@@ -145,8 +153,8 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
 
         //Deklarasi
         ImageView img,edit,delete;
-        EditText myCalender;
         TextView tgl_penyampaian, nama_responden, ruangan, kategori, keluhan;
+
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -161,7 +169,9 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
             edit = (ImageView)itemView.findViewById(R.id.editicon);
             delete =(ImageView)itemView.findViewById(R.id.deleteicon);
 
-            myCalender = (EditText)itemView.findViewById(R.id.datedeparture);
+
+
+
 
 
         }
