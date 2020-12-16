@@ -22,6 +22,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -49,6 +50,7 @@ public class FormActivity extends AppCompatActivity  {
     private static final int PReqCode = 2 ;
 
     String nama_responden, keluhan;
+    private ProgressBar loadingProgress;
 
     Dialog dialog;
 
@@ -76,6 +78,9 @@ public class FormActivity extends AppCompatActivity  {
 
         txt_tgl_penyampaian = findViewById(R.id.idtanggal);
         txt_tgl_penyampaian.setText(finalTanggal);
+
+        loadingProgress = findViewById(R.id.formProgressBar);
+        loadingProgress.setVisibility(View.GONE);
 
     }
 
@@ -171,6 +176,9 @@ public class FormActivity extends AppCompatActivity  {
                         && !spinner.getSelectedItem().toString().isEmpty()
                         && !edt_keluhan.getText().toString().isEmpty()
                         && pickedImgUri != null ){
+
+
+                    loadingProgress.setVisibility(View.VISIBLE);
 
                     //everything is okey no empty or null value
                     // TODO Create Post Object and add it to firebase database
@@ -270,6 +278,7 @@ public class FormActivity extends AppCompatActivity  {
             @Override
             public void onSuccess(Void aVoid) {
 
+                loadingProgress.setVisibility(View.INVISIBLE);
                 showProgressDialog();
 
                 //mengosongkan isian setelah klik button upload
