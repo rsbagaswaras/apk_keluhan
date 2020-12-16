@@ -31,11 +31,11 @@
 
         <LinearLayout
             android:id="@+id/layoutInput"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="250dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/background_white"
             android:orientation="vertical"
@@ -43,45 +43,46 @@
 
             <Button
                 android:id="@+id/sign_in_button"
-                android:layout_width="325dp"
-                android:layout_height="50dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textAlignment="textStart"
                 android:elevation="10dp"
-                android:paddingLeft="100dp"
+                android:paddingLeft="36dp"
+                android:paddingRight="16dp"
                 android:textAllCaps="false"
-                android:layout_gravity="center_horizontal"
-                tools:ignore="RtlCompat"
+                android:drawableLeft="@drawable/google_icon"
                 android:background="@drawable/background_white"
                 android:text="Masuk dengan Google"/>
 
+
+
             <Button
                 android:id="@+id/btn_phonenumber"
-                android:layout_width="321dp"
-                android:layout_height="48dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_button_nohp"
-                android:text="Masuk dengan No.Handphone"
-                android:textAlignment="textStart"
-                android:paddingLeft="100dp"
                 android:elevation="10dp"
-                android:textAllCaps="false"
-                android:layout_gravity="center_horizontal"
-                tools:ignore="RtlCompat" />
+                android:paddingLeft="40dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/white"
+                android:drawableLeft="@drawable/hp_icon"
+                android:background="@drawable/background_button_nohp"
+                android:text="Masuk dengan No.HP"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_login"
-                android:layout_width="321dp"
-                android:layout_height="48dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/background_button_email"
-                android:textAlignment="textStart"
+                android:textColor="@color/white"
                 android:elevation="10dp"
-                android:paddingLeft="100dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="25dp"
+                android:drawableLeft="@drawable/email_icon"
+                android:background="@drawable/background_button_email"
                 android:text="Masuk dengan Email"
-                android:textAllCaps="false"
-                android:layout_gravity="center_horizontal"
-                tools:ignore="RtlCompat" />
+                android:textAllCaps="false"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -93,7 +94,7 @@
                     android:id="@+id/txt_reg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="45dp"
                     android:text="Belum punya akun?" />
 
                 <TextView
@@ -135,11 +136,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layoutInput"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_alignParentRight="true"
             android:padding="18dp"
             android:text="Masuk sebagai Admin ->"
-            android:textColor="#090808"
+            android:textColor="#000000"
             android:textStyle="bold" />
     </RelativeLayout>
 
