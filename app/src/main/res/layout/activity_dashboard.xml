@@ -82,8 +82,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="120dp"
-            android:src="@drawable/lantai1_icon" />
+            android:src="@drawable/lantai1_icon_min"
+            android:layout_marginLeft="120dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -119,8 +119,8 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="115dp"
-            android:src="@drawable/lantai2_icon" />
+            android:src="@drawable/lantai2_icon_min"
+            android:layout_marginLeft="115dp" />
     </LinearLayout>
 
     <TextView
