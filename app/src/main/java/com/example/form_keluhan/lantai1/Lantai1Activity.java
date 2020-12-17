@@ -181,6 +181,10 @@ public class Lantai1Activity extends AppCompatActivity implements OnClickableAre
 
         List<ClickableArea> clickableAreas = new ArrayList<>();
 
+
+        //X semakin besar jumlah angkanya KEKANAN ,
+        // Y semakin besar jumlah angkanya KEBAWAH , W semakin besar angkanya semakin LEBAR
+        // , H semakin besar angknay semakin PANJANG
         clickableAreas.add(new ClickableArea(270, 420, 50, 50, new State("L. RADIOLOGI")));
         clickableAreas.add(new ClickableArea(350, 420, 50, 50, new State("K.LABORATORIUM")));
         clickableAreas.add(new ClickableArea(350, 500, 50, 50, new State("M.INSTALASI KEBIDANAN")));

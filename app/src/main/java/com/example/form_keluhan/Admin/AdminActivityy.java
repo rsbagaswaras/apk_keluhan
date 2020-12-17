@@ -28,6 +28,8 @@ import cyd.awesome.material.AwesomeText;
 import cyd.awesome.material.FontCharacterMaps;
 
 public class AdminActivityy extends AppCompatActivity  implements View.OnClickListener {
+
+    //variabel global teteapi hanya dikelas iini, jika ingin dikelas lain tinggal diganti public
     private static final String TAG = "AdminActivityy";
     private EditText emailet, passwordet ;
     private ProgressDialog progressDialog;
@@ -124,6 +126,7 @@ public class AdminActivityy extends AppCompatActivity  implements View.OnClickLi
         }
 
         //showProgressDialog();
+        //variabel lokal
         String email = emailet.getText().toString();
         String password = passwordet.getText().toString();
 

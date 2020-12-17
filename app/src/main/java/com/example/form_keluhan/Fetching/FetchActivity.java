@@ -38,11 +38,13 @@ public class FetchActivity extends AppCompatActivity {
         recview = findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
+        //database yg akan dibuat pada fetching
         FirebaseRecyclerOptions<Form> options =
                 new FirebaseRecyclerOptions.Builder<Form>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("RSBW_KELUHAN"), Form.class)
                         .build();
 
+        //memanggil data fetch adapter yang akan ditampilkan di fetching
         fetchAdapter = new FetchAdapter(options);
         recview.setAdapter(fetchAdapter);
     }

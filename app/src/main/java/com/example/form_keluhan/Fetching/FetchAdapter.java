@@ -30,12 +30,16 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+//menghubungkan data dari database ke recycler view dan mengatur bagaimana data yg akan ditampilkan
 public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myviewholder> {
 
+    //untuk menerima list dari database
     public FetchAdapter(@NonNull FirebaseRecyclerOptions<Form> options) {
         super(options);
     }
 
+
+    //memasukkan data ke tampilan, atau menampilkan data
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Form form) {
         holder.tgl_penyampaian.setText(form.getTanggal_penyampaian());
@@ -43,6 +47,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
         holder.ruangan.setText(form.getRuangan());
         holder.kategori.setText(form.getKategori());
         holder.keluhan.setText(form.getKeluhan());
+
 
         Glide.with(holder.img.getContext()).load(form.getPicture()).into(holder.img);
 
@@ -145,10 +150,13 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //membuat view untuk menyiapkan dan memasang layout yg akan digunakan pada recycler view
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview,parent,false);
         return new myviewholder(view);
     }
 
+
+    //untuk menyimpan referensi dari view-view
     class myviewholder extends RecyclerView.ViewHolder{
 
         //Deklarasi
@@ -158,12 +166,14 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
+            //menginisialisasi view-view yang terpasang pada layout recyler view
             img = (ImageView)itemView.findViewById(R.id.imgFetch);
             tgl_penyampaian = (TextView)itemView.findViewById(R.id.tgl_penyampaian);
             nama_responden = (TextView)itemView.findViewById(R.id.nama_responden);
             ruangan = (TextView)itemView.findViewById(R.id.ruangan);
             kategori = (TextView)itemView.findViewById(R.id.kategori);
             keluhan = (TextView)itemView.findViewById(R.id.keluhan);
+
 
 
             edit = (ImageView)itemView.findViewById(R.id.editicon);

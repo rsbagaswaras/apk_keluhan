@@ -71,12 +71,7 @@ public class KodeActivity extends AppCompatActivity {
                             pb_bar.setVisibility(View.INVISIBLE);
 
                         } else {
-                            // pb_bar.setVisibility(View.INVISIBLE);
-                            //  String message = "Verification failed , Please try again later.";
 
-                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            //    message = "Invalid code entered...";
-                            //   }
                             Toast.makeText(KodeActivity.this, "Something Wrong ",
                                     Toast.LENGTH_SHORT).show();
                         }

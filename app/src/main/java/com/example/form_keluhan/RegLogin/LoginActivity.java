@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            //sign in sukses, llalu mengupdate ui selanjutnya stlh login
+                            //sign in sukses, lalu mengupdate ui selanjutnya stlh login
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class );
