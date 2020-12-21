@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -143,17 +144,12 @@ public class RegisterActivity extends AppCompatActivity {
             inputNama.requestFocus();
         }
 
-        else if(email.isEmpty())
+        else if(email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher((CharSequence) inputEmail).matches())
         {
-            inputEmail.setError("Enter Email Address");
+            inputEmail.setError("Enter Valid Email Address");
             inputEmail.requestFocus();
         }
 
-        else if(email.length()<10)
-        {
-            inputEmail.setError("Enter valid email");
-            inputEmail.requestFocus();
-        }
 
         else if (password.isEmpty())
         {
@@ -222,6 +218,7 @@ public class RegisterActivity extends AppCompatActivity {
                     btnRegister.setEnabled(true);
                     Toast.makeText(RegisterActivity.this, "Opps! Something went wrong", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
