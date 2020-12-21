@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 
@@ -63,7 +64,40 @@ public class FetchActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_fetching_drawer, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.nav_search);
+
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
+            @Override
+            public boolean onQueryTextSubmit(String s){
+
+            processsearch(s);
+            return false;
+        }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                processsearch(s);
+                return false;
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void processsearch(String s)
+    {
+        FirebaseRecyclerOptions<Form> options =
+                new FirebaseRecyclerOptions.Builder<Form>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("RSBW_KELUHAN").orderByChild("ruangan").startAt(s).endAt(s+"\uf8ff"),Form.class)
+                .build();
+
+        fetchAdapter = new FetchAdapter(options);
+        fetchAdapter.startListening();
+        recview.setAdapter(fetchAdapter);
+
     }
 
     @Override

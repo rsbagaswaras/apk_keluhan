@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,15 +28,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myviewholder> {
+public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myviewholder>
+{
 
-    public FetchAdapter(@NonNull FirebaseRecyclerOptions<Form> options) {
-        super(options);
-    }
+    public FetchAdapter(@NonNull FirebaseRecyclerOptions<Form> options) { super(options); }
+
 
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Form form) {
@@ -148,6 +153,7 @@ public class FetchAdapter extends FirebaseRecyclerAdapter<Form,FetchAdapter.myvi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview,parent,false);
         return new myviewholder(view);
     }
+
 
     class myviewholder extends RecyclerView.ViewHolder{
 
