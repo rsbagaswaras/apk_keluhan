@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.form_keluhan.DashboardActivity;
 import com.example.form_keluhan.R;
 import com.example.form_keluhan.lantai1.Lantai1Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -71,12 +72,7 @@ public class KodeActivity extends AppCompatActivity {
                             pb_bar.setVisibility(View.INVISIBLE);
 
                         } else {
-                            // pb_bar.setVisibility(View.INVISIBLE);
-                            //  String message = "Verification failed , Please try again later.";
 
-                            //  if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            //    message = "Invalid code entered...";
-                            //   }
                             Toast.makeText(KodeActivity.this, "Something Wrong ",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -102,7 +98,7 @@ public class KodeActivity extends AppCompatActivity {
         //memberi nilai pada referensi yang dituju
         myRef.child("Kode").setValue(et_otp.getText().toString());
 
-        Intent intent = new Intent(KodeActivity.this, Lantai1Activity.class);
+        Intent intent = new Intent(KodeActivity.this, DashboardActivity.class);
         startActivity(intent);
         finish();
 

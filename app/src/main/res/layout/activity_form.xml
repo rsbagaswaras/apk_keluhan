@@ -140,6 +140,7 @@
                 android:lines="3"
                 tools:ignore="MissingConstraints" />
 
+
             <ImageView
                 android:id="@+id/gambar"
                 android:layout_width="350dp"

@@ -11,6 +11,7 @@ public class Form {
     private String kategori;
 
 
+
     public Form(String tanggal_penyampaian, String nama, String ruangan,String kategori, String keluhan, String picture) {
         this.postKey = postKey;
         this.tanggal_penyampaian = tanggal_penyampaian;
@@ -19,6 +20,7 @@ public class Form {
         this.kategori = kategori;
         this.keluhan = keluhan;
         this.picture = picture;
+
     }
 
    Form() {
